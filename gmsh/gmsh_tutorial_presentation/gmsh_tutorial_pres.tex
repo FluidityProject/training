@@ -1,0 +1,444 @@
+\documentclass[t]{beamer}
+\usetheme{amcg}
+\usepackage{hyperref}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
+\setbeamertemplate{navigation symbols}{}
+
+\author[Alexandros Avdis]{Applied Modelling and Computation Group\\[15pt]Alexandros Avdis}
+
+\institute{Department of Earth Science and Engineering, Imperial College London}
+
+\date{4-6 November 2013}
+\title[Meshing]{Meshing}
+\subtitle[]{Fluidity training}
+
+\setbeamersize{text margin left=0.3in}
+\setbeamersize{text margin right=0.3in}
+
+\begin{document}
+{
+\setbeamertemplate{footline}
+{%
+\begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+        \begin{minipage}[c]{5cm}%
+        \usebeamerfont{author in head/foot}
+        \end{minipage}\hfill% 
+        \begin{minipage}{6cm}
+        \hfill\includegraphics[height=.5cm]{AMCGFlow-long}
+        \end{minipage}
+\end{beamercolorbox}%
+}
+\begin{frame}
+\titlepage
+\end{frame}
+}
+
+\begin{frame}{Tutorial overview~~~~~~~}
+\begin{columns}[l]
+
+\column{2.8in}
+  \begin{itemize}
+     \item What is a mesh.\\[17pt]
+     \item What is Gmsh.\\[17pt]
+     \item Viewing and meshing a 3--D geometry.\\[17pt]
+     \item Generating and meshing a 2--D geometry.\\[17pt]
+     \item Meshing realistic domains.
+  \end{itemize}
+
+\column{1.75in}
+\vspace{-0.9in}
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=1.0\textwidth]{../figures/globe_mesh}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{but, before we start...}
+  \begin{itemize}
+     \item The presents slides are freely available, as well as a more detailed tutorial we have prepared.\\
+     \item Open a terminal and issue the following commands:\\[10pt]
+     \begin{itemize}
+        \item[] \hspace{-60pt}\emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)\\
+        \item[] \hspace{-60pt}\emph{cd meshingTutorial}\\
+        \item[] \hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh\_tutorial\_pres.pdf $>$ gmsh\_tutorial\_pres.pdf}\\ (to fetch a pdf copy of the present slides)\\
+        \item[] \hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh\_tutorial.pdf$>$gmsh\_tutorial.pdf}\\ (to fetch a pdf copy of the tutorial document)
+        \item[] \hspace{-60pt}\emph{evince gmsh\_tutorial\_pres.pdf \&}
+        \item[] \hspace{-60pt}\emph{evince gmsh\_tutorial.pdf \&}\\[10pt]
+     \end{itemize}
+     \item Keep this terminal open, as we will come back to it.\\
+     \item Fell free to consult the slides (and/or the document) at any time!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What is a mesh?}
+\only<1->{
+A mesh can be qualitatively thought of as the tessellation of a domain $\Omega$ into a set of
+non-overlapping sub-domains $\omega_i$:
+}
+\only<1>{
+\begin{align}
+\Omega &= \cup \left\{ \omega_i \left| i=1,2,\ldots ele \right. \right\} \nonumber \\
+\label{eqn:tessalation_definition} \\
+0 &= \cap \left\{ \omega_i \left| i=1,2,\ldots ele \right. \right\} \nonumber
+\end{align}
+where $ele$ is the number of elements in the tessellation.
+}
+\only<2>{
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=0.85\textwidth]{../figures/1d_2d_mesh_examples}
+\end{figure}
+}
+\end{frame}
+
+
+\begin{frame}{What is Gmsh?}
+\begin{itemize}
+\item It is the role of the mesh (or grid) generator to scatter the points and generate the mesh, whilst ensuring high quality elements.
+\item Gmsh is a \emph{``3D finite element grid generator with a build-in CAD engine and post-processor. Its design goal is to provide a fast, light and user-friendly meshing tool with parametric input and advanced visualization capabilities.''}\footnote{from \url{http://www.geuz.org/gmsh/}}. Furthermore, Gmsh can be used as a 1--, 2-- and 3-- dimensional mesh generator for use with the Fluidity CFD code.
+\item Not the only mesh generator that can be used with Fluidity.
+\begin{itemize}
+   \item Fluidity can also read meshes in ExodusII format.
+\end{itemize}
+\item Distributed under the GNU General Public License, available for Linux, Windows and Mac OS.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Starting Gmsh}
+\begin{itemize}
+   \item Go back to your terminal and issue the following commands:\\
+   \begin{itemize}
+      \item[]\hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh/annulus.geo$>$annulus.geo}\\ (to fetch an example-file)\\
+      \item[]\hspace{-60pt}\emph{gmsh annulus.geo \&}\\ (To open the example-file with Gmsh, the ampersand is important.)
+   \end{itemize}
+\end{itemize}
+\vspace{-18pt}
+\begin{columns}[l]
+\column{2.3in}
+  \begin{itemize} 
+     \item Gmsh will open annulus.geo, two windows will appear:
+     \begin{itemize}
+        \item[$\circ$] The Menu window (smaller).
+        \item[$\circ$] The Graphic window (larger).
+     \end{itemize}
+  \end{itemize}
+\column{2.2in}
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=1.0\textwidth]{../figures/annulus1}
+  \label{fig:annulus1}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Viewing and meshing a 3D geometry: Navigating menus.}
+   \begin{itemize}
+     \item Gmsh's architecture is centred around four modules, this is reflected in the menu window.\\[10pt]
+     \item The menu widow can be used to switch between the different modules, but you are encouraged to switch between modules by using the keyboard (letters in parentheses below.)\\[10pt]
+     \begin{itemize}
+       \item[$\circ$] Geometry ($G$): For defining domain geometry.
+       \item[$\circ$] Mesh ($M$): For building the mesh.
+       \item[$\circ$] Solver ($S$).
+       \item[$\circ$] Post--Processing ($P$).
+       \item[$\circ$] \emph{Practical:} Try switching between different modules.
+     \end{itemize}
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Viewing and meshing a 3D geometry: Manipulating the view}
+\begin{itemize}
+\item Panning : Hold right button down and move cursor.
+\item Zooming : Scroll or hold middle button down and move cursor.
+\item Rotating : Hold left button down and move cursor.
+\item \emph{Practical :} Try modifying the view.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Viewing and meshing a 3D geometry: Getting and saving the mesh}
+\begin{itemize}
+\item Mesh the annulus
+\begin{itemize}
+  \item[$\circ$] \lstinline{Mesh (M) > 3D}
+  \item[$\circ$] Once again, try modifying the view
+\end{itemize}
+\vspace{5pt}
+\item To save the mesh click on File (menu window) and select Save Mesh.
+\begin{itemize}
+  \item[$\circ$] This creates a file ``annulus.msh'', storing the mesh.
+\end{itemize}
+\vspace{5pt}
+\item More information on the annulus is available in the tutorial document fetched earlier.
+\begin{itemize}
+  \item[$\circ$] Including instructions how to build the geometry.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Viewing and meshing a 3D geometry: The various files}
+   \begin{itemize}
+      \item annulus.geo : Stores the geometry as an ASCII script file.
+      \begin{itemize}
+         \item[$\circ$] Can be edited (try \emph{cat annulus.geo} at your terminal).
+      \end{itemize}
+      \item annulus.msh : Stores the mesh
+      \begin{itemize}
+         \item[$\circ$] Also contains tags (numerical ID) on element vertices, edges and faces that we can use to assign boundary conditions.
+         \item[$\circ$] Can be ASCII or binary.
+      \end{itemize}\vspace{20pt}
+      \item Fluidity can also read meshes in ``triangle'' format
+      \begin{itemize}
+         \item[$\circ$] Issue \emph{/path/to/fluidity/bin/gmsh2triangle annulus.msh}
+         \item[$\circ$] This will generate annulus.edge, annulus.ele, annulus.node files.
+         \item[$\circ$] Issue \emph{ls -l} at your terminal.
+      \end{itemize}
+      \item Fluidity can also read meshes in ExodusII format.
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Generating and meshing a 2D geometry: Aim}
+
+\begin{itemize}
+\item To generate a 2--D, structured mesh on a $1,000$km $\times 1,000$km square.
+\item Typical element size (edge length): $20$km.
+\item Mesh will be used in subsequent simulations/examples in this training event.
+\end{itemize}
+
+\begin{figure}[htbp]
+ \centering
+  \includegraphics[width=0.4\textwidth]{../figures/2d-example-mesh}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Generating \& meshing a 2D geometry: Getting started}
+
+Close your existing Gmsh instance and start a new one from your terminal: \\[10pt]
+
+\emph{bzr cat lp:fluidity/training/gmsh/gmsh\_tutorial\_presentation/2d-example-tutor.geo$>$2d-example-tutor.geo} (This fetches a file to be used by the tutors when helping you!)\\[10pt]
+\emph{gmsh 2d-example.geo \&} (The ampersand is important)\\[10pt]
+
+We proceed by defining:
+\begin{enumerate}
+\item Points
+\item Lines
+\item Surfaces
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Generating \& meshing a 2D geometry: Creating points}
+  \begin{itemize}
+  \item \lstinline{Geometry (G) > Elementary Entities > Add > New > Point}\\[4pt]
+  \item The \emph{Contextual Geometry Definitions} window will appear.\\[4pt]
+  \item Enter the point coordinates and click ``Apply''.\\[4pt]
+  \begin{itemize}
+    \item[$\circ$] Do not move cursor outside \emph{Contextual Geometry Definitions} window while entering coordinates! Hold shift down if you have to.\\[4pt]
+    \item[$\circ$] Always look at the instructions shown in the graphic window.\\[4pt]
+    \item[$\circ$] Point 1: \emph{[ 0.0\ \ ,  0.0\ \ ,  0.0]} with characteristic length of \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 2: \emph{[ 0.0\ \ ,  1.e6,\ \ 0.0]} with characteristic length of \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 3: \emph{[ 1.e6, 1.e6,\ \ 0.0]} with characteristic length of \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 4: \emph{[ 1.e6, 0.0\ \ ,  0.0]} with characteristic length of \emph{2e4}\\[5pt]
+    \end{itemize}
+  \item Press `q' and close Contextual Geometry Definitions window.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Generating \& meshing a 2D geometry: Creating lines}
+\begin{itemize}
+\item Geometry $>$ Elementary Entities $>$ Add $>$ New $>$ Straight Line
+\begin{itemize}
+\item[$\circ$] Draw a line between two points by selecting the points.
+\item[$\circ$] Join points \emph{(1,2)}, \emph{(2,3)}, \emph{(3,4)}, \emph{(4,1)}
+\item[$\circ$] Once all lines are drawn, press `q'
+\item[$\circ$] Always look at the instructions shown in the graphic window.
+\end{itemize}
+\end{itemize}
+\begin{figure}[htbp]
+ \centering
+  \includegraphics[width=0.74\textwidth]{../figures/Gmsh_dawing_lines.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Generating \& meshing a 2D geometry: Declaring a plane surface.}
+\begin{itemize}
+\item Geometry(G) $>$ Elementary Entities $>$ Add $>$ New $>$ Plane Surface
+\item Click on any of the sides, all sides should be highlighted in red.
+\item Press `e' then `q'.
+\item Gmsh will highlight the surface with grey, dash-lines.
+\end{itemize}
+\begin{figure}[htbp]
+ \centering
+  \includegraphics[width=0.7\textwidth]{../figures/2d-example-surface}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Generating \& meshing a 2D geometry: Declaring physical groups.}
+In order to specify regions and boundaries in Fluidity, they must first be defined as ``Physical Groups'' in Gmsh:\\[15pt]
+
+\begin{itemize}
+   \item Assign ``Physical Line'' ID's to the domain boundaries.
+   \begin{itemize}
+      \item[$\circ$] \lstinline{Geometry (G) > Physical Groups > Add > Line}
+      \item[$\circ$] Select \emph{bottom} side and press `e'.
+      \item[$\circ$] Select \emph{right} side and press `e'.
+      \item[$\circ$] Select \emph{top} side and press `e'.
+      \item[$\circ$] Select \emph{left} side and press `e'.
+      \item[$\circ$] Once you have done all sides press `q'.\\[15pt]
+   \end{itemize}
+   \item Assign ``Physical Surface'' ID to the plane surface.
+   \begin{itemize}
+      \item[$\circ$] \lstinline{Geometry (G) > Physical Groups > Add > Surface}
+      \item[$\circ$] Select the highlighted surface: Click on the grey dash lines.
+      \item[$\circ$] Press `e' then `q'.
+   \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Generating \& meshing a 2D geometry: Producing a mesh}
+   \begin{itemize}
+      \item To produce a 2--D mesh: \emph{ \lstinline{Mesh (M) > 2D}}
+      \item To save the mesh: Click on File (menu window) and select Save Mesh.
+      \item Convert to triangle format:\\ \emph{/path/to/fluidity/bin/gmsh2triangle 2d-example.msh}
+   \end{itemize}
+\begin{figure}[htbp]
+ \centering
+  \includegraphics[width=0.75\textwidth]{../figures/2d-example-Gmsh-mesh}
+  \label{fig:shot16}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Meshing realistic ocean domains: Key points}
+\begin{itemize}
+   \item A Gmsh user typically has to specify two essential parts:
+   \begin{itemize}
+      \item[$\circ$] Domain shape.
+      \item[$\circ$] Characteristic element size.
+   \end{itemize}\vspace{20pt}
+   \item In domains representative of oceans:
+   \begin{itemize}
+      \item[$\circ$] The geometry is very complex, boundaries are fractal--like
+      \item[$\circ$] Ideal characteristic element size can also be dependent on many parameters, for example:
+      \begin{itemize}
+         \item[$\cdot$] Depth
+         \item[$\cdot$] Ocean floor topography
+         \item[$\cdot$] Explicit requirement in order to resolve tidal turbine array, etc.
+      \end{itemize}
+   \end{itemize}
+\end{itemize}
+%\begin{figure}[htbp!]
+% \centering
+%  \includegraphics[width=0.27\textwidth]{../figures/UK_bathymetry_metric.png}
+%\end{figure}
+\end{frame}
+
+\begin{frame}{Meshing realistic ocean domains: Our approach so far}
+\begin{itemize}
+\item Domain geometry \& Mesh are constructed on a spherical shell, representative of the Earth's surface geoid.
+\item See fetched Gmsh tutorial document.
+\begin{itemize}
+   \item[$\circ$] Coastlines extracted from GSHHS dataset, via Gmsh plug--in.
+   \item[$\circ$] Open boundaries are drawn, usually constant longitude \& constant latitude lines.
+   \item[$\circ$] Element size is defined using ``attractor'' and ``threshold'' fields available in Gmsh.
+   \item[$\circ$] 2--D surface mesh is extruded along the radial direction within Fluidity.
+\end{itemize}
+\item Mesh is ``vertically extruded'' within Fluidity.
+\end{itemize}
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=1.0\textwidth]{../figures/mesh_extrusion.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Shortcomings -- Domain boundaries.}
+A simple CAD engine is insufficient:
+\begin{itemize}
+   \item Shorelines are geometrically very complex.
+   \item The Gmsh GSHHS plug--in fits a spline through the GSHHS points, leading to intersecting shorelines (support for Gmsh GSHHS plugin now dropped).
+   \item Drawing arbitrary lines as open boundaries --e.g. contour at a given depth-- not easily done.
+\end{itemize}
+\begin{figure}[htbp]
+ \centering
+  \includegraphics[width=1.00\textwidth]{../figures/UKwc_mesh_with_details/UK_west_coast_with_details}
+  \caption{Mesh of the Irish Sea and surrounding seas, with highlighted details}
+  \label{fig:IrishSeaMesh}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Shortcomings -- Mesh size}
+The spatial variation of the mesh element size could be complex:
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+   \item Mesh element size must usually be fine near the coastlines to capture their structure.\\[15pt]
+   \item Mesh element size must usually be fine in areas of steep ocean floor topography and in shallow areas: Not easily done with current approach.
+\end{itemize}
+\column{0.5\textwidth}
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=1.00\textwidth]{../figures/UK_bathymetry_metric.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Meshing realistic domains -- Our proposed approach}
+Use Geographical Information Systems to extract domain boundaries and prescribe mesh metric size.
+\begin{itemize}
+   \item Existing GIS software capable of reading databases in popular formats.
+   \item Capability of extracting contours from field-type databases is usually available. ($\rightarrow$domain boundaries)
+   \item Capability of generating field-type databases is usually available. ($\rightarrow$mesh size metric)
+   \item A project bringing together GIS software with mesh generation software has been registered by AMCG:
+   \begin{itemize}
+      \item[$\circ$] \url{https://launchpad.net/meshing}
+      \item[$\circ$] Publication coming soon.
+      \item[$\circ$] Watch this space!
+   \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Further reading}
+\begin{thebibliography}{9}
+
+  \bibitem{meshingTutorialNotes}
+  AMCG, 
+  \emph{A Gmsh tutorial}
+
+  \bibitem{gmsharticle}
+  C. Geuzaine and J.-F. Remacle,
+  \emph{Gmsh: a three-dimensional finite element mesh generator with built-in pre- and post-processing facilities.}.
+  International Journal for Numerical Methods in Engineering,
+  Volume 79, Issue 11,
+  pages 1309-1331, 2009.
+
+  \bibitem{gmshwebsite}
+  C. Geuzaine and J.-F. Remacle,
+  \emph{Gmsh Reference Manual.}.
+  Available at,
+  \url{http://geuz.org/gmsh/\#Documentation}.
+
+  \bibitem{amcg-gmsh-tutorial}
+  A. Avdis and S.L.Mouradian,
+  \emph{A Gmsh tutorial},
+  available over launchpad.
+
+  \end{thebibliography}
+
+\end{frame}
+
+\begin{frame}{Questions?}
+\begin{center}
+\vfill
+AMCG:\\
+\url{http://amcg.ese.ic.ac.uk/}\\[20pt]
+Fluidity:\\
+\url{http://amcg.ese.ic.ac.uk/Fluidity}\\[20pt]
+Fluidity on launchpad:\\
+\url{https://launchpad.net/fluidity}
+\end{center}
+\end{frame}
+
+\end{document}
+

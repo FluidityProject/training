@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2828"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3725"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3739"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49982792"
+     inkscape:cx="372.04724"
+     inkscape:cy="526.18109"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1326"
+     inkscape:window-height="788"
+     inkscape:window-x="352"
+     inkscape:window-y="183"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.99994314;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2816"
+       width="498.00006"
+       height="148.02866"
+       x="123.03297"
+       y="203.28456" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2.0035615;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2816-4"
+       width="497.99643"
+       height="544.95245"
+       x="123.03477"
+       y="353.31506" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="297.23807"
+       y="242.81613"
+       id="text3614"><tspan
+         sodipodi:role="line"
+         id="tspan3616"
+         x="297.23807"
+         y="242.81613">Header</tspan></text>
+    <image
+       y="260.08713"
+       x="127.38949"
+       id="image3727"
+       height="86.001854"
+       width="489.28702"
+       xlink:href="file:///home/jhill1/projects/fluidity_gen/docs/presentations/release_talks_nov2010/stat_header.png" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="324.12283"
+       y="395.63745"
+       id="text3614-3"><tspan
+         sodipodi:role="line"
+         id="tspan3616-8"
+         x="324.12283"
+         y="395.63745">Data</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3756"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><flowRegion
+         id="flowRegion3758"><rect
+           id="rect3760"
+           width="461.56207"
+           height="106.32844"
+           x="137.74365"
+           y="433.724" /></flowRegion><flowPara
+         id="flowPara3762"
+         style="font-size:20px">010101011010101010101010110110001010101010101011010101110100101001001011010101010101101010101110001010101001001010101001010101010010101010101000</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="358.23654"
+       y="578.54559"
+       id="text3764"><tspan
+         sodipodi:role="line"
+         id="tspan3766"
+         x="358.23654"
+         y="578.54559"
+         style="font-size:22px">or</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3774"
+       style="font-size:20px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><flowRegion
+         id="flowRegion3776"><rect
+           id="rect3778"
+           width="458.15768"
+           height="250.08607"
+           x="144.04958"
+           y="628.21619"
+           style="font-size:20px" /></flowRegion><flowPara
+         id="flowPara3780"
+         style="font-size:16">  0.48000000000000000E+003  0.48000000000000000E+003  0.19027999999999999E+002 1683 6000 2480  0.18923088000000000E+008  0.00000000000000000E+000  0.23051116000000000E+008  0.26832800000000000E+007  0.00000000000000000E+000  0.26832800000000000E+007  0.14644880000000000E+007  0.00000000000000000E+000  0.20527360000000000E+007  0.25328400000000000E+007  0.00000000000000000E+000  0.36848400000000000E+007  0.21687840000000000E+007  0.00000000000000000E+000  0.38967840000000000E+007  0.33963360000000000E+007  0.00000000000000000E+000  0.38763400000000000E+007  0.52456800000000000E+007  0.00000000000000000E+000  0.75496800000000000E+007  0.14316800000000000E+007  0.00000000000000000E+000  0.14316800000000000E+007  0.10148052881995633E+001  0.10152690183714499E+001  0.11348553045792225E+004  0.12688067917843719E+007  0.10000000000000000E+002  0.13000000000000000E+002  0.12893796958227538E+005  0.14375000000001121E+008  0.14805288199563392E-001  0.15269018371449988E-001  0.16821972621063001E+002  0.18806791784365294E+005  0.20000000000000000E+002  0.20000000000000000E+002  0.22360679774996948E+005  0.25000000000001449E+008 -0.36674953150561223E+001  0.37049962138149928E+001  0.23796681809274346E+004 -0.23669126333887857E+003  0.76000000000000001E-005  0.76000000000000001E-005  0.84970583144993467E-002  0.94999999999998828E+001  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.19397433364110396E-004  0.26298679045943859E-004  0.27930387272317388E-001  0.31203701434534917E+002  0.98975593728157776E-012  0.33466540867304749E-003  0.30273117990245655E-001  0.41496808829626923E+001  0.32445600861795113E-017  0.68332078407329113E-017  0.68862066411509608E-014  0.76732931670106758E-011  0.25263157894736841E-004  0.25263157894736841E-004  0.28245069189470045E-001  0.31578947368425158E+002  0.97300843611394603E-002  0.42367466572429491E+000  0.33935513034031976E+003  0.37418456093805237E+006  0.47420493567239010E-004  0.99869960749173308E-004  0.10064455860143712E+000  0.11214813090246376E+003  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000 -0.99869960749173309E-010 -0.47420493567239011E-010  0.10064455860143718E-006 -0.11214813090246455E-003  0.72159855571087243E-008  0.95957333595162348E-004  0.87740954132979887E-002  0.12193673530917581E+001  0.13781158024316427E-004  0.29022583656425024E-004  0.17395186453069117E-001  0.19345734867495221E+002  0.44651461501257841E-005  0.94037499123605498E-005  0.56361315364509479E-002  0.62681163036713556E+001  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.32445600861795113E-017  0.68332078407329113E-017  0.68862066411509608E-014  0.76732931670106758E-011  0.19397433364110396E-004  0.26298679045943859E-004  0.27930387272317388E-001  0.31203701434534917E+002  0.25263157894736841E-004  0.25263157894736841E-004  0.28245069189470045E-001  0.31578947368425158E+002  0.10000000000000000E+001  0.10000000000000000E+001  0.11180339887498963E+004  0.12500000000000030E+007  0.10003968915966939E-005  0.10338981005297601E-005  0.11323597897594830E-002  0.12660118861484382E+001  0.10001285946392074E-005  0.10109834900868776E-005  0.11226746758191981E-002  0.12551879327059829E+001  0.42997876679860078E-006  0.19151963350622364E+000  0.22902536252057043E+002 -0.94886470231042006E-001  0.19151963350622364E+000  0.15058772171123074E+002  0.11999998501844570E+004 -0.16759328303802985E-005  0.13523512520508559E-006  0.70051960326869718E-003 -0.68448152492559533E+000 -0.25588068086893823E-004  0.30362661842927372E-004  0.17925210234368199E-001 -0.53986287457702433E+001  0.10000000000000000E+001  0.10000000000000000E+001  0.11180339887498963E+004  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000 -0.10000000000000000E+001 -0.10000000000000000E+001  0.11180339887498963E+004 -0.12500000000000030E+007</flowPara><flowPara
+         id="flowPara3782"
+         style="font-size:16" /></flowRoot>  </g>
+</svg>

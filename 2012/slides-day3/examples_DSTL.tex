@@ -1,0 +1,50 @@
+% small.tex
+\documentclass[10pt]{beamer}
+\usetheme{amcg}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\thefootnote}{}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
+\usepackage{subfigure}
+
+% items enclosed in square brackets are optional
+\title[Stratified flow examples]{Summary of the Stratified Flow examples}
+\subtitle[]{}
+\institute{Department of Earth Science and Engineering, Imperial College London}
+\author[James Percival]{\large{James Percival}}
+\date{}
+
+
+\begin{document}
+
+%--- the titlepage frame -------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%-- Overview slide --- %
+\section*{Outline}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\input{shear_instability/shear_instability}
+
+%-- Data directory slide --- %
+\section*{Data}
+\begin{frame}
+  \frametitle{Data}
+  \begin{center}
+  The examples have been run in advance \\ and the output can be found in \\ /scratch/stratified-examples-data
+  \end{center}
+\end{frame}
+
+\end{document}
+
+
+
+

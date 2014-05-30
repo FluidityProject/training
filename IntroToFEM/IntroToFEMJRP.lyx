@@ -1,0 +1,4528 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+%\usetheme{Warsaw}
+\usetheme{amcg}
+%\usepackage{eulervm}
+\usepackage{bm}
+% or ...
+
+%\usecolortheme{orchid}
+%\setbeamertemplate{footline}[text line]{} % makes the footer EMPTY
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\options mathserif, professionalfonts
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 2
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This file is a solution template for:
+\end_layout
+
+\begin_layout Itemize
+Talk at a conference/colloquium.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk length is about 20min.
+ 
+\end_layout
+
+\begin_layout Itemize
+Style is ornate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+In principle, this file can be redistributed and/or modified under the terms
+ of the GNU Public License, version 2.
+ However, this file is supposed to be a template to be modified for your
+ own needs.
+ For this reason, if you use this file as a template and not specifically
+ distribute it as part of a another package/program, the author grants the
+ extra permission to freely copy and modify this file as you see fit and
+ even to delete this copyright notice.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+A Brief Introduction to Finite Element Methods for Fluid Flow Problems
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Intro to FEM for Fluids
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+James
+\begin_inset space ~
+\end_inset
+
+Percival
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+James Percival
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+- optional, use only with lots of authors
+\end_layout
+
+\begin_layout Plain Layout
+- if there are really lots of authors, use 
+\begin_inset Quotes eld
+\end_inset
+
+Author et al.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+AMCG,
+\begin_inset Newline newline
+\end_inset
+
+Department of Earth Science and Engineering
+\begin_inset Newline newline
+\end_inset
+
+Imperial College London
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Use the 
+\begin_inset Quotes eld
+\end_inset
+
+Institute mark
+\begin_inset Quotes erd
+\end_inset
+
+ inset (
+\family sans
+Insert\SpecialChar \menuseparator
+Custom Insets\SpecialChar \menuseparator
+InstituteMark
+\family default
+) only if there are several affiliations.
+\end_layout
+
+\begin_layout Itemize
+Keep it simple, no one is interested in your street address.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+AMCG
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, but mostly needed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Fluidity Training 2013
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Either use conference name or its abbreviation.
+ 
+\end_layout
+
+\begin_layout Itemize
+Not really informative to the audience, more for people (including yourself)
+ who are reading the slides online
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Fluidity Training 2013
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, should be abbreviation of conference name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you have a file called "institution-logo-filename.xxx", where xxx is a
+ graphic format that can be processed by latex or pdflatex, resp., then you
+ can add a logo by uncommenting the following:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{institution-logo-filename}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning
+ of every subsection.
+ Delete this, if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+%  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+%    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+%    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%  }
+\end_layout
+
+\begin_layout Plain Layout
+
+%}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Outline
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Numerical Solution of PDEs
+\end_layout
+
+\begin_layout Subsection
+Standard numerical methods for PDEs.
+\end_layout
+
+\begin_layout BeginFrame
+Numerical Solutions to PDEs
+\end_layout
+
+\begin_layout Standard
+Mathematical descriptions of the equations governing physical processes
+ are often in the form of partial differential equations (PDEs).
+ Variable values are functions of time and satisfy relationships between
+ variables and their partial derivatives.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Examples}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Formula 
+\begin{alignat*}{1}
+\tag{heat equation}\frac{\partial T}{\partial t} & =\kappa\frac{\partial^{2}T}{\partial x^{2}},\\
+\tag{wave equation}\frac{\partial^{2}a}{\partial t^{2}} & =c^{2}\frac{\partial^{2}a}{\partial x^{2}}\\
+\tag{advection-diffusion equation}\frac{\partial\tau}{\partial t}+u\frac{\partial\tau}{\partial x} & =\kappa\frac{\partial^{2}\tau}{\partial^{2}x}
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Numerical Solutions to PDEs
+\end_layout
+
+\begin_layout Standard
+Solving PDEs assumes knowledge of the variables at an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{infinite}
+\end_layout
+
+\end_inset
+
+ number of locations in space and time.
+ However memory available in computers (and humans!) is finite.
+ Equations must be 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{discretized}
+\end_layout
+
+\end_inset
+
+ to create a smaller (and easier to solve) problem.
+ Eg.
+ to a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{matrix}
+\end_layout
+
+\end_inset
+
+ problem like
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccc}
+3 & 2 & 0\\
+4 & 4 & 1\\
+0 & 2 & 3
+\end{array}\right)\left(\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right)=\left(\begin{array}{c}
+1\\
+3\\
+2
+\end{array}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or, in a more general form,
+\begin_inset Formula 
+\[
+\mathrm{A}\bm{x}=\bm{b}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Numerical Solutions to PDEs
+\end_layout
+
+\begin_layout Standard
+Some standard techniques for discretization are:
+\end_layout
+
+\begin_layout Enumerate
+Finite difference methods.
+\end_layout
+
+\begin_layout Enumerate
+Finite volume methods.
+\end_layout
+
+\begin_layout Enumerate
+Spectral methods.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Finite element methods}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Fluidity model primarily implements the last of these.
+\end_layout
+
+\begin_layout BeginFrame
+Finite Difference Methods
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Itemize
+Reduce problem domain to finite set of points.
+\end_layout
+
+\begin_layout Itemize
+Replace exact derivatives with approximate difference equations.
+\end_layout
+
+\begin_layout Column
+7cm
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/fin_dif.png
+	width 100text%
+	BoundingBox 30bp 10bp 550bp 370bp
+	clip
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{df}{dx}\approx\frac{\Delta f}{\Delta x}=\frac{f\left(x_{i+1}\right)-f\left(x_{i-1}\right)}{x_{i+1}-x_{i-1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Finite Volume Methods
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Itemize
+Break problem domain into a finite set of sub-volumes.
+\end_layout
+
+\begin_layout Itemize
+Solve for volume integral of quantities inside.
+ Typically reduces problem into flux calculation across faces of the volume.
+ 
+\end_layout
+
+\begin_layout Itemize
+If fluxes depend on derivatives then another method (e.g.
+ finite differences) must be used to find them.
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+\begin_inset Formula 
+\[
+\frac{d}{dt}\int_{\Omega_{i}}\rho dV=\sum_{\mbox{faces}}\int_{\delta\Omega_{i}^{(j)}}\rho\bm{u}\cdot\bm{n}dS
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/FVex_crop.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_layout BeginFrame
+Spectral Methods
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Itemize
+Represent variables as (limit of) sum of orthogonal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{basis functions}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Global}
+\end_layout
+
+\end_inset
+
+ basis functions vary over entire domain.
+\end_layout
+
+\begin_layout Itemize
+Truncate infinite series and calculate behaviour of finite set of coefficients.
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)\\
+ & \approx\sum_{n=1}^{N}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/spec_ex.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_layout BeginFrame
+Spectral Methods
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/spec_ex_0.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Spectral Methods
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/spec_ex_1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Spectral Methods
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/spec_ex_2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Spectral Methods
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/spec_ex_3.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Methods
+\end_layout
+
+\begin_layout Itemize
+Break the problem domain down into a finite set of sub-volumes (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{elements}
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Represent variables as a sum of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{basis functions}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Basis functions non-zero only on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{local}
+\end_layout
+
+\end_inset
+
+ set of subvolumes.
+\end_layout
+
+\begin_layout Itemize
+Solve 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{integral equation}
+\end_layout
+
+\end_inset
+
+ form of PDE.
+ 
+\end_layout
+
+\begin_layout BeginFrame
+Hybrid Methods
+\end_layout
+
+\begin_layout Itemize
+Very common to combine these different approaches
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Couple finite volume method for globally conserved quanity to finite difference
+ method to calculate fluxes
+\end_layout
+
+\begin_layout Itemize
+Couple finite volume method for globally conserved quanity to finite element
+ method to calculate fluxes.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Control Volume}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Itemize
+Fluidity velocity solver: Finite element method in space, finite difference
+ in time
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Finite Elements from First Principles
+\end_layout
+
+\begin_layout Subsection
+Example: Poisson equation
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Prerequisites
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Poisson Equation: Pressure in Navier-Stokes
+\end_layout
+
+\begin_layout FrameSubtitle
+Finding pressure in the incompressible Navier-Stokes Equations
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<1->
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Incompressible Navier-Stokes equations
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\tag{momentum}\frac{\partial\bm{u}}{\partial t}+\bm{u}\cdot\nabla\bm{u} & =-\nabla p+\nu\nabla^{2}\bm{u},\\
+\tag{continuity}\nabla\cdot\bm{u} & =0,
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Taking divergence
+\begin_inset Formula 
+\[
+\underbrace{\frac{\partial}{\partial t}\left(\nabla\cdot\bm{u}\right)}_{=0}+\nabla\cdot\left(\bm{u}\cdot\nabla\bm{u}\right)=-\nabla^{2}p+\underbrace{\nu\nabla^{2}\nabla\cdot\bm{u}}_{=0}.
+\]
+
+\end_inset
+
+I.e.
+\begin_inset Formula 
+\[
+\nabla^{2}p=-\nabla\cdot\left(\bm{u}\cdot\nabla\bm{u}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+ Poisson Equation
+\end_layout
+
+\begin_layout Standard
+General form of this equation
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Poisson Equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tag{*}\nabla^{2}\psi+f\left(\bm{x}\right)=0,\quad\forall\bm{x}\in\Omega
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+In 1D, setting 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ to the unit interval:
+\begin_inset Formula 
+\[
+\frac{\partial^{2}\psi}{\partial x^{2}}+f\left(x\right)=0\quad\forall x\in(0,1).
+\]
+
+\end_inset
+
+This is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{strong form}
+\end_layout
+
+\end_inset
+
+ of the Poisson equation.
+\end_layout
+
+\begin_layout Subsection
+Strong and Weak Forms
+\end_layout
+
+\begin_layout BeginFrame
+Strong Form vs.
+ Weak Form of an Equation
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Strong form
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Equation (*) true individually for each point in space,
+\end_layout
+
+\begin_layout Block
+\begin_inset Formula 
+\[
+\nabla^{2}\psi+f\left(x\right)=0,
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $x$
+\end_inset
+
+ in domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Block
+Test a 
+\begin_inset Formula $\psi$
+\end_inset
+
+ by checking equation holds individually for each point in space.
+\end_layout
+
+\begin_layout Column
+6cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Weak form
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Integral equation holds for all choices of a `
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{test function}
+\end_layout
+
+\end_inset
+
+', 
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\int_{\Omega}\phi\left(\nabla^{2}\psi+f\right)\, dV=0,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\phi:\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+ is from a function space defined later.
+\end_layout
+
+\begin_layout Block
+Test possible 
+\begin_inset Formula $\psi$
+\end_inset
+
+ (`
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{trial function}
+\end_layout
+
+\end_inset
+
+') by checking integral equation holds for all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{test functions}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Quick Review of Vector Spaces
+\end_layout
+
+\begin_layout Standard
+A set, 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+, is a vector space if it has addition and scalar multiplication operators
+ where 
+\begin_inset Formula 
+\begin{alignat*}{1}
+\tag{associativity}\bm{a}+\left(\bm{b+\bm{c}}\right) & =\left(\bm{a}+\bm{b}\right)+\bm{c},\\
+\tag{commutivity}\bm{a}+\bm{b} & =\bm{b}+\bm{a},\\
+\mbox{there exists }\bm{0}\in\mathcal{V}\mbox{ such that } & \bm{a}+\bm{0}=\bm{a},\mbox{ for all }\bm{a}\in\mathcal{V},\\
+\mbox{for all }\bm{a}\mbox{ there exists }-\bm{a}\in\mathcal{V} & \mbox{such that }\bm{a}+\left(-\bm{a}\right)=\bm{0},\\
+\tag{distributivity(vector)}\alpha\left(\bm{a}+\bm{b}\right) & =\alpha\bm{a}+\alpha\bm{b},\\
+\tag{distributivity(scalar)}\left(\alpha+\beta\right)\bm{a} & =\alpha\bm{a}+\beta\bm{a},\\
+\alpha\left(\beta\bm{a}\right) & =\left(\alpha\beta\right)\bm{a},\\
+1\bm{a} & =\bm{a}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+Functions are a vector space under the following definitions of addition
+ and scalar multiplication:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\left(f+g\right)\left(x\right) & =f\left(x\right)+g\left(x\right),\\
+\left(\alpha f\right)\left(x\right) & =\alpha\left(f\left(x\right)\right).
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I.e.
+ functions are added/multiplied pointwise based on their result.
+ Necessary axioms all follow from the normal rules of addition/multiplication.
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_0.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_1.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_2.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+Within the space of functions there are many smaller subspaces.
+ Eg:
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Examples}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Polynomials 
+\begin_inset Formula $f(x)=1+3x+4x^{2}+5x^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Functions on an interval 
+\begin_inset Formula $f(x)=\begin{cases}
+0 & x<0,\\
+e^{x} & 0\leq x\leq1,\\
+0 & x>1.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Twice differentiable functions 
+\begin_inset Formula $f\left(x\right)=\begin{cases}
+x^{2}+2, & x<0,\\
+2\left(e^{x}-x\right). & x\geq0.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Vector Spaces
+\end_layout
+
+\begin_layout Standard
+Key idea of finite element method: 
+\end_layout
+
+\begin_layout Itemize
+Desire an exact solution 
+\begin_inset Formula $\psi$
+\end_inset
+
+, from an inifinite dimensional vector space, 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+, which satisfies weak form equation, for test functions 
+\begin_inset Formula $\phi$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\psi^{\delta}$
+\end_inset
+
+ in approximate vector space 
+\begin_inset Formula $\mathcal{V}^{\delta}\subset\mathcal{V}$
+\end_inset
+
+ with finite representation, which satisfies same weak form equation, for
+ test functions 
+\begin_inset Formula $\phi^{\delta}$
+\end_inset
+
+ in approximate space 
+\begin_inset Formula $\mathcal{U}^{\delta}\subset\mathcal{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout BeginFrame
+Strong and Weak Forms
+\end_layout
+
+\begin_layout Standard
+A solution to the strong form of the equations 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{will}
+\end_layout
+
+\end_inset
+
+ be a solution to the weak form equations:
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\nabla^{2}\psi+f=0$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+\int\phi\left(\nabla^{2}\psi+f\right)\: dV=\int\phi\cdot0\: dV=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+independent of 
+\begin_inset Formula $\phi$
+\end_inset
+
+, i.e.
+ for any possible choice of test space.
+\end_layout
+
+\begin_layout BeginFrame
+Strong and Weak Forms
+\end_layout
+
+\begin_layout Standard
+A solution to the weak form of the equations 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{may}
+\end_layout
+
+\end_inset
+
+ be a solution to the strong equations if it is smooth enough.
+\end_layout
+
+\begin_layout Standard
+The weak formulation extends the equations to allow non-smooth solutions
+ which exist in a distributional sense.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Examples of common distributions}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tag{Dirac delta}\delta\left(x\right),\quad\int_{-\infty}^{a}f\left(x\right)\delta\left(x\right)=\begin{cases}
+f\left(0\right), & a>0,\\
+0, & a<0.
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tag{Heaviside}H\left(x\right):=\int_{-\infty}^{x}\delta\left(s\right)ds=\begin{cases}
+0, & x<0,\\
+1, & x>0.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Example of a Weak Nonclassical Solution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tag{Helmholtz}\psi-\nabla^{2}\psi\left(x\right)=a\delta\left(X-x\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi=\begin{cases}
+a\text{\exp\left(x-X\right)} & x\leq X,\\
+a\exp\left(X-x\right) & x>X
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename peakon.png
+	lyxscale 50
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Review of Section
+\end_layout
+
+\begin_layout Itemize
+Strong form of PDEs prescribes behaviour pointwise
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finite difference methods work at a finite number of points
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Weak form of PDEs prescribes behaviour over intervals (areas, volumes etc.)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finite element methods work over a finite number of intervals
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Functions live in vector spaces, which can be approximated.
+\end_layout
+
+\begin_layout Subsection
+Boundary Conditions
+\end_layout
+
+\begin_layout BeginFrame
+Boundary Conditions for Weak Equations
+\end_layout
+
+\begin_layout Standard
+Two possible forms of boundary condition for a solution to the Poisson equation
+ to be well posed:
+\end_layout
+
+\begin_layout Enumerate
+Dirichlet: 
+\begin_inset Formula $\psi(x)=a(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in A\subset\delta\Omega$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Enumerate
+Neumann: 
+\begin_inset Formula $\frac{\partial\psi}{\partial x}=b\left(x\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in B\subset\delta\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the Galerkin formulation, Dirichlet boundary conditions require explicit
+ modification of the structure of the problem to be solved, whereas Neumann
+ conditions are dealt with naturally as part of the formulation.
+ We'll use a Dirichlet boundary condition at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, and a Neumann condition at 
+\begin_inset Formula $x=1$
+\end_inset
+
+ in our example.
+\end_layout
+
+\begin_layout BeginFrame
+Natural Boundary Conditions
+\end_layout
+
+\begin_layout Standard
+Our weak form equation is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{1}\phi\left(\frac{\partial^{2}\psi}{\partial x^{2}}+f\right)\: dx=0,
+\]
+
+\end_inset
+
+Integrate by parts,
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\, dx-\int_{0}^{1}\phi f\, dx=-\left[\phi\frac{\partial\psi}{\partial x}\right]_{0}^{1}.
+\]
+
+\end_inset
+
+Chose 
+\begin_inset Formula $\phi$
+\end_inset
+
+ to vanish on Dirichlet boundaries (and set 
+\begin_inset Formula $\psi=a(0)$
+\end_inset
+
+), and use our knowlege of 
+\begin_inset Formula $\frac{\partial\psi}{\partial x}$
+\end_inset
+
+ on Neumann boundaries:
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\, dx=\int_{0}^{1}\phi f\, dx-\phi\left(1\right)b\left(1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Dirichlet Boundary Conditions
+\end_layout
+
+\begin_layout Standard
+Dirichlet boundary conditions enforced through splitting solution into two
+ parts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi=\psi_{0}+\psi_{d}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\psi_{d}$
+\end_inset
+
+ is any (chosen) function satisfying 
+\begin_inset Formula 
+\[
+\psi_{d}\left(0\right)=a(0),\qquad\frac{\partial\psi_{d}}{\partial x}\left(1\right)=0
+\]
+
+\end_inset
+
+while 
+\begin_inset Formula $\psi_{0}$
+\end_inset
+
+ satisfies a modified weak form, with 
+\begin_inset Formula $\psi_{d}$
+\end_inset
+
+ on r.h.s,
+\begin_inset Formula 
+\[
+\psi_{0}(0)=0,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{0}}{\partial x}\: dx=\int_{0}^{1}\phi f\: dx-\phi\left(1\right)b\left(1\right)-\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{d}}{\partial x}\: dx,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note 
+\begin_inset Formula $\psi_{0}$
+\end_inset
+
+ vanishes on the Dirichlet boundaries, same condition we apply to 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout BeginFrame
+Boundary Conditions: Strong vs.
+ Weak
+\end_layout
+
+\begin_layout Standard
+More generally, implementations of finite element boundary conditions come
+ in two flavours, strong and weak.
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Strong form bc.s
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Information contained in boundary condition appears implicitly in the weak
+ form of the PDE.
+ Solve by lifting method.
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Weak form bcs.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Information contained in boundary condition appears explicitly in surface
+ integrals in the weak form of the PDE.
+ Solve by direct substitution.
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Boundary Conditions: Strong vs.
+ Weak
+\end_layout
+
+\begin_layout Standard
+Which method to apply depends on the details of both the original PDE and
+ the weak form to be solved.
+ Sometimes both are possible.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, consider solving the advection equation,
+\begin_inset Formula 
+\[
+\frac{\partial\tau}{\partial t}+\bm{a}\cdot\nabla\tau=0,
+\]
+
+\end_inset
+
+for a tracer 
+\begin_inset Formula $\tau$
+\end_inset
+
+, given a known velocity field, 
+\begin_inset Formula $\bm{a}$
+\end_inset
+
+ and dirichlet boundary conditions at a inlet.
+\end_layout
+
+\begin_layout Standard
+Note the odd number of spatial derivatives, whereas even for Poisson equation.
+\end_layout
+
+\begin_layout BeginFrame
+Boundary Conditions: Strong vs.
+ Weak
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Strong form bc.s
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Solve 
+\begin_inset Formula 
+\[
+\int_{\Omega}\phi\left(\frac{\partial\tau}{\partial t}+\bm{a}\cdot\nabla\tau\right)dx=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Dirichlet bcs must be applied strongly.
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Weak form bcs.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Integrate by parts,
+\begin_inset Formula 
+\begin{alignat*}{1}
+\int_{\Omega}\phi\frac{\partial\tau}{\partial t}-\tau\nabla\cdot\left(\phi\bm{a}\right)dx\\
+\qquad=-\int_{\delta\Omega^{+}}\bm{a}\cdot\bm{n}\phi\tau_{b}\: dS,
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+where 
+\begin_inset Formula $\tau_{b}$
+\end_inset
+
+ is the Dirichlet bc, applied weakly.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+When using this sort of weak boundary condition, values may not be quite
+ what you expect, however fluxes should be right.
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Basis Functions
+\end_layout
+
+\begin_layout Standard
+Need discrete finite dimensional representation of problem to do numerical
+ calculations on a computer.
+ Set
+\begin_inset Formula 
+\[
+\psi^{\delta}\left(x\right)=\sum_{i=1}^{N}\hat{\psi}_{i}N_{i}\left(x\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{\psi}_{i}\in\mathbb{R}$
+\end_inset
+
+ is a scalar parameter and 
+\begin_inset Formula $N_{i}:\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+ is a fixed shape function specifing spatial dependence.
+ Can do the same for the space of test functions, 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+For our 1D Poisson equation example we can choose to use the set of continuous,
+ piecewise linear functions ('
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{shape functions}')
+\end_layout
+
+\end_inset
+
+ on subdivisions of the unit interval.
+\begin_inset Formula 
+\[
+N_{i}=\begin{cases}
+0, & x\leq x_{(i-1)},\\
+\frac{x-x_{(i-1)}}{x_{i}-x_{(i-1)}}, & x_{(i-1)}<x\leq x_{i},\\
+\frac{x_{(i+1)}-x}{x_{(i+1)}-x_{i}}, & x_{i}<x\leq x_{(i+1)},\\
+0. & x>x_{(i+1)}.
+\end{cases}
+\]
+
+\end_inset
+
+Functions are equal to 1 at the set of points 
+\begin_inset Formula $[0,x_{1,}x_{2},\ldots x_{n-1},1]$
+\end_inset
+
+, sometimes called 'nodes' or 'degrees of freedom.
+ The subdivisions of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ on which the 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ are smooth are often called 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{elements}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_0.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_3.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_4.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_5.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N_6.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Galerkin Approximation
+\end_layout
+
+\begin_layout Standard
+To obtain the Galerkin approximation of the Poisson equation, we find the
+ (unique) solution of the weak form equation when 
+\begin_inset Formula $\psi$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi$
+\end_inset
+
+ are approximated by our finite element expansions, 
+\begin_inset Formula 
+\begin{alignat*}{1}
+\psi^{\delta} & =\sum_{i=0}^{n}\hat{\psi}_{i}N_{i},\\
+\phi^{\delta} & =\sum_{j=0}^{n}\hat{\phi}_{j}N_{j}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\psi^{\delta}$
+\end_inset
+
+ are called 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{trial functions}
+\end_layout
+
+\end_inset
+
+ and the function space they come from is the trial space.
+ The 
+\begin_inset Formula $\phi^{\delta}$
+\end_inset
+
+are called 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{test functions}
+\end_layout
+
+\end_inset
+
+ and live in the trial space.
+ Computation involves obtaining the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{finite}
+\end_layout
+
+\end_inset
+
+ number of 
+\begin_inset Formula $\hat{\psi}_{i}$
+\end_inset
+
+.
+ Can then be solved on a computer.
+\end_layout
+
+\begin_layout BeginFrame
+Galerkin Approximation
+\end_layout
+
+\begin_layout Standard
+Substituing the finite representations into (*) we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\int\sum_{j=1}^{n}\hat{\phi}_{j}\frac{\partial N_{j}}{\partial x}\sum_{i=1}^{N}\hat{\psi}_{i}\frac{\partial N_{i}}{\partial x}\: dV+v_{N}^{\delta}b\left(x_{N}\right) & =\int\sum_{j=1}^{n}\hat{\phi}_{j}^{\delta}N_{j}f\: dV,
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\hat{\phi}_{j}\left(\underbrace{\left[\int\frac{\partial N_{j}}{\partial x}\frac{\partial N_{i}}{\partial x}dV\right]}_{\mathrm{matrix\,}D_{ij}}\hat{\psi}_{i}-\int fN_{j}dV+\begin{cases}
+0, & j=1,\ldots n-1\\
+b\left(x_{n}\right), & j=n
+\end{cases}\right)\\
+=0\qquad\qquad
+\end{alignat*}
+
+\end_inset
+
+If bracket vanishes, solution for any 
+\begin_inset Formula $\hat{\phi}_{j}$
+\end_inset
+
+, so we can drop them.
+ 
+\end_layout
+
+\begin_layout BeginFrame
+The Right Hand Side
+\end_layout
+
+\begin_layout Standard
+Generally the right hand side of the equation is known explicitly as a function
+ 
+\begin_inset Formula $f:\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula $\int_{0}^{1}\phi^{\delta}f\, dx$
+\end_inset
+
+ can be calculated exactly.
+ In practice (especially for coupled problems,) it is usually represented
+ in the approximate function space,
+\begin_inset Formula 
+\[
+f^{\delta}\left(x\right)=\sum_{i=1}^{N}\hat{f}_{i}N_{i}\left(x\right),
+\]
+
+\end_inset
+
+where, for our choice of shape functions,
+\begin_inset Formula 
+\[
+\hat{f}_{i}=f\left(x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Poisson Matrix Problem
+\end_layout
+
+\begin_layout Standard
+\align left
+Dirichlet condition: 
+\begin_inset Formula $\hat{\psi}_{0}=a(0)$
+\end_inset
+
+, turns up on right hand side:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/FEmatrix.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Local to global
+\end_layout
+
+\begin_layout Standard
+Note that
+\begin_inset Formula 
+\begin{alignat*}{1}
+D_{ij} & =\int_{\Omega}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\: dV,\\
+ & =\sum_{k}\int_{\Omega^{(k)}}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\: dV,
+\end{alignat*}
+
+\end_inset
+
+where the 
+\begin_inset Formula $\Omega^{k}=[x_{i},x_{i+1}]$
+\end_inset
+
+ only contribute if
+\begin_inset Formula 
+\[
+\frac{\partial N_{i}}{\partial x}\neq0,\quad\frac{\partial N_{j}}{\partial x}\neq0.
+\]
+
+\end_inset
+
+Global matrix assembled from sum of local integrals over elements.
+\end_layout
+
+\begin_layout BeginFrame
+Finite Difference Poisson Matrix Problem
+\end_layout
+
+\begin_layout Standard
+\align left
+Finite Difference discretization of same problem:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/FDmatrix.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Volume Poisson Matrix Problem
+\end_layout
+
+\begin_layout Standard
+\align left
+Finite volume discretization of same problem.
+ 2 point finite difference approximation for flux terms:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/FVmatrix.png
+	lyxscale 40
+	width 85text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Solutions: Finite Element
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f=10\sin\left(5x\right)+\nicefrac{1}{2}\cos\left(3\left(x+\nicefrac{1}{2}\right)\right),$
+\end_inset
+
+ 
+\begin_inset Formula $\psi\left(0\right)=0$
+\end_inset
+
+, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\frac{d\psi}{dx}=1:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/solnFE.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Solutions: Finite Difference
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f=10\sin\left(5x\right)+\nicefrac{1}{2}\cos\left(3\left(x+\nicefrac{1}{2}\right)\right),$
+\end_inset
+
+ 
+\begin_inset Formula $\psi\left(0\right)=0$
+\end_inset
+
+, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\frac{d\psi}{dx}=1:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/solnFD.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Solutions: Finite Volume
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f=10\sin\left(5x\right)+\nicefrac{1}{2}\cos\left(3\left(x+\nicefrac{1}{2}\right)\right),$
+\end_inset
+
+ 
+\begin_inset Formula $\psi\left(0\right)=0$
+\end_inset
+
+, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\frac{d\psi}{dx}=1:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/solnFV.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Example II: Advection-Diffusion
+\end_layout
+
+\begin_layout Standard
+Use same finite element framework for 1D advection diffusion equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\tau}{\partial t}+\frac{\partial}{\partial x}\left(u\tau\right)=\frac{\partial}{\partial x}\left(\kappa\frac{\partial\tau}{\partial x}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{1}\phi\frac{\partial\tau}{\partial t}\, dx=\int\frac{\partial\phi}{\partial x}\left(u\tau-\kappa\frac{\partial\tau}{\partial x}\right)\: dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Example II: Advection-Diffusion
+\end_layout
+
+\begin_layout Standard
+Given FEM framework, crank the handle to reduce the problem; Discretize
+ through Finite Element Galerkin Method,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tau^{\delta}=\sum_{i=0}^{n}\hat{\tau}_{i}N_{i}^{\tau},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+u^{\delta}=\sum_{i=0}^{n}\hat{u}_{i}N_{i}^{u}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\phi^{\delta}=\sum_{i=0}^{n}\hat{\phi}_{i}N_{i}^{\tau},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the method doesn't require 
+\begin_inset Formula $N_{i}^{u}=N_{i}^{\tau}$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Mixed formulations}
+\end_layout
+
+\end_inset
+
+ are possible
+\end_layout
+
+\begin_layout BeginFrame
+Example II: Advection-Diffusion
+\end_layout
+
+\begin_layout Standard
+Following substitution, integrate by parts to obtain
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{\int_{0}^{1}N_{i}N_{j}\: dx}_{\mbox{"Mass matrix"}M_{ij}}\frac{\partial\hat{\tau}_{j}}{\partial t}-\int_{0}^{1}\frac{\partial N_{i}}{\partial x}\left(N_{j}\sum_{k=0}^{n}u_{k}N_{k}^{u}-\kappa\frac{\partial N_{j}}{\partial x}\right)\: dx\hat{\tau}_{j}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or in matrix form,
+\begin_inset Formula 
+\[
+\mathrm{M}\frac{\partial\bm{\tau}}{\partial t}+\mathrm{A}\left(\bm{u}\right)\bm{\bm{\tau}}+\mathrm{D}\left(\kappa\right)\bm{\tau}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the FEM form of the tracer advection-diffusion equation.
+ Further details will depend on the choice of shape functions and timestepping
+ method.
+\end_layout
+
+\begin_layout BeginFrame
+Review of Section
+\end_layout
+
+\begin_layout Itemize
+Finite element methods solve weak (integral) equations
+\end_layout
+
+\begin_layout Itemize
+Functions get approximated by finite dimensional summations of functions,
+ non-zero over small regions of problem domain (elements)
+\end_layout
+
+\begin_layout Itemize
+Linear PDE problem gives a linear (matrix) problem for the 
+\begin_inset Formula $\hat{\psi}_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The efficient computational representation and solution of these sorts of
+ problems will form the basis of the other session.
+\end_layout
+
+\begin_layout Section
+Extending the method
+\end_layout
+
+\begin_layout Subsection
+Two and Three dimensional FEM
+\end_layout
+
+\begin_layout BeginFrame
+Extensions: Higher dimensions
+\end_layout
+
+\begin_layout Standard
+The linear finite element method extends naturally on simplicies [line elements,
+ triangle elements, tetrahedrons].
+ Basis functions are set to 1 at one vertex and to zero on the others.
+ E.g.
+ for triangles:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/p1_2d.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Extensions: Higher dimensions
+\end_layout
+
+\begin_layout Standard
+The linear finite element method extends naturally on simplicies [line elements,
+ triangle elements, tetrahedrons].
+ Basis functions are set to 1 at one vertex and to zero on the others.
+ E.g.
+ for triangles:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/p1_0005.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Extensions: Higher dimensions
+\end_layout
+
+\begin_layout Standard
+The linear finite element method extends naturally on simplicies [line elements,
+ triangle elements, tetrahedrons].
+ Basis functions are set to 1 at one vertex and to zero on the others.
+ E.g.
+ for triangles:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/p1_0010.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Extensions: Higher dimensions
+\end_layout
+
+\begin_layout Standard
+The linear finite element method extends naturally on simplicies [line elements,
+ triangle elements, tetrahedrons].
+ Basis functions are set to 1 at one vertex and to zero on the others.
+ E.g.
+ for triangles:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/p1_0015.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+ Increasing the degrees of 
+\series medium
+freedom
+\end_layout
+
+\begin_layout Standard
+To increase the number of free parameters in the approximate solution space
+ (and thus attempt to get a more accurate solution) there are several options:
+\end_layout
+
+\begin_layout Itemize
+More, smaller subdivisions [step size,
+\begin_inset Formula $h$
+\end_inset
+
+] 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the system used in Fluidity's mesh adaptivity.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Use higher order polynomials, e.g.
+ quadratic functions [polynomial order, 
+\begin_inset Formula $p$
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Itemize
+Use discontinuous functions [Discontinuous Galerkin formulation]
+\end_layout
+
+\begin_layout Subsection
+High order polynomials and discontinous FEM
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+Projection (in black) of smooth function (red).
+\end_layout
+
+\begin_layout Itemize
+Linear, continuous basis, Galerkin method (P1 CG).
+\end_layout
+
+\begin_layout Itemize
+In 1d degrees of freedom 
+\begin_inset Formula $\approx$
+\end_inset
+
+ no.
+ of elements
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/proj_p1_low_no_err.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+Projection (in black) of smooth function (red), & error (blue).
+\end_layout
+
+\begin_layout Itemize
+Linear, continuous basis, Galerkin method (P1 CG).
+\end_layout
+
+\begin_layout Itemize
+In 1d degrees of freedom 
+\begin_inset Formula $\approx$
+\end_inset
+
+ no.
+ of elements
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/proj_p1_low.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+May increase the number of elements
+\end_layout
+
+\begin_layout Itemize
+More elements mean more degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+One of the methods used in Fluidity adaptivity routines
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/proj_p1_high.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Increasing the polynomial order
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Standard
+Quadratic shape functions
+\begin_inset Formula 
+\[
+N_{2i}=\begin{cases}
+0, & x\leq x_{i-1},\\
+\frac{2x^{2}-\left(3x_{i-1}+x_{i}\right)x+\left(x_{i}+x_{i-1}\right)x_{i-1}}{\left(x_{i}-x_{i-1}\right)^{2}}, & x_{i-1}<x\leq x_{i},\\
+\frac{2x^{2}-\left(3x_{i+1}+x_{i}\right)x+\left(x_{i}+x_{i+1}\right)x_{i+1}}{\left(x_{i+1}-x_{i}\right)^{2}}, & x_{i}<x\leq x_{i+1},\\
+0. & x>x_{i+1}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N_{2i+1}=\begin{cases}
+0, & x<x_{i},\\
+-\frac{x^{2}-\left(x_{i+1}+x_{i}\right)x+x_{i}x_{i+1}}{\left(x_{i+1}-x_{i}\right)^{2}}, & x_{i}<x\leq x_{i+1},\\
+0. & x>x_{i+\text{1}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N2_0.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N2_1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N2_2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N2_3.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Finite Element Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/N2_4.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+Projection of a smooth function.
+\end_layout
+
+\begin_layout Itemize
+Quadratic, continuous basis, Galerkin method (P2 CG).
+\end_layout
+
+\begin_layout Itemize
+In 1d degrees of freedom 
+\begin_inset Formula $\approx$
+\end_inset
+
+ 2 
+\begin_inset Formula $\times$
+\end_inset
+
+ no.
+ of elements.
+\end_layout
+
+\begin_layout Itemize
+Good representation of slowly varying functions
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/proj_p2.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Discontinuous elements
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Standard
+Discontinuous linear shape functions
+\begin_inset Formula 
+\[
+N_{2i}=\begin{cases}
+0, & x\leq x_{i},\\
+\frac{\left(x_{i+1}-x\right)}{\left(x_{i+1}-x_{i}\right)}, & x_{i}<x\leq x_{i+1},\\
+0. & x>x_{i+1}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N_{2i+1}=\begin{cases}
+0, & x<x_{i},\\
+-\frac{\left(x-x_{i}\right)}{\left(x_{i+1}-x_{i}\right)}, & x_{i}<x\leq x_{i+1},\\
+0. & x>x_{i+\text{1}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Increasing the degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+Projection of a smooth function.
+\end_layout
+
+\begin_layout Itemize
+Linear, discontinuous basis, Galerkin method (P1 DG).
+\end_layout
+
+\begin_layout Itemize
+In 1d degrees of freedom 
+\begin_inset Formula $\approx$
+\end_inset
+
+2 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\times$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ no.
+ of elements.
+\end_layout
+
+\begin_layout Itemize
+Good representation of discontinuties/fronts/large gradients.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/proj_p1_dg.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Review of Section
+\end_layout
+
+\begin_layout Itemize
+The degrees of freedom (and thus size) of a problem can be increased by:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+increasing the number of element subdivisions (making step size 
+\begin_inset Formula $h$
+\end_inset
+
+ smaller)
+\end_layout
+
+\begin_layout Itemize
+increasing the order of the shape functions applied on elements (increasing
+ polynomial degree, 
+\begin_inset Formula $p$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+relaxing continuity constraints at the interface between elements (discontinuous
+ Galerkin method, nonconforming elements)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Spaces, Forms and Functions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SFF"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+More on Vector Spaces
+\end_layout
+
+\begin_layout BeginFrame
+Reassuring Mathematics
+\end_layout
+
+\begin_layout Standard
+This section summarises some useful results from mathematical analysis for
+ finite element problems.
+ In particular, we note that results exists to show that, under certain
+ provisos finite element solutions to a given problem
+\end_layout
+
+\begin_layout Itemize
+exist
+\end_layout
+
+\begin_layout Itemize
+are unique
+\end_layout
+
+\begin_layout Itemize
+converge
+\end_layout
+
+\begin_layout Itemize
+converge to the right answer.
+\end_layout
+
+\begin_layout BeginFrame
+Choice of Vector Spaces
+\end_layout
+
+\begin_layout Standard
+Going back to the weak form for the original infinite dimensional problem,
+\begin_inset Formula 
+\[
+\int_{\Omega}\nabla\phi\cdot\nabla\psi\: dV=\int_{\Omega}\phi f\: dV+\int_{\delta\Omega^{N}}\phi b\: dV,
+\]
+
+\end_inset
+
+it is obvious that 
+\begin_inset Formula $\psi$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla\psi$
+\end_inset
+
+ must be well behaved enough for these integrals to exist.
+ 
+\end_layout
+
+\begin_layout BeginFrame
+Choice of Vector Spaces
+\end_layout
+
+\begin_layout Standard
+We require the function is square integrable,
+\begin_inset Formula 
+\begin{equation}
+\left\Vert \psi\right\Vert ^{2}:=\int_{\Omega}\psi^{2}\: dV<\infty.
+\end{equation}
+
+\end_inset
+
+(The space of function which satisfy this is normally called 
+\begin_inset Formula $\mathcal{L}_{2}\left(\Omega\right)$
+\end_inset
+
+) and also that
+\begin_inset Formula 
+\begin{equation}
+\left\Vert \nabla\psi\right\Vert ^{2}:=\int_{\Omega}\nabla\psi\cdot\nabla\psi\: dV<\infty,
+\end{equation}
+
+\end_inset
+
+Functions which satisfy both (1) & (2) are in the space of square integrable
+ functions with square integrable derivatives, denoted 
+\begin_inset Formula $\mathcal{H}^{1}\left(\Omega\right)$
+\end_inset
+
+.
+ This is a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Sobolev space}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout BeginFrame
+Weak equations and Bilinear forms
+\end_layout
+
+\begin_layout Standard
+The volume integral in (*) defines a symmetric bilinear form, 
+\begin_inset Formula $a:\mathcal{H}^{1}\left(\Omega\right)\times\mathcal{H}^{1}\left(\Omega\right)\rightarrow\mathbb{R},$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a(\phi,\psi):=\int_{\Omega}\nabla\psi\cdot\nabla\phi\: d^{n}x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\begin_inset Formula 
+\begin{alignat*}{1}
+a\left(\phi,\psi\right) & =a\left(\psi,\phi\right),\\
+a\left(c_{1}\phi+c_{2}\xi,\psi\right) & =c_{1}a\left(\phi,\psi\right)+c_{2}a\left(\xi,\psi\right).
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Lax-Milgram Theorem
+\end_layout
+
+\begin_layout Standard
+Two properties of the bilinear form, 
+\begin_inset Formula $a$
+\end_inset
+
+, are used to show well-posedness: 
+\begin_inset Formula 
+\[
+\tag{continuity }a(\phi,\psi)\leq C\left\Vert \psi\right\Vert \left\Vert \phi\right\Vert \mbox{ for some C}>0,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tag{coercive/elliptic}a(\psi,\psi)\geq c\left\Vert \psi\right\Vert ^{2}\mbox{ for some c>0.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Existence, Uniqueness and Convergence of Solutions
+\end_layout
+
+\begin_layout BeginFrame
+Well posedness - existence 
+\end_layout
+
+\begin_layout Standard
+Existence follows from application of Riesz representation theorem to the
+ Hilbert space problem
+\begin_inset Formula 
+\[
+a\left(u,v\right)=f\left(v\right),
+\]
+
+\end_inset
+
+Precise details lie outside of the scope of this lecture, but effectively
+ guarantees an 
+\begin_inset Quotes eld
+\end_inset
+
+inverse
+\begin_inset Quotes erd
+\end_inset
+
+ to the map
+\begin_inset Formula 
+\[
+\phi_{v}\left(u\right)=a\left(u,v\right),
+\]
+
+\end_inset
+
+so that for sufficiently smooth data we can always get a solution.
+\end_layout
+
+\begin_layout BeginFrame
+Well posedness - uniqueness:
+\end_layout
+
+\begin_layout Standard
+Suppose there are two different solutions, 
+\begin_inset Formula $\psi_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{2}$
+\end_inset
+
+, i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\left(\phi,\psi_{1}\right)=a\left(\phi,\psi_{2}\right)=\int_{\Omega}\phi f\, d^{n}x,\mbox{ for all }\phi\in\mathcal{H}^{1}\left(\Omega\right).
+\]
+
+\end_inset
+
+Then
+\begin_inset Formula 
+\[
+a\left(\phi,\psi_{1}-\psi_{2}\right)=0
+\]
+
+\end_inset
+
+but 
+\begin_inset Formula $\psi_{1}-\psi_{2}\in\mathcal{H}^{1}\left(\Omega\right),$
+\end_inset
+
+ so can choose to test 
+\begin_inset Formula $\phi=\psi_{1}-\psi_{2}$
+\end_inset
+
+ Then
+\begin_inset Formula 
+\[
+a\left(\psi_{1}-\psi_{2},\psi_{1}-\psi_{2}\right)=0\geq c\left\Vert \psi_{1}-\psi_{2}\right\Vert ^{2},
+\]
+
+\end_inset
+
+So 
+\begin_inset Formula $\psi_{1}=\psi_{2},$
+\end_inset
+
+ hence solution is unique.
+\end_layout
+
+\begin_layout BeginFrame
+Well posedness - convergence
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\psi\in\mathcal{V}$
+\end_inset
+
+ be exact solution, 
+\begin_inset Formula $\psi^{\delta}\in\mathcal{V}^{\delta}\subset\mathcal{V}$
+\end_inset
+
+ be the finite element solution 
+\begin_inset Formula $\xi\in\mathcal{V}^{\delta}$
+\end_inset
+
+ be an arbitrary function.
+ Then 
+\begin_inset Formula $\psi^{\delta}-\xi\in\mathcal{V}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi^{\delta}-\xi\in\mathcal{V}^{\delta}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\tag{From PDE}a(\underbrace{\psi^{\delta}-\xi}_{\in\mathcal{V}},\psi)=\int_{\Omega}\left(\psi^{\delta}-\xi\right)fd^{n}x
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tag{FEM}a(\underbrace{\psi^{\delta}-\xi}_{\in\mathcal{V^{\delta}}},\psi^{\delta})=\int_{\Omega}\left(\psi^{\delta}-\xi\right)fd^{n}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Well posedness - convergence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+c\left\Vert \psi-\psi^{\delta}\right\Vert ^{2}\leq & a\left(\psi-\psi^{\delta},\psi-\psi^{\delta}\right),\\
+ & =a\left(\psi-\psi^{\delta},\psi-\psi^{\delta})+a(\psi-\psi^{\delta},\psi^{\delta}-\xi\right)\\
+ & \qquad\qquad+a\left(\psi^{\delta}-\xi,\psi^{\delta}\right)-a\left(\psi^{\delta}-\xi,\psi\right),\\
+ & =a\left(\psi-\psi^{\delta},\psi-\psi^{\delta}+\psi^{\delta}-\xi\right)\\
+ & \qquad\qquad-\int_{\Omega}\left(\psi^{\delta}-\xi\right)fd^{n}x+\int_{\Omega}\left(\psi^{\delta}-\xi\right)fd^{n}x,\\
+ & =a\left(\psi-\psi^{\delta},\psi-\xi\right)\leq C\left\Vert \psi-\psi^{\delta}\right\Vert \left\Vert \psi-\xi\right\Vert .
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Well posedness - convergence
+\end_layout
+
+\begin_layout Standard
+Hence it is guaranteed (Cea's lemma)
+\begin_inset Formula 
+\[
+\left\Vert \psi-\psi^{\delta}\right\Vert \leq\frac{C}{c}\inf_{\xi\in\mathcal{V}^{\delta}}\left\Vert \psi-\xi\right\Vert .
+\]
+
+\end_inset
+
+Choose 
+\begin_inset Formula $\xi$
+\end_inset
+
+ to be linear projection of 
+\begin_inset Formula $\psi$
+\end_inset
+
+, i.e 
+\begin_inset Formula $\xi\left(x_{i}\right)=\psi\left(x_{i}\right),$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{\partial^{2}\xi}{\partial x^{2}}=0$
+\end_inset
+
+, then
+\begin_inset Formula 
+\[
+\left\Vert \psi-P\psi\right\Vert \leq\alpha\sup_{\Omega_{i}}h_{i}\sup_{x\in\Omega}\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|
+\]
+
+\end_inset
+
+Hence
+\begin_inset Formula 
+\[
+\left\Vert \psi-\psi^{\delta}\right\Vert \leq\frac{\alpha C}{c}\sup_{\Omega_{i}}h_{i}\sup_{x\in\Omega}\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left\Vert \psi-\psi^{\delta}\right\Vert \rightarrow0\mbox{ as }\sup_{\Omega_{i}}h_{i}\rightarrow0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Connection to mesh adaptivity
+\end_layout
+
+\begin_layout Standard
+We can also sum the error estimates element by element
+\begin_inset Formula 
+\[
+\left\Vert \psi-\psi^{\delta}\right\Vert \leq\frac{1}{\epsilon}\sum_{i}h_{i}\sup_{x\in\Omega_{i}}\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|.
+\]
+
+\end_inset
+
+A good mesh will minimise this representation error.
+ When 
+\begin_inset Formula $\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|$
+\end_inset
+
+ is small, element size 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ can be large, and vice versa.
+\end_layout
+
+\begin_layout BeginFrame
+Connection to mesh adaptivity
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename adapt_ex1.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Connection to mesh adaptivity
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename adapt_ex2.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Review of Section
+\end_layout
+
+\begin_layout Standard
+We have shown that finite element approximations to the solutions to PDEs
+\end_layout
+
+\begin_layout Itemize
+are unique,
+\end_layout
+
+\begin_layout Itemize
+converge,
+\end_layout
+
+\begin_layout Itemize
+and converge to the right answer.
+\end_layout
+
+\begin_layout Standard
+We have also given a hint that they exist.
+ We have also shown that by using knowledge about the form of the solution
+ we can choose elements to minimize the estimated error for a given number
+ of degrees of freedom.
+\end_layout
+
+\begin_layout Section
+A Note on Implementation
+\end_layout
+
+\begin_layout BeginFrame
+Quadrature
+\end_layout
+
+\begin_layout Standard
+Numerical method to calculate/approximate integrals:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{a}^{b}f\left(\bm{x}\right)d^{n}x\approx\sum_{x=1}^{N}w_{i}f\left(\bm{p}_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/quad_func_0.pdf
+	width 70text%
+	BoundingBox 0bp 20bp 576bp 412bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Quadrature
+\end_layout
+
+\begin_layout Standard
+Numerical method to calculate/approximate integrals:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{a}^{b}f\left(\bm{x}\right)d^{n}x\approx\sum_{x=1}^{N}w_{i}f\left(\bm{p}_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/quad_func_1.pdf
+	width 70text%
+	BoundingBox 0bp 20bp 576bp 412bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Quadrature
+\end_layout
+
+\begin_layout Standard
+Some famous quadratures:
+\end_layout
+
+\begin_layout Enumerate
+Midpoint rule [one point method]
+\begin_inset Formula 
+\[
+w=a-b,\quad p=\frac{a+b}{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Simpson's rule [3 point method]
+\begin_inset Formula 
+\[
+w_{1}=\frac{a-b}{6},\quad w_{2}=\frac{4\left(a-b\right)}{6},\quad w_{3}=\frac{a-b}{6},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p_{1}=a,\quad p_{2}=\frac{a+b}{2},\quad p_{3}=b,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Quadrature
+\end_layout
+
+\begin_layout Standard
+The degree or order of a quadrature rule over an interval is the largest
+ integer, n such that method is exact for all
+\begin_inset Formula 
+\[
+p_{n}=a_{0}x^{n}+a_{1}x^{n-1}+\ldots a_{n}\quad a_{i}\in\mathbb{R}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Reference Elements
+\end_layout
+
+\begin_layout Standard
+Finite element method reduces global problem down to a series of integrals
+ over individual elements.
+ Numerical integration is easier when the shape of the domain is fixed.
+ We can do this through change of variables:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x-y$
+\end_inset
+
+ space
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/reference_0.pdf
+	width 120text%
+	BoundingBox 70bp 70bp 506bp 362bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\xi-\chi$
+\end_inset
+
+ space
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/reference_1.pdf
+	width 110text%
+	BoundingBox 70bp 70bp 506bp 362bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Reference Elements
+\end_layout
+
+\begin_layout Standard
+Rule for change of variables in integrals is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\iint_{\Omega}f\left(x,y\right)\, dx\, dy=\int_{0}^{1}\int_{0}^{1-\chi}f\left(\xi\left(x,y\right),\chi\left(x,y\right)\right)\frac{\partial\left(x,y\right)}{\partial\left(\left(\xi,\chi\right)\right)}\, d\xi\: d\chi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+here the change of variables is given by
+\begin_inset Formula 
+\[
+\xi=\frac{\left(x-x_{A}\right)\left(x_{B}-x_{A}\right)+\left(y-y_{A}\right)\left(y_{B}-y_{A}\right)}{\left(x_{B}-x_{A}\right)^{2}+\left(y_{B}-y_{A}\right)^{2}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\chi=\frac{\left(x-x_{A}\right)\left(x_{C}-x_{A}\right)+\left(y-y_{A}\right)\left(y_{C}-y_{A}\right)}{\left(x_{C}-x_{A}\right)^{2}+\left(y_{C}-y_{A}\right)^{2}}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout BeginFrame
+Reference Elements
+\end_layout
+
+\begin_layout Standard
+The inverse transformation is thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x-x_{A}=\frac{\left(\left(x_{B}-x_{A}\right)^{2}+\left(y_{B}-y_{A}\right)^{2}\right)\left(\left(y_{C}-y_{A}\right)\xi-\left(y_{B}-y_{A}\right)\chi\right)}{\left(x_{B}-x_{A}\right)\left(y_{C}-y_{A}\right)-\left(x_{C}-x_{A}\right)\left(y_{B}-y_{A}\right)},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y-y_{A}=\frac{\left(\left(x_{B}-x_{A}\right)^{2}+\left(y_{B}-y_{A}\right)^{2}\right)\left(\left(x_{C}-x_{A}\right)\xi-\left(x_{B}-x_{A}\right)\chi\right)}{\left(x_{B}-x_{A}\right)\left(y_{C}-y_{A}\right)-\left(x_{C}-x_{A}\right)\left(y_{B}-y_{A}\right)},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Reference Elements
+\end_layout
+
+\begin_layout Standard
+Determinent of the Jacobian matrix for the change of variables is given
+ by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\frac{\partial\left(x,y\right)}{\partial\left(\left(\xi,\chi\right)\right)} & =\left|\det\left[\begin{array}{cc}
+\frac{\partial x}{\partial\xi} & \frac{\partial x}{\partial\chi}\\
+\frac{\partial y}{\partial\xi} & \frac{\partial y}{\partial\chi}
+\end{array}\right]\right|=\left|\frac{\partial x}{\partial\xi}\frac{\partial y}{\partial\chi}-\frac{\partial y}{\partial\xi}\frac{\partial x}{\partial\chi}\right|\\
+ & =\frac{\left(\left(x_{B}-x_{A}\right)^{2}+\left(y_{B}-y_{A}\right)^{2}\right)^{2}}{\left|\left(x_{B}-x_{A}\right)\left(y_{C}-y_{A}\right)-\left(x_{C}-x_{A}\right)\left(y_{B}-y_{A}\right)\right|}
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+constant for any given triangle.
+ Quadrature method has same order on original 
+\begin_inset Formula $x-y$
+\end_inset
+
+ space as on the reference triangle.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout BeginFrame
+Well posedness - convergence
+\end_layout
+
+\begin_layout Plain Layout
+In fact 
+\begin_inset Formula $\left\Vert \psi\right\Vert _{a}=\sqrt{a\left(\psi,\psi\right)}$
+\end_inset
+
+ defines a norm on 
+\begin_inset Formula $H^{1}\left(0,1\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout BeginFrame
+Summary
+\end_layout
+
+\begin_layout Itemize
+Finite element methods solve a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{weak form}
+\end_layout
+
+\end_inset
+
+ of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{exact}
+\end_layout
+
+\end_inset
+
+ equations in an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{approximate solution space}
+\end_layout
+
+\end_inset
+
+
+\color none
+.
+\end_layout
+
+\begin_layout Itemize
+
+\color none
+The approximate 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{solution}
+\end_layout
+
+\end_inset
+
+ is defined (almost) 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{everywhere}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Neuman conditions}
+\end_layout
+
+\end_inset
+
+ dealt with implicitly inside formulation
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Dirichlet conditions}
+\end_layout
+
+\end_inset
+
+ appear in right hand side (as in finite difference methods).
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section*
+\start_of_appendix
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+All of the following is optional and typically not needed.
+\end_layout
+
+\end_inset
+
+Appendix
+\end_layout
+
+\begin_layout Subsection*
+Useful References
+\end_layout
+
+\begin_layout BeginFrame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+References
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatebookbibitems
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Start with overview books.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Author1990"
+
+\end_inset
+
+J.
+ Donea & A.
+ Huerta 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Finite Elements Methods for Flow Problems.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Wiley 2003
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Reddy"
+
+\end_inset
+
+ J.N.
+ Reddy & D.K.
+ Gartling
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ The Finite Element Method in Heat Transfer and Fluid Dynamics
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ CRC Press 1994
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatearticlebibitems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Fluidity Manual
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ AMCG
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 2013
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Followed by interesting articles.
+ Keep the list short.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document

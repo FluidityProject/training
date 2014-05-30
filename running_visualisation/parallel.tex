@@ -1,0 +1,173 @@
+% small.tex
+\documentclass[12pt]{beamer}
+\usetheme{amcg}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\thefootnote}{}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
+
+% items enclosed in square brackets are optional; explanation below
+\title[Parallel]{Running Fluidity in Parallel}
+\subtitle[]{}
+\institute{1 - Dept of Earth Science and Engineering, Imperial College London}
+\author[Jon Hill]{\large{Jon Hill}\inst{1}}
+\date{}
+
+
+\begin{document}
+
+
+%--- the titlepage frame -------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%-- Overview slide --- %
+\section*{Outline}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Pre-running}
+\begin{frame}
+    \frametitle{FLML}
+No changes required!
+\vspace{5mm}
+
+[Optional]
+\begin{itemize}
+\item Remove fields from stat file
+\item Remove some fields from VTU
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Decompose mesh}
+\begin{itemize}
+\item fldecomp
+\item flderecomp
+\end{itemize}
+\vspace{5mm}
+
+Both make with \texttt{make fltools}. Programs will be in bin
+\end{frame}
+
+\begin{frame}
+    \frametitle{\texttt{fldecomp}}
+
+\texttt{fldecomp -n 8 MeshName}
+\vspace{5mm}
+
+Will decompose mesh into 8 peices.
+\end{frame}
+
+\begin{frame}
+    \frametitle{\texttt{flredecomp}}
+\texttt{flredecomp -i 2 -n 8 InputMeshName OutputMeshName}
+\vspace{5mm}
+
+Will decompose mesh from 2 to 8.
+\vspace{5mm}
+
+\texttt{flredecomp -i 8 -n 2 InputMeshName OutputMeshName}
+\vspace{5mm}
+
+Will decompose mesh from 8 to 2.
+\vspace{5mm}
+Both need running on 8 processors
+\end{frame}
+
+\section{Running}
+\begin{frame}
+    \frametitle{Local systems}
+
+\texttt{mpiexec -n 8 ../../bin/fluidity my.flml}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Practical}
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
+cp Stommel.flml Stommel_fixed.flml
+\end{lstlisting}
+\begin{itemize}
+    \item Rename output
+    \item Remove adaptivity
+\end{itemize}
+Run in serial and parallel
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{HECToR}
+
+\texttt{module swap PrgEnv-cray PrgEnv-fluidity}
+\vspace{5mm}
+
+Submit job to back-end.
+\vspace{5mm}
+
+\texttt{qsub myscript.sct}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{HECToR}
+\vspace{-2mm}
+\lstset{language=bash,basicstyle=\tiny}
+\begin{lstlisting}[language=bash]
+#!/bin/bash --login
+#PBS -N fluidity_run
+#PBS -l mppwidth=512
+#PBS -l mppnppn=4
+#PBS -l walltime=0:10:00
+#PBS -A n04-IC
+
+module swap PrgEnv-cray PrgEnv-fluidity
+
+# Change to the directory that the job was submitted from
+cd $PBS_O_WORKDIR
+ 
+# The following take a copy of the Fluidity Python directory and
+# put it in the current directory. If we don't do this, we get import errors. 
+export WORKING_DIR=$(pwd -P)
+cp -r /usr/local/packages/fluidity/xe6/2.0/python/ .
+export PYTHONPATH=$WORKING_DIR/python:$PYTHONPATH
+
+# Set the number of MPI tasks
+export NPROC=`qstat -f $PBS_JOBID | awk '/mppwidth/ {print $3}'`
+# Set the number of MPI tasks per node
+export NTASK=`qstat -f $PBS_JOBID | awk '/mppnppn/  {print $3}'`
+aprun -n $NPROC -N $NTASK fluidity -l -v1  standing_wave.flml
+
+# clean up the python directory
+rm -rf python
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{HECToR: A run-through}
+\begin{itemize}
+\item Set-up on local machine
+\item Copy to HECToR
+\item Create PBS script
+\item qsub
+\item Copy results back to local machine \textbf{or} use paraview on HECToR
+\end{itemize}
+\end{frame}
+
+
+\section{Post-running}
+\begin{frame}
+    \frametitle{Visualisation}
+No different from serial - except .pvtu files, not .vtu
+\vspace{5mm}
+
+Log files (if used) will be one per processor.
+\end{frame}
+
+
+\end{document}
+

@@ -1,0 +1,79 @@
+% small.tex
+\documentclass[12pt]{beamer}
+\usetheme{amcg}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\thefootnote}{}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
+
+% items enclosed in square brackets are optional
+\title[Subtitle]{Snazzy title}
+\subtitle[]{}
+\institute{1 - Dept of Earth Science and Engineering, Imperial College London}
+\author[Short name]{\large{Full name}\inst{1}}
+\date{}
+
+
+\begin{document}
+
+% This listtle snippet adds the outline slide with the
+% current section highlighted between each section
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+%--- the titlepage frame -------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%-- Overview slide --- %
+\section*{Outline}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+%-- Add sections and your outline will be created automatically --%
+\section{Section 1}
+
+% Frame starts a new slide
+\begin{frame}
+    \frametitle{Slide title}
+\begin{itemize}
+\item A list!
+\item Of stuff!
+\end{itemize}
+% end my slide
+\end{frame}
+
+
+\section{Section 2}
+%when using listings, add the [fragile] to \begin{frame}
+\begin{frame}[fragile]
+    \frametitle{A code listing}
+
+\lstset{language=bash,basicstyle=\tiny}
+\begin{lstlisting}[language=bash]
+#!/bin/bash --login
+#PBS -N fluidity_run
+#PBS -l mppwidth=512
+#PBS -l mppnppn=4
+#PBS -l walltime=0:10:00
+#PBS -A n04-IC
+
+module load xt-fluidity
+
+\end{lstlisting}
+\end{frame}
+
+
+\end{document}
+

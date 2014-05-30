@@ -1,0 +1,62 @@
+%% Generated file to generate a table data from a pgfdatafile using pgfplotstable
+
+\documentclass[11pt]{article}
+% Set page legths
+\special{papersize=350cm,350cm}
+\hoffset-0.8in
+\voffset-0.8in
+\setlength{\paperwidth}{350cm}
+\setlength{\paperheight}{350cm}
+\setlength{\textwidth}{345cm}
+\setlength{\textheight}{345cm}
+\topskip0cm
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+% set the pagestyle to empty (removing pagenumber etc)
+\pagestyle{empty}
+
+% Additional packages:
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{units}
+\usepackage[english]{babel}
+\usepackage[babel]{csquotes}
+\usepackage{color}
+\usepackage{pdflscape}
+
+
+% PGF:
+\usepackage{tikz}
+% \usepackage{pgfplots}
+\usepackage{pgfplotstable}
+% recommended:
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+
+\begin{document}
+
+\begin{landscape}
+
+% Load table settings:
+\input{pgftablesettings_st-andrews-cross-validation.tex}
+% Load table data:
+\pgfplotstableread{./st-andrews-cross-validation_data.pgfdat}\pgftablestandrewscrossvalidation
+
+\begin{table}
+  \centering
+  \pgfplotstabletypeset[columns={elmin,num_nodes,min_sim_angle,abs_error,rel_error,angle_mean,mean_rel_error,angle_std},
+  ]\pgftablestandrewscrossvalidation
+  \caption{St Andrews Cross validation: $\omega = 0.699$, $N=1$, $\alpha=44.347$, with a prescribed velocity of the cylinder of $A\sin(\omega t)$, with $A=r=0.5$, $r$ being the radius of the cylinder, and $t$ being the time of the simulation. Shown are the minimum angle found as well as the averaged angle at all the positions the angle was computed. Note, the averaged values can be biased due to very large errors found at one distance.}
+  \label{tab:st-andrews-cross-validation}
+\end{table}
+
+\end{landscape}
+
+\end{document}

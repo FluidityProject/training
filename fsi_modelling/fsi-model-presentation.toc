@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.10pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{How to get it}{6}{0}{2}
+\beamer@sectionintoc {3}{Governing Equations}{9}{0}{3}
+\beamer@sectionintoc {4}{Projection}{10}{0}{4}
+\beamer@sectionintoc {5}{Mesh Adaptivity and FSI}{26}{0}{5}
+\beamer@sectionintoc {6}{Applications}{29}{0}{6}
+\beamer@sectionintoc {7}{Diamond Interface --- FSI}{49}{0}{7}
+\beamer@sectionintoc {8}{FSI Output}{59}{0}{8}

@@ -1,0 +1,50 @@
+% small.tex
+\documentclass[12pt]{beamer}
+\usetheme{amcg}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\thefootnote}{}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
+
+% items enclosed in square brackets are optional
+\title[Fluidity Training]{Fluidity Training}
+\subtitle[]{}
+\institute{1 - Dept of Earth Science and Engineering, Imperial College London}
+\author[AMCG]{\large{Applied Modelling and Computation Group}\inst{1}}
+\date{}
+
+
+\begin{document}
+%--- the titlepage frame -------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Outline}
+\begin{itemize}
+\item Day 1:
+    \begin{itemize}
+        \item Theoretical aspects of FEM
+        \item Numerical implementation of FEM
+        \item Assembly and sparse matrix solvers
+    \end{itemize}
+\item Day 2:
+    \begin{itemize}
+        \item Introduction to Fluidity
+        \item Getting and building Fluidity
+        \item Driving Fluidity
+    \end{itemize}
+\item Day 3:
+    \begin{itemize}
+        \item Hands-on examples
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\end{document}

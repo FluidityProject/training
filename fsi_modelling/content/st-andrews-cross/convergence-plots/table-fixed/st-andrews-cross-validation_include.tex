@@ -1,0 +1,15 @@
+% Load this file in your LaTeX document with:
+% \input{st-andrews-cross-validation_include.tex}
+
+% Load table settings:
+\input{content/st-andrews-cross/convergence-plots/table-fixed/pgftablesettings_st-andrews-cross-validation.tex}
+% Load table data:
+\pgfplotstableread{content/st-andrews-cross/convergence-plots/table-fixed/st-andrews-cross-validation_data.pgfdat}\pgftablestandrewscrossvalidation
+
+\begin{table}
+  \centering
+  \pgfplotstabletypeset[columns={elmin,num_nodes,min_sim_angle,abs_error,rel_error,angle_mean,mean_rel_error,angle_std},
+  ]\pgftablestandrewscrossvalidation
+  \caption{St Andrews Cross validation, fixed mesh: $\omega = 0.699$, $N=1$, $\alpha=44.347$}%, with a prescribed velocity of the cylinder of $A\sin(\omega t)$, with $A=r=0.5$, $r$ being the radius of the cylinder, and $t$ being the time of the simulation. Shown are the minimum angle found as well as the averaged angle at all the positions the angle was computed. Note, the averaged values can be biased due to very large errors found at one distance.}
+  \label{tab:st-andrews-cross-validation}
+\end{table}

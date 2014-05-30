@@ -1,0 +1,19 @@
+Diamond demo:
+
+Explain window - LHS, documentation, data entry and comments
+Show blue highlighting
+show spud path
+
+Setup:
+ prob type: oceans
+ quad 3 - what's the rule again?
+ Why anisotropic gradation if it's 0.7, 0, 0.7?
+ Aspect ratio bound?
+ Do we need stream function?
+
+
+
+show copy and paste
+show group
+show slice
+

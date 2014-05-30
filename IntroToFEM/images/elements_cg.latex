@@ -1,0 +1,305 @@
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6012,2101)(76,-1700)
+\put(3106,-1636){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x$}%
+}}}}
+{\color[rgb]{0,0,0}\thinlines
+\put(1126,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(1711,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(2296,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(2701,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(3196,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(3646,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(4051,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(4546,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(5086,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(5536,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(5536,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(6031,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\multiput(1126,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(1711,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(2296,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(2701,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(3196,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(3646,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(4051,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(4546,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(5086,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(5536,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\multiput(6031,-1411)(0.00000,9.00000){201}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+{\color[rgb]{0,0,0}\put(6076,-1411){\line(-1, 0){5625}}
+\put(451,-1411){\line( 0, 1){1800}}
+}%
+{\color[rgb]{1,0,0}\multiput(451,-736)(inf,inf){1}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(453,-735)(inf,inf){1}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(456,-732)(7.08200,5.90167){2}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(463,-726)(10.32790,8.60658){2}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(473,-717)(7.50000,6.00000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(488,-705)(6.66667,5.33333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(508,-689)(8.00000,6.66667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(532,-669)(6.95902,5.79919){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(560,-646)(6.56098,5.24878){6}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(593,-620)(7.21952,5.77562){6}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(629,-591)(6.48373,5.18699){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(668,-560)(6.76830,5.41464){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(709,-528)(7.22667,5.42000){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(752,-495)(7.33333,5.50000){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(796,-462)(7.25333,5.44000){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(840,-430)(7.25333,5.44000){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(884,-398)(7.26923,4.84616){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(927,-368)(6.96153,4.64102){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(968,-339)(6.80770,4.53847){7}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1009,-312)(7.85294,4.71176){6}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1048,-288)(7.47058,4.48235){6}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1085,-265)(7.14706,4.28824){6}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1121,-244)(8.80000,4.40000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1156,-226)(8.20000,4.10000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1189,-210)(8.10345,3.24138){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1221,-196)(7.80173,3.12069){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1252,-183)(9.70000,3.23333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1281,-173)(9.72550,2.43138){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1310,-165)(9.67950,1.93590){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1339,-159)(8.97437,1.79487){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(1366,-154){\line( 1, 0){ 28}}
+\put(1394,-152){\line( 1, 0){ 27}}
+\put(1421,-151){\line( 1, 0){ 28}}
+\put(1449,-151){\line( 1, 0){ 30}}
+\multiput(1479,-153)(7.94595,-1.32432){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1511,-157)(10.32050,-2.06410){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1542,-163)(8.00000,-2.00000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1574,-171)(8.05883,-2.01471){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1606,-180)(8.17500,-2.72500){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1639,-190)(8.32500,-2.77500){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1672,-202)(8.23275,-3.29310){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1705,-215)(8.53448,-3.41379){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1739,-229)(8.62070,-3.44828){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1773,-244)(8.60000,-4.30000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1808,-260)(8.50000,-4.25000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1842,-277)(8.50000,-4.25000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1876,-294)(8.70000,-4.35000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1911,-311)(8.60000,-4.30000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1945,-329)(8.50000,-4.25000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(1979,-346)(8.40000,-4.20000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2012,-364)(8.30000,-4.15000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2045,-381)(8.00000,-4.00000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2077,-397)(7.80000,-3.90000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2108,-413)(7.60000,-3.80000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2139,-427)(7.20000,-3.60000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2168,-441)(9.71263,-3.88505){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2197,-453)(9.31033,-3.72413){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2225,-464)(8.70000,-2.90000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2251,-473)(8.60000,-2.86667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2277,-481)(8.39217,-2.09804){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2302,-488)(8.00000,-1.33333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2326,-492)(11.43245,-1.90541){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(2349,-495){\line( 1, 0){ 22}}
+\put(2371,-496){\line( 1, 0){ 27}}
+\multiput(2398,-495)(8.65383,1.73077){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2424,-490)(8.70587,2.17647){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2450,-483)(8.40000,2.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2475,-474)(8.26667,4.13333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2500,-462)(8.18627,4.91176){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2525,-448)(8.33333,5.00000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2550,-433)(7.84000,5.88000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2574,-416)(7.96747,6.37397){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2598,-397)(7.96747,6.37397){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2622,-378)(7.63933,6.36611){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2645,-359)(7.80327,6.50272){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2668,-339)(7.63933,6.36611){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2691,-320)(7.27870,6.06558){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2713,-302)(7.27870,6.06558){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2735,-284)(7.04000,5.28000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2756,-268)(6.76923,4.51282){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2776,-254)(6.91177,4.14706){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2797,-242)(9.60000,4.80000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2816,-232)(10.05000,3.35000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2836,-225)(9.51925,1.90385){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2855,-221)(8.91890,1.48648){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2873,-219)(9.40540,-1.56757){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2892,-221)(9.52940,-2.38235){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2911,-226)(9.13795,-3.65518){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2929,-234)(9.04410,-5.42646){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2947,-245)(8.88000,-6.66000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2965,-258)(6.52460,-5.43717){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(2984,-275)(6.16667,-6.16667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3003,-293)(6.83333,-6.83333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3023,-314)(5.10245,-6.12294){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3044,-338)(5.22540,-6.27048){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3065,-363)(5.34147,-6.67684){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3086,-390)(5.56098,-6.95122){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3108,-418)(5.46000,-7.28000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3130,-447)(5.78050,-7.22562){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3153,-476)(5.67000,-7.56000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3176,-506)(5.46000,-7.28000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3198,-535)(5.78050,-7.22562){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3221,-564)(5.79917,-6.95901){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3244,-592)(5.43902,-6.79878){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3266,-619)(5.32787,-6.39345){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3288,-644)(5.75000,-5.75000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3310,-668)(7.00000,-7.00000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3331,-689)(7.24590,-6.03825){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3352,-708)(7.04000,-5.28000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3373,-724)(6.61540,-4.41027){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3393,-737)(10.00000,-5.00000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3413,-747)(9.39655,-3.75862){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3432,-754)(9.52940,-2.38235){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(3451,-759){\line( 1, 0){ 19}}
+\multiput(3470,-759)(9.40540,1.56757){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3489,-757)(9.45000,3.15000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3508,-751)(9.80000,4.90000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3528,-742)(9.41175,5.64705){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3547,-731)(6.76923,4.51282){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3567,-717)(7.03253,5.62603){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3588,-700)(6.83333,6.83333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3609,-680)(7.00000,7.00000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3630,-659)(5.10245,6.12294){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3651,-635)(5.45083,6.54099){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3673,-609)(5.45083,6.54099){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3695,-583)(5.79917,6.95901){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3718,-555)(5.46000,7.28000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3740,-526)(5.78050,7.22562){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3763,-497)(5.58000,7.44000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3785,-467)(5.78050,7.22562){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3808,-438)(5.46000,7.28000){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3830,-409)(5.56098,6.95122){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3852,-381)(5.67622,6.81147){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3875,-354)(5.32787,6.39345){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3897,-329)(5.10245,6.12294){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3918,-305)(5.62500,5.62500){5}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3940,-282)(7.60657,6.33881){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3962,-262)(7.44263,6.20219){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(3984,-243)(7.41333,5.56000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4006,-226)(7.38460,4.92307){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4028,-211)(7.54903,4.52942){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4051,-198)(7.86667,3.93333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4075,-187)(8.04597,3.21839){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4099,-177)(8.39217,2.09804){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4124,-170)(8.39217,2.09804){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4149,-163)(8.64863,1.44144){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4175,-159)(8.91893,1.48649){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(4202,-156){\line( 1, 0){ 27}}
+\put(4229,-154){\line( 1, 0){ 28}}
+\put(4257,-155){\line( 1, 0){ 28}}
+\multiput(4285,-156)(9.56757,-1.59459){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4314,-159)(9.29730,-1.54955){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4342,-163)(9.67567,-1.61261){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4371,-168)(9.35897,-1.87179){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4399,-174)(9.33333,-2.33333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4427,-181)(9.41177,-2.35294){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4455,-189)(9.00000,-3.00000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4482,-198)(8.70000,-2.90000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4508,-207)(8.62070,-3.44828){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4534,-217)(8.33333,-3.33333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4559,-227)(8.04597,-3.21839){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4583,-237)(8.04597,-3.21839){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4607,-247)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4630,-258)(7.20000,-3.60000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4652,-268)(7.33333,-3.66667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4674,-279)(7.33333,-3.66667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4696,-290)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4719,-301)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4742,-312)(7.33333,-3.66667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4764,-323)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4787,-334)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4810,-345)(7.73333,-3.86667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4833,-357)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4856,-368)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4879,-379)(8.04597,-3.21839){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4903,-389)(7.60000,-3.80000){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4926,-400)(8.04597,-3.21839){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4950,-410)(7.64367,-3.05747){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4973,-419)(7.93103,-3.17241){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(4997,-428)(7.64367,-3.05747){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5020,-437)(7.60000,-2.53333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5043,-444)(7.60000,-2.53333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5066,-451)(7.60000,-2.53333){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5089,-458)(11.05880,-2.76470){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5111,-464)(11.02705,-1.83784){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5133,-468)(10.94120,-2.73530){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5155,-473)(10.94595,-1.82432){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5177,-476)(10.94595,-1.82432){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5199,-479)(10.86485,-1.81081){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(5221,-481){\line( 1, 0){ 23}}
+\put(5244,-482){\line( 1, 0){ 23}}
+\put(5267,-483){\line( 1, 0){ 23}}
+\put(5290,-483){\line( 1, 0){ 25}}
+\put(5315,-483){\line( 1, 0){ 25}}
+\put(5340,-482){\line( 1, 0){ 26}}
+\put(5366,-480){\line( 1, 0){ 26}}
+\multiput(5392,-478)(8.91893,1.48649){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5419,-475)(8.91893,1.48649){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5446,-472)(9.29730,1.54955){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5474,-468)(8.97297,1.49549){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5501,-464)(9.29730,1.54955){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5529,-460)(8.97437,1.79487){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5556,-455)(8.97437,1.79487){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5583,-450)(8.64863,1.44144){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5609,-446)(8.33333,1.66667){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5634,-441)(8.01283,1.60257){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5658,-436)(8.01283,1.60257){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5682,-431)(10.94120,2.73530){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5704,-426)(10.48075,2.09615){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5725,-422)(10.00000,2.00000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5745,-418)(9.52940,2.38235){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5764,-413)(9.00000,1.50000){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5782,-410)(8.47060,2.11765){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5799,-406)(8.65383,1.73077){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5825,-401)(8.01283,1.60257){4}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5849,-396)(11.51350,1.91892){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5872,-392)(10.45945,1.74324){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5893,-389)(10.45945,1.74324){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5914,-386)(10.45945,1.74324){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5935,-383)(9.89190,1.64865){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5955,-381)(9.89190,1.64865){3}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(5975,-379){\line( 1, 0){ 19}}
+\put(5994,-378){\line( 1, 0){ 15}}
+\multiput(6009,-377)(11.83780,1.97297){2}{\makebox(1.5875,11.1125){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(6021,-376){\line( 1, 0){  7}}
+\put(6028,-376){\line( 1, 0){  3}}
+}%
+\put( 91,-421){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$f(x)$}%
+}}}}
+{\color[rgb]{0,0,0}\put(451,-1411){\circle*{90}}
+}%
+{\color[rgb]{0,0,0}\put(451,-736){\line( 4, 3){669.600}}
+\put(1126,-241){\line( 1, 0){585}}
+\put(1711,-217){\line( 2,-1){575.600}}
+\put(2296,-486){\line( 5, 2){408.793}}
+\put(2701,-313){\line( 5,-2){502.931}}
+\put(3196,-534){\line( 4,-1){448.706}}
+\put(3646,-641){\line( 5, 6){384.836}}
+\put(4051,-196){\line( 1, 0){495}}
+\put(4546,-222){\line( 5,-2){547.241}}
+\put(5086,-459){\line( 1, 0){450}}
+\put(5536,-459){\line( 6, 1){495.081}}
+}%
+\end{picture}%
