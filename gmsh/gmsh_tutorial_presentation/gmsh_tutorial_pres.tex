@@ -11,9 +11,9 @@
 
 \institute{Department of Earth Science and Engineering, Imperial College London}
 
-\date{4-6 November 2013}
+\date{5-7 November 2014}
 \title[Meshing]{Meshing}
-\subtitle[]{Fluidity training}
+\subtitle[]{Fluidity training workshop}
 
 \setbeamersize{text margin left=0.3in}
 \setbeamersize{text margin right=0.3in}
@@ -59,18 +59,17 @@
 
 \begin{frame}{but, before we start...}
   \begin{itemize}
-     \item The presents slides are freely available, as well as a more detailed tutorial we have prepared.\\
-     \item Open a terminal and issue the following commands:\\[10pt]
+     \item The slides, as well as a more detailed tutorial, are freely available.\\
      \begin{itemize}
-        \item[] \hspace{-60pt}\emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)\\
-        \item[] \hspace{-60pt}\emph{cd meshingTutorial}\\
-        \item[] \hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh\_tutorial\_pres.pdf $>$ gmsh\_tutorial\_pres.pdf}\\ (to fetch a pdf copy of the present slides)\\
-        \item[] \hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh\_tutorial.pdf$>$gmsh\_tutorial.pdf}\\ (to fetch a pdf copy of the tutorial document)
-        \item[] \hspace{-60pt}\emph{evince gmsh\_tutorial\_pres.pdf \&}
-        \item[] \hspace{-60pt}\emph{evince gmsh\_tutorial.pdf \&}\\[10pt]
+         \item Via Figshare:
+         \item Slides:
+         \item Tutorial document:
      \end{itemize}
-     \item Keep this terminal open, as we will come back to it.\\
-     \item Fell free to consult the slides (and/or the document) at any time!
+     \item Keep the slides open in a window.
+     \begin{itemize}
+         \item You can copy--paste lengthy commands \& statements.
+         \item Feel free to progress at a faster pace than the speaker.
+     \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -110,20 +109,34 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{Starting Gmsh}
 \begin{itemize}
-   \item Go back to your terminal and issue the following commands:\\
+   \item Lets fetch a Gmsh file and open it.
+   \item Download a simple example file:
    \begin{itemize}
-      \item[]\hspace{-60pt}\emph{bzr cat lp:fluidity/training/gmsh/annulus.geo$>$annulus.geo}\\ (to fetch an example-file)\\
-      \item[]\hspace{-60pt}\emph{gmsh annulus.geo \&}\\ (To open the example-file with Gmsh, the ampersand is important.)
+      \item[] \hspace{-60pt}Point your browser to \href{http://figshare.com/s/b0936b565f8211e4aee906ec4b8d1f61}{here}
+      \item[] \hspace{-60pt}Click on ``Download''.
    \end{itemize}
+   \item Open a terminal and issue the following commands:\\[10pt]
+   \begin{itemize}
+      \item[] \hspace{-60pt}\emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)
+      \item[] \hspace{-60pt}\emph{cd meshingTutorial}
+      \item[] \hspace{-60pt}\emph{mv \$HOME/Downloads/annulus.geo .}
+   \end{itemize}
+   \item Keep this terminal open, as we will come back to it.\\
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Starting Gmsh}
 \vspace{-18pt}
 \begin{columns}[l]
 \column{2.3in}
   \begin{itemize} 
-     \item Gmsh will open annulus.geo, two windows will appear:
+     \item Issue the following command at the terminal:\\[10pt]
+     \item[] \emph{gmsh annulus.geo \&}\\[10pt]
+     \item Gmsh will open annulus.geo . The Gmsh window is composed of two panels:
      \begin{itemize}
-        \item[$\circ$] The Menu window (smaller).
-        \item[$\circ$] The Graphic window (larger).
+        \item[$\circ$] A menu panel, showing the Gmsh functionality in a tree--like structure (left).
+        \item[$\circ$] The Graphic area (larger, right).
+        \item[$\circ$] A status bar at the bottom.
      \end{itemize}
   \end{itemize}
 \column{2.2in}
@@ -140,11 +153,10 @@ where $ele$ is the number of elements in the tessellation.
      \item Gmsh's architecture is centred around four modules, this is reflected in the menu window.\\[10pt]
      \item The menu widow can be used to switch between the different modules, but you are encouraged to switch between modules by using the keyboard (letters in parentheses below.)\\[10pt]
      \begin{itemize}
-       \item[$\circ$] Geometry ($G$): For defining domain geometry.
-       \item[$\circ$] Mesh ($M$): For building the mesh.
-       \item[$\circ$] Solver ($S$).
-       \item[$\circ$] Post--Processing ($P$).
-       \item[$\circ$] \emph{Practical:} Try switching between different modules.
+       \item[$\circ$] Geometry : For defining domain geometry.
+       \item[$\circ$] Mesh : For building the mesh.
+       \item[$\circ$] Solver.
+       \item[$\circ$] Post--Processing : More visible in older versions of Gmsh.
      \end{itemize}
    \end{itemize}
 \end{frame}
@@ -192,7 +204,7 @@ where $ele$ is the number of elements in the tessellation.
       \item Fluidity can also read meshes in ``triangle'' format
       \begin{itemize}
          \item[$\circ$] Issue \emph{/path/to/fluidity/bin/gmsh2triangle annulus.msh}
-         \item[$\circ$] This will generate annulus.edge, annulus.ele, annulus.node files.
+         \item[$\circ$] Generates annulus.ele, annnulus.face, annulus.node files.
          \item[$\circ$] Issue \emph{ls -l} at your terminal.
       \end{itemize}
       \item Fluidity can also read meshes in ExodusII format.
