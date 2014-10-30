@@ -1,6 +1,11 @@
 \documentclass[t]{beamer}
 \usetheme{amcg}
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan
+}
 \usepackage{mathptmx}
 \usepackage{helvet}
 \newcommand\TILDE{\char`\~}
@@ -112,14 +117,14 @@ where $ele$ is the number of elements in the tessellation.
    \item Lets fetch a Gmsh file and open it.
    \item Download a simple example file:
    \begin{itemize}
-      \item[] \hspace{-60pt}Point your browser to \href{http://figshare.com/s/b0936b565f8211e4aee906ec4b8d1f61}{here}
-      \item[] \hspace{-60pt}Click on ``Download''.
+      \item[$\circ$] Point your browser to \href{http://figshare.com/s/b0936b565f8211e4aee906ec4b8d1f61}{here}
+      \item[$\circ$] Click on ``Download''.
    \end{itemize}
    \item Open a terminal and issue the following commands:\\[10pt]
    \begin{itemize}
-      \item[] \hspace{-60pt}\emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)
-      \item[] \hspace{-60pt}\emph{cd meshingTutorial}
-      \item[] \hspace{-60pt}\emph{mv \$HOME/Downloads/annulus.geo .}
+      \item[\$] \emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)
+      \item[\$] \emph{cd meshingTutorial} \\(to ``enter'' the newly created directory)
+      \item[\$] \emph{mv \$HOME/Downloads/annulus.geo .} \\(to move the downloaded file into the new directory)
    \end{itemize}
    \item Keep this terminal open, as we will come back to it.\\
 \end{itemize}
@@ -152,12 +157,12 @@ where $ele$ is the number of elements in the tessellation.
    \begin{itemize}
      \item Gmsh's architecture is centred around four modules, this is reflected in the menu window.\\[10pt]
      \item The menu widow can be used to switch between the different modules, but you are encouraged to switch between modules by using the keyboard (letters in parentheses below.)\\[10pt]
-     \begin{itemize}
-       \item[$\circ$] Geometry : For defining domain geometry.
-       \item[$\circ$] Mesh : For building the mesh.
-       \item[$\circ$] Solver.
-       \item[$\circ$] Post--Processing : More visible in older versions of Gmsh.
-     \end{itemize}
+     \begin{enumerate}
+       \item Geometry : For defining domain geometry.
+       \item Mesh : For building the mesh.
+       \item Solver.
+       \item Post--Processing : More visible in older versions of Gmsh.
+     \end{enumerate}
    \end{itemize}
 \end{frame}
 
@@ -203,9 +208,9 @@ where $ele$ is the number of elements in the tessellation.
       \end{itemize}\vspace{20pt}
       \item Fluidity can also read meshes in ``triangle'' format
       \begin{itemize}
-         \item[$\circ$] Issue \emph{/path/to/fluidity/bin/gmsh2triangle annulus.msh}
-         \item[$\circ$] Generates annulus.ele, annnulus.face, annulus.node files.
-         \item[$\circ$] Issue \emph{ls -l} at your terminal.
+         \item The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
+         \item[\$] \emph{gmsh2triangle annulus.msh} \\ \hspace{10pt} Generates annulus.ele, annnulus.face, annulus.node
+         \item[\$] \emph{ls -l} \\ \hspace{10pt} to list the files.
       \end{itemize}
       \item Fluidity can also read meshes in ExodusII format.
    \end{itemize}
@@ -214,9 +219,9 @@ where $ele$ is the number of elements in the tessellation.
 \begin{frame}{Generating and meshing a 2D geometry: Aim}
 
 \begin{itemize}
-\item To generate a 2--D, structured mesh on a $1,000$km $\times 1,000$km square.
-\item Typical element size (edge length): $20$km.
-\item Mesh will be used in subsequent simulations/examples in this training event.
+    \item To generate a 2--D, structured mesh on a $1,000$km $\times 1,000$km square.
+    \item Typical element size (edge length): $20$km.
+    \item Mesh will be used in subsequent simulations/examples in this training event.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -228,25 +233,32 @@ where $ele$ is the number of elements in the tessellation.
 
 
 \begin{frame}{Generating \& meshing a 2D geometry: Getting started}
-
-Close your existing Gmsh instance and start a new one from your terminal: \\[10pt]
-
-\emph{bzr cat lp:fluidity/training/gmsh/gmsh\_tutorial\_presentation/2d-example-tutor.geo$>$2d-example-tutor.geo} (This fetches a file to be used by the tutors when helping you!)\\[10pt]
-\emph{gmsh 2d-example.geo \&} (The ampersand is important)\\[10pt]
-
-We proceed by defining:
-\begin{enumerate}
-\item Points
-\item Lines
-\item Surfaces
-\end{enumerate}
+    \begin{itemize}
+        \item Close your existing Gmsh instance.
+        \item Download the solution file, to help you \& tutors trace mistakes.
+        \begin{itemize}
+            \item[$\circ$] Download from \href{http://figshare.com/s/85271e16603d11e4840b06ec4bbcf141}{here}
+            \item[\$] \emph{mv \$HOME/Downloads/2d-gyre-tutor.geo .}
+        \end{itemize}
+        \item Open a new Gmsh instance, on a new file:
+        \begin{itemize}
+            \item[\$] \emph{gmsh 2d-gyre.geo \&} (The ampersand is important)\\[10pt]
+        \end{itemize}
+    \end{itemize}
+    We proceed by defining:
+    \begin{enumerate}
+        \item Points
+        \item Lines
+        \item Surfaces
+        \item in 3D cases, volumes
+    \end{enumerate}
 \end{frame}
 
 \begin{frame}{Generating \& meshing a 2D geometry: Creating points}
   \begin{itemize}
-  \item \lstinline{Geometry (G) > Elementary Entities > Add > New > Point}\\[4pt]
+  \item \lstinline{Geometry > Elementary Entities > Add > Point}\\[4pt]
   \item The \emph{Contextual Geometry Definitions} window will appear.\\[4pt]
-  \item Enter the point coordinates and click ``Apply''.\\[4pt]
+  \item Enter the point coordinates and click ``Add''.\\[4pt]
   \begin{itemize}
     \item[$\circ$] Do not move cursor outside \emph{Contextual Geometry Definitions} window while entering coordinates! Hold shift down if you have to.\\[4pt]
     \item[$\circ$] Always look at the instructions shown in the graphic window.\\[4pt]
@@ -391,7 +403,7 @@ The spatial variation of the mesh element size could be complex:
 \column{0.5\textwidth}
 \begin{figure}[htbp!]
  \centering
-  \includegraphics[width=1.00\textwidth]{../figures/UK_bathymetry_metric.png}
+%  \includegraphics[width=1.00\textwidth]{../figures/UK_bathymetry_metric.png}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -402,25 +414,20 @@ Use Geographical Information Systems to extract domain boundaries and prescribe 
    \item Existing GIS software capable of reading databases in popular formats.
    \item Capability of extracting contours from field-type databases is usually available. ($\rightarrow$domain boundaries)
    \item Capability of generating field-type databases is usually available. ($\rightarrow$mesh size metric)
-   \item A project bringing together GIS software with mesh generation software has been registered by AMCG:
-   \begin{itemize}
-      \item[$\circ$] \url{https://launchpad.net/meshing}
-      \item[$\circ$] Publication coming soon.
-      \item[$\circ$] Watch this space!
-   \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Further reading}
 \begin{thebibliography}{9}
 
-  \bibitem{meshingTutorialNotes}
+  \bibitem{presentDocumentPdf}
   AMCG, 
-  \emph{A Gmsh tutorial}
+  \emph{The present slides},
+  accessible via \href{GitHub}{https://github.com/FluidityProject/training} and \href{Figshare}{}.
 
   \bibitem{gmsharticle}
   C. Geuzaine and J.-F. Remacle,
-  \emph{Gmsh: a three-dimensional finite element mesh generator with built-in pre- and post-processing facilities.}.
+  \emph{Gmsh: a three-dimensional finite element mesh generator with built-in pre- and post-processing facilities.}
   International Journal for Numerical Methods in Engineering,
   Volume 79, Issue 11,
   pages 1309-1331, 2009.
@@ -428,13 +435,13 @@ Use Geographical Information Systems to extract domain boundaries and prescribe 
   \bibitem{gmshwebsite}
   C. Geuzaine and J.-F. Remacle,
   \emph{Gmsh Reference Manual.}.
-  Available at,
+  Available at
   \url{http://geuz.org/gmsh/\#Documentation}.
 
   \bibitem{amcg-gmsh-tutorial}
   A. Avdis and S.L.Mouradian,
   \emph{A Gmsh tutorial},
-  available over launchpad.
+  accessible via \href{GitHub}{https://github.com/FluidityProject/training} and \href{Figshare}{}.
 
   \end{thebibliography}
 
@@ -444,11 +451,14 @@ Use Geographical Information Systems to extract domain boundaries and prescribe 
 \begin{center}
 \vfill
 AMCG:\\
-\url{http://amcg.ese.ic.ac.uk/}\\[20pt]
+\url{http://amcg.ese.ic.ac.uk/}\\[15pt]
 Fluidity:\\
-\url{http://amcg.ese.ic.ac.uk/Fluidity}\\[20pt]
-Fluidity on launchpad:\\
-\url{https://launchpad.net/fluidity}
+\url{http://fluidityproject.github.io/}\\[15pt]
+Fluidity on GitHub:\\
+\url{https://github.com/FluidityProject/fluidity}
+\url{https://github.com/FluidityProject}\\[15pt]
+Fluidity wiki:\\
+\url{https://github.com/FluidityProject/fluidity/wiki}
 \end{center}
 \end{frame}
 
