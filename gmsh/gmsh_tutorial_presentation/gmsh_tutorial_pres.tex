@@ -203,41 +203,47 @@ where $ele$ is the number of elements in the tessellation.
    \begin{itemize}
       \item annulus.geo : Stores the geometry as an ASCII script file.
       \begin{itemize}
-         \item[$\circ$] Can be edited (try \emph{cat annulus.geo} at your terminal).
-      \end{itemize}
+         \item[$\circ$] You have already seen the contents, when downloading.
+         \item[\$] \emph{cat annulus.geo} \\ \hspace{10pt} To list the file lines (catenate) in your terminal
+         \item[$\circ$] Possible to write this file from scratch with a text editor.
+         \item[$\circ$] Possible to use the Gmsh GUI to create this file.
+      \end{itemize}\vspace{10pt}
       \item annulus.msh : Stores the mesh
       \begin{itemize}
          \item[$\circ$] Also contains tags (numerical ID) on element vertices, edges and faces that we can use to assign boundary conditions.
          \item[$\circ$] Can be ASCII or binary.
+         \item[\$] \emph{cat annulus.msh} \\ \hspace{10pt} The file we generated here is ASCII
       \end{itemize}
    \end{itemize}
 \end{frame}
 
 \begin{frame}{Mesh file formats}
    \begin{itemize}
-      \item Fluidity can read meshes in ``gmsh'' format.
-      \item Fluidity can also read meshes in ``triangle'' format.
+      \item Fluidity can read meshes in gmsh format.\vspace{10pt}
+      \item Fluidity can also read meshes in triangle format.
       \begin{itemize}
-         \item The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
+         \item[$\circ$] The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
          \item[\$] \emph{gmsh2triangle annulus.msh} \\ \hspace{10pt} Generates annulus.ele, annnulus.face, annulus.node
          \item[\$] \emph{ls -l} \\ \hspace{10pt} to list the files.
+         \item[\$] \emph{gmsh2triangle} \\ \hspace{10pt} Shows usage and options.\vspace{10pt}
       \end{itemize}
-      \item Fluidity can also read meshes in ExodusII format.
-      \item Work is on--going on PETSc DMPlex.
+      \item Fluidity can also read meshes in ExodusII format.\vspace{10pt}
+      \item Work is on--going on PETSc DMPlex capability.
    \end{itemize}
 \end{frame}
 
 \begin{frame}{Generating and meshing a 2D geometry: Aim}
 
 \begin{itemize}
-    \item To generate a 2--D, structured mesh on a $1,000$km $\times 1,000$km square.
+    \item To generate a 2--D mesh on a $1,000$km $\times 1,000$km square.
+    \item Using the Gmsh GUI.
     \item Typical element size (edge length): $20$km.
-    \item Mesh will be used in subsequent simulations/examples in this training event.
+    \item Mesh will be used in subsequent simulations/examples.
 \end{itemize}
 
 \begin{figure}[htbp]
  \centering
-  \includegraphics[width=0.4\textwidth]{../figures/2d-example-mesh}
+  \includegraphics[width=0.5\textwidth]{../figures/2d-example-mesh}
 \end{figure}
 
 \end{frame}
@@ -253,7 +259,7 @@ where $ele$ is the number of elements in the tessellation.
         \end{itemize}
         \item Open a new Gmsh instance, on a new file:
         \begin{itemize}
-            \item[\$] \emph{gmsh gyre.geo \&} (The ampersand is important)\\[10pt]
+            \item[\$] \emph{gmsh gyre.geo \&} \\ \hspace{10pt} The ampersand is important.\vspace{10pt}
         \end{itemize}
     \end{itemize}
     We proceed by defining:
@@ -284,12 +290,12 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{Generating \& meshing a 2D geometry: Creating lines}
 \begin{itemize}
-\item Geometry $>$ Elementary Entities $>$ Add $>$ New $>$ Straight Line
+\item Geometry $>$ Elementary Entities $>$ Add $>$ Straight Line
 \begin{itemize}
 \item[$\circ$] Draw a line between two points by selecting the points.
 \item[$\circ$] Join points \emph{(1,2)}, \emph{(2,3)}, \emph{(3,4)}, \emph{(4,1)}
 \item[$\circ$] Once all lines are drawn, press `q'
-\item[$\circ$] Always look at the instructions shown in the graphic window.
+\item[$\circ$] Always look at the instructions shown in the graphic panel.
 \end{itemize}
 \end{itemize}
 \begin{figure}[htbp]
@@ -300,7 +306,7 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{Generating \& meshing a 2D geometry: Declaring a plane surface.}
 \begin{itemize}
-\item Geometry(G) $>$ Elementary Entities $>$ Add $>$ New $>$ Plane Surface
+\item Geometry $>$ Elementary Entities $>$ Add $>$ Plane Surface
 \item Click on any of the sides, all sides should be highlighted in red.
 \item Press `e' then `q'.
 \item Gmsh will highlight the surface with grey, dash-lines.
@@ -317,7 +323,7 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
 \begin{itemize}
    \item Assign ``Physical Line'' ID's to the domain boundaries.
    \begin{itemize}
-      \item[$\circ$] \lstinline{Geometry (G) > Physical Groups > Add > Line}
+      \item[$\circ$] \lstinline{Geometry > Physical Groups > Add > Line}
       \item[$\circ$] Select \emph{bottom} side and press `e'.
       \item[$\circ$] Select \emph{right} side and press `e'.
       \item[$\circ$] Select \emph{top} side and press `e'.
@@ -326,7 +332,7 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
    \end{itemize}
    \item Assign ``Physical Surface'' ID to the plane surface.
    \begin{itemize}
-      \item[$\circ$] \lstinline{Geometry (G) > Physical Groups > Add > Surface}
+      \item[$\circ$] \lstinline{Geometry > Physical Groups > Add > Surface}
       \item[$\circ$] Select the highlighted surface: Click on the grey dash lines.
       \item[$\circ$] Press `e' then `q'.
    \end{itemize}
@@ -335,14 +341,34 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
 
 \begin{frame}{Generating \& meshing a 2D geometry: Producing a mesh}
    \begin{itemize}
-      \item To produce a 2--D mesh: \emph{ \lstinline{Mesh (M) > 2D}}
+      \item To produce a 2--D mesh: \emph{ \lstinline{Mesh > 2D}}
       \item To save the mesh: Click on File (menu window) and select Save Mesh.
-      \item Convert to triangle format:\\ \emph{/path/to/fluidity/bin/gmsh2triangle 2d-example.msh}
+      \item Convert to triangle format:\\ \emph{gmsh2triangle -2 gyre.msh}
    \end{itemize}
 \begin{figure}[htbp]
  \centering
   \includegraphics[width=0.75\textwidth]{../figures/2d-example-Gmsh-mesh}
   \label{fig:shot16}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Meshes for realistic ocean domains \& Fluidity}
+\begin{itemize}
+    \item Mesh is constructed on a reference surface.
+    \begin{itemize}
+        \item[$\circ$] A spherical shell, Earth's surface geoid.
+        \item[$\circ$] A flat surface, a chartographic projection datum (e.g. a UTM zone).
+    \end{itemize}
+    \item User can choose to set--up 2D or 3D simulations
+    \begin{itemize}
+        \item[$\circ$] 2D, suitable for regional shallow water (not currently on--the--sphere).
+        \item[$\circ$] In 3D no need  to do three-dimensional mesh generation.
+        \item[$\circ$] Mesh is ``vertically extruded'' within Fluidity.
+    \end{itemize}
+\end{itemize}
+\begin{figure}[htbp!]
+ \centering
+  \includegraphics[width=1.0\textwidth]{../figures/mesh_extrusion.png}
 \end{figure}
 \end{frame}
 
@@ -353,15 +379,12 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
       \item[$\circ$] Domain shape.
       \item[$\circ$] Characteristic element size.
    \end{itemize}\vspace{20pt}
-   \item In domains representative of oceans:
+   \item The geometry is very complex, boundaries are fractal--like
+   \item Ideal characteristic element size can also be dependent on many parameters, for example:
    \begin{itemize}
-      \item[$\circ$] The geometry is very complex, boundaries are fractal--like
-      \item[$\circ$] Ideal characteristic element size can also be dependent on many parameters, for example:
-      \begin{itemize}
-         \item[$\cdot$] Depth
-         \item[$\cdot$] Ocean floor topography
-         \item[$\cdot$] Explicit requirement in order to resolve tidal turbine array, etc.
-      \end{itemize}
+       \item[$\circ$] Depth
+       \item[$\circ$] Ocean floor topography
+       \item[$\circ$] Explicit requirement in order to resolve tidal turbine array, etc.
    \end{itemize}
 \end{itemize}
 %\begin{figure}[htbp!]
@@ -370,25 +393,7 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
 %\end{figure}
 \end{frame}
 
-\begin{frame}{Meshing realistic ocean domains: Our approach so far}
-\begin{itemize}
-\item Domain geometry \& Mesh are constructed on a spherical shell, representative of the Earth's surface geoid.
-\item See fetched Gmsh tutorial document.
-\begin{itemize}
-   \item[$\circ$] Coastlines extracted from GSHHS dataset, via Gmsh plug--in.
-   \item[$\circ$] Open boundaries are drawn, usually constant longitude \& constant latitude lines.
-   \item[$\circ$] Element size is defined using ``attractor'' and ``threshold'' fields available in Gmsh.
-   \item[$\circ$] 2--D surface mesh is extruded along the radial direction within Fluidity.
-\end{itemize}
-\item Mesh is ``vertically extruded'' within Fluidity.
-\end{itemize}
-\begin{figure}[htbp!]
- \centering
-  \includegraphics[width=1.0\textwidth]{../figures/mesh_extrusion.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Shortcomings -- Domain boundaries.}
+\begin{frame}{Meshing realistic ocean domains: Challenges}
 A simple CAD engine is insufficient:
 \begin{itemize}
    \item Shorelines are geometrically very complex.
@@ -403,20 +408,20 @@ A simple CAD engine is insufficient:
 \end{figure}
 \end{frame}
 
-\begin{frame}{Shortcomings -- Mesh size}
+\begin{frame}{More challenges}
 The spatial variation of the mesh element size could be complex:
-\begin{columns}
-\column{0.5\textwidth}
+%\begin{columns}
+%\column{0.5\textwidth}
 \begin{itemize}
    \item Mesh element size must usually be fine near the coastlines to capture their structure.\\[15pt]
    \item Mesh element size must usually be fine in areas of steep ocean floor topography and in shallow areas: Not easily done with current approach.
 \end{itemize}
-\column{0.5\textwidth}
-\begin{figure}[htbp!]
- \centering
+%\column{0.5\textwidth}
+%\begin{figure}[htbp!]
+% \centering
 %  \includegraphics[width=1.00\textwidth]{../figures/UK_bathymetry_metric.png}
-\end{figure}
-\end{columns}
+%\end{figure}
+%\end{columns}
 \end{frame}
 
 \begin{frame}{Meshing realistic domains -- Our proposed approach}
