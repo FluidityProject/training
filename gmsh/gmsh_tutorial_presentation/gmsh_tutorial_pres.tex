@@ -66,14 +66,15 @@
   \begin{itemize}
      \item The slides, as well as a more detailed tutorial, are freely available.\\
      \begin{itemize}
-         \item Via Figshare:
-         \item Slides:
-         \item Tutorial document:
+         \item[$\circ$] Via Figshare:
+         \item[$\circ$] Slides:
+         \item[$\circ$] Tutorial document:
      \end{itemize}
      \item Keep the slides open in a window.
      \begin{itemize}
-         \item You can copy--paste lengthy commands \& statements.
-         \item Feel free to progress at a faster pace than the speaker.
+         \item[$\circ$] You can copy--paste lengthy commands \& statements.
+         \item[$\circ$] You will be asked to click on links in the slides.
+         \item[$\circ$] Feel free to progress at a faster pace than the speaker.
      \end{itemize}
   \end{itemize}
 \end{frame}
@@ -112,37 +113,40 @@ where $ele$ is the number of elements in the tessellation.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Starting Gmsh}
+\begin{frame}{Fetching an example}
 \begin{itemize}
    \item Lets fetch a Gmsh file and open it.
    \item Download a simple example file:
    \begin{itemize}
       \item[$\circ$] Point your browser to \href{http://figshare.com/s/b0936b565f8211e4aee906ec4b8d1f61}{here}
+      \item[$\circ$] Look at the file contents, it is a geometry description.
       \item[$\circ$] Click on ``Download''.
-   \end{itemize}
-   \item Open a terminal and issue the following commands:\\[10pt]
+   \end{itemize}\vspace{10pt}
+   \item Open a terminal (Ctrl$+$Alt$+$t) :
    \begin{itemize}
-      \item[\$] \emph{mkdir meshingTutorial} \\(to create a directory for this tutorial)
-      \item[\$] \emph{cd meshingTutorial} \\(to ``enter'' the newly created directory)
-      \item[\$] \emph{mv \$HOME/Downloads/annulus.geo .} \\(to move the downloaded file into the new directory)
+      \item[$\circ$] We will be using this terminal throughout this tutorial.
+      \item[$\circ$] \$ signifies commands to be typed into the terminal.
+      \item[\$] \emph{mkdir meshingTutorial} \\to create a directory for this tutorial
+      \item[\$] \emph{cd meshingTutorial} \\to ``enter'' the newly created directory
+      \item[\$] \emph{mv \$HOME/Downloads/annulus.geo .} \\to move the downloaded file into the new directory
    \end{itemize}
-   \item Keep this terminal open, as we will come back to it.\\
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Starting Gmsh}
-\vspace{-18pt}
+  \begin{itemize} 
+     \item Open the file, with Gmsh:
+     \begin{itemize} 
+         \item[\$] \emph{gmsh annulus.geo \&} \\ \hspace{10pt} The ampersand is important.
+     \end{itemize} 
+     \item The Gmsh window is composed of two panels:
+  \end{itemize}
 \begin{columns}[l]
 \column{2.3in}
   \begin{itemize} 
-     \item Issue the following command at the terminal:\\[10pt]
-     \item[] \emph{gmsh annulus.geo \&}\\[10pt]
-     \item Gmsh will open annulus.geo . The Gmsh window is composed of two panels:
-     \begin{itemize}
         \item[$\circ$] A menu panel, showing the Gmsh functionality in a tree--like structure (left).
         \item[$\circ$] The Graphic area (larger, right).
         \item[$\circ$] A status bar at the bottom.
-     \end{itemize}
   \end{itemize}
 \column{2.2in}
 \begin{figure}[htbp!]
@@ -155,8 +159,8 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{Viewing and meshing a 3D geometry: Navigating menus.}
    \begin{itemize}
-     \item Gmsh's architecture is centred around four modules, this is reflected in the menu window.\\[10pt]
-     \item The menu widow can be used to switch between the different modules, but you are encouraged to switch between modules by using the keyboard (letters in parentheses below.)\\[10pt]
+     \item Gmsh's architecture is centred around four modules, this is reflected in the menu panel.\\[10pt]
+     \item The menu panel can be used to switch between the different modules.\\[10pt]
      \begin{enumerate}
        \item Geometry : For defining domain geometry.
        \item Mesh : For building the mesh.
@@ -179,8 +183,8 @@ where $ele$ is the number of elements in the tessellation.
 \begin{itemize}
 \item Mesh the annulus
 \begin{itemize}
-  \item[$\circ$] \lstinline{Mesh (M) > 3D}
-  \item[$\circ$] Once again, try modifying the view
+  \item[$\circ$] \lstinline{Mesh > 3D}
+  \item[$\circ$] Once again, try modifying the view.
 \end{itemize}
 \vspace{5pt}
 \item To save the mesh click on File (menu window) and select Save Mesh.
@@ -205,14 +209,21 @@ where $ele$ is the number of elements in the tessellation.
       \begin{itemize}
          \item[$\circ$] Also contains tags (numerical ID) on element vertices, edges and faces that we can use to assign boundary conditions.
          \item[$\circ$] Can be ASCII or binary.
-      \end{itemize}\vspace{20pt}
-      \item Fluidity can also read meshes in ``triangle'' format
+      \end{itemize}
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Mesh file formats}
+   \begin{itemize}
+      \item Fluidity can read meshes in ``gmsh'' format.
+      \item Fluidity can also read meshes in ``triangle'' format.
       \begin{itemize}
          \item The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
          \item[\$] \emph{gmsh2triangle annulus.msh} \\ \hspace{10pt} Generates annulus.ele, annnulus.face, annulus.node
          \item[\$] \emph{ls -l} \\ \hspace{10pt} to list the files.
       \end{itemize}
       \item Fluidity can also read meshes in ExodusII format.
+      \item Work is on--going on PETSc DMPlex.
    \end{itemize}
 \end{frame}
 
@@ -238,11 +249,11 @@ where $ele$ is the number of elements in the tessellation.
         \item Download the solution file, to help you \& tutors trace mistakes.
         \begin{itemize}
             \item[$\circ$] Download from \href{http://figshare.com/s/85271e16603d11e4840b06ec4bbcf141}{here}
-            \item[\$] \emph{mv \$HOME/Downloads/2d-gyre-tutor.geo .}
+            \item[\$] \emph{mv \$HOME/Downloads/gyre-example.geo .}
         \end{itemize}
         \item Open a new Gmsh instance, on a new file:
         \begin{itemize}
-            \item[\$] \emph{gmsh 2d-gyre.geo \&} (The ampersand is important)\\[10pt]
+            \item[\$] \emph{gmsh gyre.geo \&} (The ampersand is important)\\[10pt]
         \end{itemize}
     \end{itemize}
     We proceed by defining:
