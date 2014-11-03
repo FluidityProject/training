@@ -64,17 +64,40 @@
 
 \begin{frame}{but, before we start...}
   \begin{itemize}
-     \item The slides, as well as a more detailed tutorial, are freely available.\\
-     \begin{itemize}
-         \item[$\circ$] Via Figshare:
-         \item[$\circ$] Slides:
-         \item[$\circ$] Tutorial document:
-     \end{itemize}
+      \item This is a hands--on session, we need to do a bit of house--keeping.
+      \vspace{10pt}
+      \item Open a new terminal (Ctrl$+$Alt$+$t) :
+      \begin{itemize}
+         \item[$\circ$] We will be using this terminal throughout this tutorial.
+         \item[\$] \emph{text} signifies commands to be typed into the terminal.
+         \item[\$] \emph{mkdir mesh} \\to create a directory for this tutorial
+         \item[\$] \emph{cd mesh} \\to ``enter'' the newly created directory
+      \end{itemize}
+      \vspace{10pt}
+      \item Fetch \& open a copy of the present slides:
+      \begin{itemize}
+         \item[$\circ$] For the duration of the training event slides are on \emph{scratch}
+         \item[\$] \emph{cp /scratch/gmsh\_tutorial\_presentation.pdf .} 
+         \item[\$] \emph{evince gmsh\_tutorial\_presentation.pdf \&} \\ \hspace{10pt} The ampersand is important.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{A bit more house--keeping.}
+  \begin{itemize}
      \item Keep the slides open in a window.
      \begin{itemize}
          \item[$\circ$] You can copy--paste lengthy commands \& statements.
          \item[$\circ$] You will be asked to click on links in the slides.
          \item[$\circ$] Feel free to progress at a faster pace than the speaker.
+         \item[$\circ$] Feel free to put your hand up and ask for help!
+     \end{itemize}
+     \vspace{10pt}
+     \item The slides, as well as a more detailed tutorial, are freely available.\\
+     \begin{itemize}
+         \item[$\circ$] You can download via Figshare:
+         \item[$\circ$] \href{http://figshare.com/s/0dbd16a2635b11e4a71206ec4b8d1f61}{slides}
+         \item[$\circ$] \url{tutorial document}
      \end{itemize}
   \end{itemize}
 \end{frame}
@@ -122,12 +145,8 @@ where $ele$ is the number of elements in the tessellation.
       \item[$\circ$] Look at the file contents, it is a geometry description.
       \item[$\circ$] Click on ``Download''.
    \end{itemize}\vspace{10pt}
-   \item Open a terminal (Ctrl$+$Alt$+$t) :
+   \item Go back to your terminal
    \begin{itemize}
-      \item[$\circ$] We will be using this terminal throughout this tutorial.
-      \item[$\circ$] \$ signifies commands to be typed into the terminal.
-      \item[\$] \emph{mkdir meshingTutorial} \\to create a directory for this tutorial
-      \item[\$] \emph{cd meshingTutorial} \\to ``enter'' the newly created directory
       \item[\$] \emph{mv \$HOME/Downloads/annulus.geo .} \\to move the downloaded file into the new directory
    \end{itemize}
 \end{itemize}
@@ -159,7 +178,7 @@ where $ele$ is the number of elements in the tessellation.
 \end{columns}
 \end{frame}
 
-\begin{frame}{Viewing and meshing a 3D geometry: Navigating menus.}
+\begin{frame}{Navigating menus.}
    \begin{itemize}
      \item Gmsh's architecture is centred around four modules, this is reflected in the menu panel.\\[10pt]
      \item The menu panel can be used to switch between the different modules.\\[10pt]
@@ -172,7 +191,7 @@ where $ele$ is the number of elements in the tessellation.
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Viewing and meshing a 3D geometry: Manipulating the view}
+\begin{frame}{Manipulating the view}
 \begin{itemize}
 \item Panning : Hold right button down and move cursor.
 \item Zooming : Scroll or hold middle button down and move cursor.
@@ -181,7 +200,7 @@ where $ele$ is the number of elements in the tessellation.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Viewing and meshing a 3D geometry: Getting and saving the mesh}
+\begin{frame}{Meshing and saving the mesh}
 \begin{itemize}
 \item Mesh the annulus
 \begin{itemize}
@@ -201,7 +220,7 @@ where $ele$ is the number of elements in the tessellation.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Viewing and meshing a 3D geometry: The various files}
+\begin{frame}{The various files}
    \begin{itemize}
       \item annulus.geo : Stores the geometry as an ASCII script file.
       \begin{itemize}
@@ -444,7 +463,7 @@ Use Geographical Information Systems to extract domain boundaries and prescribe 
   \bibitem{presentDocumentPdf}
   AMCG, 
   \emph{The present slides},
-  accessible via \href{GitHub}{https://github.com/FluidityProject/training} and \href{Figshare}{}.
+  accessible via \href{https://github.com/FluidityProject/training}{GitHub} and \href{http://figshare.com/s/0dbd16a2635b11e4a71206ec4b8d1f61}{Figshare}.
 
   \bibitem{gmsharticle}
   C. Geuzaine and J.-F. Remacle,
@@ -475,7 +494,7 @@ AMCG:\\
 \url{http://amcg.ese.ic.ac.uk/}\\[15pt]
 Fluidity:\\
 \url{http://fluidityproject.github.io/}\\[15pt]
-Fluidity on GitHub:\\
+Fluidity code on GitHub:\\
 \url{https://github.com/FluidityProject/fluidity}
 \url{https://github.com/FluidityProject}\\[15pt]
 Fluidity wiki:\\
