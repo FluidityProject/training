@@ -141,14 +141,16 @@ where $ele$ is the number of elements in the tessellation.
      \end{itemize} 
      \item The Gmsh window is composed of two panels:
   \end{itemize}
+\vspace{-15pt}
 \begin{columns}[l]
 \column{2.3in}
   \begin{itemize} 
-        \item[$\circ$] A menu panel, showing the Gmsh functionality in a tree--like structure (left).
+        \item[$\circ$] A menu panel, a tree--like structure (left).
         \item[$\circ$] The Graphic area (larger, right).
         \item[$\circ$] A status bar at the bottom.
   \end{itemize}
 \column{2.2in}
+\vspace{-5pt}
 \begin{figure}[htbp!]
  \centering
   \includegraphics[width=1.0\textwidth]{../figures/annulus1}
@@ -232,7 +234,7 @@ where $ele$ is the number of elements in the tessellation.
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Generating and meshing a 2D geometry: Aim}
+\begin{frame}{Gyre example: Aim}
 
 \begin{itemize}
     \item To generate a 2--D mesh on a $1,000$km $\times 1,000$km square.
@@ -249,7 +251,7 @@ where $ele$ is the number of elements in the tessellation.
 \end{frame}
 
 
-\begin{frame}{Generating \& meshing a 2D geometry: Getting started}
+\begin{frame}{Gyre example: Getting started}
     \begin{itemize}
         \item Close your existing Gmsh instance.
         \item Download the solution file, to help you \& tutors trace mistakes.
@@ -271,7 +273,7 @@ where $ele$ is the number of elements in the tessellation.
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Generating \& meshing a 2D geometry: Creating points}
+\begin{frame}{Gyre example: Creating points}
   \begin{itemize}
   \item \lstinline{Geometry > Elementary Entities > Add > Point}\\[4pt]
   \item The \emph{Contextual Geometry Definitions} window will appear.\\[4pt]
@@ -279,16 +281,16 @@ where $ele$ is the number of elements in the tessellation.
   \begin{itemize}
     \item[$\circ$] Do not move cursor outside \emph{Contextual Geometry Definitions} window while entering coordinates! Hold shift down if you have to.\\[4pt]
     \item[$\circ$] Always look at the instructions shown in the graphic window.\\[4pt]
-    \item[$\circ$] Point 1: \emph{[ 0.0\ \ ,  0.0\ \ ,  0.0]} with characteristic length of \emph{2e4}\\[5pt]
-    \item[$\circ$] Point 2: \emph{[ 0.0\ \ ,  1.e6,\ \ 0.0]} with characteristic length of \emph{2e4}\\[5pt]
-    \item[$\circ$] Point 3: \emph{[ 1.e6, 1.e6,\ \ 0.0]} with characteristic length of \emph{2e4}\\[5pt]
-    \item[$\circ$] Point 4: \emph{[ 1.e6, 0.0\ \ ,  0.0]} with characteristic length of \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 1: \emph{[ 0.0\ \ ,  0.0\ \ ,  0.0]}, Prescribed mesh element size \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 2: \emph{[ 0.0\ \ ,  1.e6,\ \ 0.0]}, Prescribed mesh element size \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 3: \emph{[ 1.e6, 1.e6,\ \ 0.0]}, Prescribed mesh element size \emph{2e4}\\[5pt]
+    \item[$\circ$] Point 4: \emph{[ 1.e6, 0.0\ \ ,  0.0]}, Prescribed mesh element size \emph{2e4}\\[5pt]
     \end{itemize}
   \item Press `q' and close Contextual Geometry Definitions window.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Generating \& meshing a 2D geometry: Creating lines}
+\begin{frame}{Gyre example: Creating lines}
 \begin{itemize}
 \item Geometry $>$ Elementary Entities $>$ Add $>$ Straight Line
 \begin{itemize}
@@ -300,24 +302,24 @@ where $ele$ is the number of elements in the tessellation.
 \end{itemize}
 \begin{figure}[htbp]
  \centering
-  \includegraphics[width=0.74\textwidth]{../figures/Gmsh_dawing_lines.png}
+  \includegraphics[width=0.65\textwidth]{../figures/Gmsh_drawing_lines.png}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Generating \& meshing a 2D geometry: Declaring a plane surface.}
+\begin{frame}{Gyre example: Declaring a plane surface.}
 \begin{itemize}
 \item Geometry $>$ Elementary Entities $>$ Add $>$ Plane Surface
-\item Click on any of the sides, all sides should be highlighted in red.
+\item Click on any of the sides, all sides will be highlighted.
 \item Press `e' then `q'.
 \item Gmsh will highlight the surface with grey, dash-lines.
 \end{itemize}
 \begin{figure}[htbp]
  \centering
-  \includegraphics[width=0.7\textwidth]{../figures/2d-example-surface}
+  \includegraphics[width=0.65\textwidth]{../figures/2d-example-surface}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Generating \& meshing a 2D geometry: Declaring physical groups.}
+\begin{frame}{Gyre example: Declaring physical groups.}
 In order to specify regions and boundaries in Fluidity, they must first be defined as ``Physical Groups'' in Gmsh:\\[15pt]
 
 \begin{itemize}
@@ -339,15 +341,18 @@ In order to specify regions and boundaries in Fluidity, they must first be defin
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Generating \& meshing a 2D geometry: Producing a mesh}
+\begin{frame}{Gyre example: Producing a mesh}
    \begin{itemize}
-      \item To produce a 2--D mesh: \emph{ \lstinline{Mesh > 2D}}
-      \item To save the mesh: Click on File (menu window) and select Save Mesh.
-      \item Convert to triangle format:\\ \emph{gmsh2triangle -2 gyre.msh}
+      \item Produce a 2--D mesh: \lstinline{Mesh > 2D}
+      \item Save the mesh: Click on File and select ``Save Mesh''.
+      \item Convert to triangle format:
+      \begin{itemize}
+          \item[\$]\emph{gmsh2triangle -2 gyre.msh}
+      \end{itemize}
    \end{itemize}
 \begin{figure}[htbp]
  \centering
-  \includegraphics[width=0.75\textwidth]{../figures/2d-example-Gmsh-mesh}
+  \includegraphics[width=0.65\textwidth]{../figures/2d-example-Gmsh-mesh}
   \label{fig:shot16}
 \end{figure}
 \end{frame}
