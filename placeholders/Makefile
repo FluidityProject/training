@@ -1,4 +1,4 @@
-PDFS=configfluidity.pdf drivingdiamond.pdf introtoexamples.pdf
+PDFS=configfluidity.pdf drivingdiamond.pdf
 
 default: $(PDFS)
 

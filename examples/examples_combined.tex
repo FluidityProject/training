@@ -11,12 +11,19 @@
 \usepackage{subfigure}
 
 % items enclosed in square brackets are optional
-\title[GFD examples]{Summary of the GFD examples}
+\title[All examples]{Introduction to the examples}
 \subtitle[]{}
 \institute{Department of Earth Science and Engineering, Imperial College London}
-\author[Sam Parkinson]{\large{Sam Parkinson}}
+\author[Richard Ferrier]{\large{Richard Ferrier}}
 \date{}
-
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+       % sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+   \end{frame}
+}
 
 \begin{document}
 
@@ -31,6 +38,16 @@
   \frametitle{Outline}
   \tableofcontents
 \end{frame}
+
+\section{CFD Examples}
+
+\input{driven_cavity/driven_cavity}
+\input{backward_facing_step/backward_facing_step}
+\input{flow_past_sphere/flow_past_sphere}
+\input{water_collapse/water_collapse}
+\input{tephra_settling/tephra_settling}
+
+\section{GFD Examples}
 
 \input{lock_exchange/lock_exchange}
 \input{hokkaido-nansei-oki_tsunami/hokkaido-nansei-oki_tsunami}
