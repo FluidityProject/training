@@ -1,12 +1,8 @@
-default:examplescfd examplesgfd
+default:examplescombined
 
-examplescfd:
-	/usr/bin/pdflatex examples_CFD
-	/usr/bin/pdflatex examples_CFD
-        
-examplesgfd:
-	/usr/bin/pdflatex examples_GFD
-	/usr/bin/pdflatex examples_GFD
-        
+examplescombined:
+	/usr/bin/pdflatex examples_combined
+	/usr/bin/pdflatex examples_combined
+
 clean:
 	rm *.aux *.log *.nav *.out *.snm *.toc

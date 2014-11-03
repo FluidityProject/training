@@ -21,8 +21,7 @@ FILES=	./intro/intro.pdf\
 	./running_visualisation/running_visualisation.pdf\
 	\
 	./intro/intro_day3.pdf\
-	./examples/examples_GFD.pdf\
-	./examples/examples_CFD.pdf\
+	./examples/examples_combined.pdf\
 
 
 default:
