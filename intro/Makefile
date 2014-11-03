@@ -1,4 +1,4 @@
-PDFS=intro.pdf
+PDFS=intro.pdf intro_day2.pdf intro_day3.pdf
 
 default: $(PDFS)
 

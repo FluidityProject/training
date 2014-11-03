@@ -13,11 +13,14 @@ FILES=	./intro/intro.pdf\
 	./IntroToFEM/IntroToFEMJRP.pdf\
 	./DavidsFEMDaySlides.pdf \
 	./numerics/numerics.pdf\
+	\
+	./intro/intro_day2.pdf\
 	./fluidity/fluidity.pdf\
 	./diamond/set_up.pdf\
 	./gmsh_tutorial_pres.pdf\
 	./running_visualisation/running_visualisation.pdf\
-	./placeholders/introtoexamples.pdf\
+	\
+	./intro/intro_day3.pdf\
 	./examples/examples_GFD.pdf\
 	./examples/examples_CFD.pdf\
 
@@ -29,4 +32,4 @@ default:
 		make; \
 		cd ../;\
 	done ;
-	/usr/bin/pdftk $(FILES) cat output AMCG_Fluidity_Training_2013.pdf
+	/usr/bin/pdftk $(FILES) cat output AMCG_Fluidity_Training_2014.pdf
