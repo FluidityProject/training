@@ -1,160 +1,144 @@
-% small.tex
-\documentclass[12pt]{beamer}
+\documentclass[t, hyperref={pdfpagelabels=false}]{beamer}
 \usetheme{amcg}
-\beamertemplatenavigationsymbolsempty
-\renewcommand{\thefootnote}{}
-\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
-\usepackage{mathptmx}
-\usepackage{helvet}
-\newcommand\TILDE{\char`\~}
+
 \usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+\usepackage{tikz}
+\usepackage{ulem}
 
-% items enclosed in square brackets are optional; explanation below
-\title[Parallel]{Running Fluidity in Parallel}
-\subtitle[]{}
-\institute{1 - Dept of Earth Science and Engineering, Imperial College London}
-\author[Jon Hill]{\large{Jon Hill}\inst{1}}
-\date{}
-
+\title[Parallel Simulations]{Parallel simulations and using clusters}
+\subtitle[]{Fluidity Training Course 2014}
+\author[M. Lange]{\footnotesize Michael Lange}
+\institute{AMCG, Imperial College London}
+\date{\footnotesize 6th November 2014}
 
 \begin{document}
+\titlepage
 
+\begin{frame}{Parallel Simulations}
+  \begin{itemize}
+  \item[] {Large simulations require more than a laptop}
+    \begin{itemize}
+      \vspace{1em}
+    \item Fluidity runs in parallel via MPI
+    \item Optional: OpenMP threading for hybrid runs
+      \begin{itemize}
+      \item Configuration option \lstinline+--enable-openmp+
+      \end{itemize}
 
-%--- the titlepage frame -------------------------%
-\begin{frame}
-  \titlepage
+      \vspace{1em}
+    \item Fluidity runs on various clusters
+      \begin{itemize}
+      \item Imperial College: CX1, CX2 (Intel)
+      \item UK national supercomputer: Archer (Cray CX30)
+      \item ANU/NCI: Raijin (Fujitsu Primergy)
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
-%-- Overview slide --- %
-\section*{Outline}
-\begin{frame}
-  \frametitle{Outline}
-  \tableofcontents
+\begin{frame}{Parallel Simulations}
+  \begin{columns}[t]
+    \column[T]{0.7\textwidth}
+
+    \begin{itemize}
+    \item[] {How to run Fluidity in parallel:}
+      \begin{itemize}
+        \vspace{1em}
+      \item No changes to the .flml required!
+        \begin{itemize}
+        \item Optional: Remove fields from output (.stat and .vtu)
+        \end{itemize}
+
+        \vspace{1em}
+      \item Need to decompose the mesh
+        \begin{itemize}
+        \item Tools provided:
+          \\\lstinline+flredecomp+, \sout{\lstinline+fldecomp+}
+          \vspace{2pt}
+        \item Build both with: \lstinline+make fltools+
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+
+    \column[T]{0.3\textwidth}
+    \vspace{2em}
+    \begin{figure}[ht] \centering
+      \begin{tikzpicture}[scale=0.8]
+        \input{mesh_boundary}
+      \end{tikzpicture}
+    \end{figure}
+  \end{columns}
 \end{frame}
 
-\section{Pre-running}
-\begin{frame}
-    \frametitle{FLML}
-No changes required!
-\vspace{5mm}
+\begin{frame}{Mesh decomposition}
+  \begin{itemize}
+  \item[] {Mesh decomposition before the run:}
+    \begin{itemize}
 
-[Optional]
-\begin{itemize}
-\item Remove fields from stat file
-\item Remove some fields from VTU
-\end{itemize}
+      \vspace{1em}
+    \item \lstinline+mpiexec -n 4 flredecomp -i 1 -n 4 serial parallel+
+      \begin{itemize}
+      \item Needs to be run in parallel!
+      \item Decomposes mesh named in \lstinline+serial.flml+
+      \item Creates new parallel setup: \lstinline+parallel.flml+
+      \end{itemize}
+
+      \vspace{1em}
+    \item Now run this on 4 processors: \\
+      \lstinline+mpiexec -n 4 fluidity parallel.flml+
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Decompose mesh}
-\begin{itemize}
-\item fldecomp
-\item flderecomp
-\end{itemize}
-\vspace{5mm}
+\begin{frame}{Mesh decomposition}
+  \begin{itemize}
+  \item[] {Mesh decomposition with checkpoints:}
+    \begin{itemize}
+      \vspace{1em}
+    \item Switch on checkpointing!
+      \begin{itemize}
+      \item \lstinline+/io/checkpointing+ in .flml
+      \end{itemize}
 
-Both make with \texttt{make fltools}. Programs will be in bin
+      \vspace{1em}
+    \item \lstinline+mpiexec -n 8 flredecomp -i 4 -n 8 par_4 par_8+
+      \begin{itemize}
+      \item Needs to be run on \lstinline+max(-i, -o)+ processes
+      \item Enables re-starting on more/fewer processes
+      \end{itemize}
+
+      \vspace{1em}
+    \item Run as before: \\
+      \lstinline+mpiexec -n 8 fluidity par_8.flml+
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{\texttt{fldecomp}}
-
-\texttt{fldecomp -n 8 MeshName}
-\vspace{5mm}
-
-Will decompose mesh into 8 peices.
-\end{frame}
-
-\begin{frame}
-    \frametitle{\texttt{flredecomp}}
-\texttt{flredecomp -i 2 -n 8 InputMeshName OutputMeshName}
-\vspace{5mm}
-
-Will decompose mesh from 2 to 8.
-\vspace{5mm}
-
-\texttt{flredecomp -i 8 -n 2 InputMeshName OutputMeshName}
-\vspace{5mm}
-
-Will decompose mesh from 8 to 2.
-\vspace{5mm}
-Both need running on 8 processors
-\end{frame}
-
-\section{Running}
-\begin{frame}
-    \frametitle{Local systems}
-
-\texttt{mpiexec -n 8 ../../bin/fluidity my.flml}
-\end{frame}
-
-\begin{frame}
-    \frametitle{HECToR}
-
-\texttt{module swap PrgEnv-cray PrgEnv-fluidity}
-\vspace{5mm}
-
-Submit job to back-end.
-\vspace{5mm}
-
-\texttt{qsub myscript.sct}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{HECToR}
-\vspace{-2mm}
-\lstset{language=bash,basicstyle=\tiny}
-\begin{lstlisting}[language=bash]
+\begin{frame}[fragile]{Archer}
+  \begin{lstlisting}[language=bash, basicstyle=\tiny]
 #!/bin/bash --login
-#PBS -N fluidity_run
-#PBS -l mppwidth=512
-#PBS -l mppnppn=4
-#PBS -l walltime=0:10:00
-#PBS -A n04-IC
+#PBS -l walltime=01:00:00
+#PBS -N jet_sim
+#PBS -l select=2
+#PBS -A n01-IC1
 
+# Load Fluidity environment
 module swap PrgEnv-cray PrgEnv-fluidity
 
-# Change to the directory that the job was submitted from
+# Make sure any symbolic links are resolved to absolute path
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
 cd $PBS_O_WORKDIR
- 
-# The following take a copy of the Fluidity Python directory and
-# put it in the current directory. If we don't do this, we get import errors. 
-export WORKING_DIR=$(pwd -P)
-cp -r /usr/local/packages/fluidity/xe6/2.0/python/ .
-export PYTHONPATH=$WORKING_DIR/python:$PYTHONPATH
 
-# Set the number of MPI tasks
-export NPROC=`qstat -f $PBS_JOBID | awk '/mppwidth/ {print $3}'`
-# Set the number of MPI tasks per node
-export NTASK=`qstat -f $PBS_JOBID | awk '/mppnppn/  {print $3}'`
-aprun -n $NPROC -N $NTASK fluidity -l -v1  standing_wave.flml
+# Workaround for python environment
+export LD_LIBRARY_PATH=$ANACONDA_LIB:$LD_LIBRARY_PATH
 
-# clean up the python directory
-rm -rf python
-\end{lstlisting}
+# Decompose the mesh
+aprun -n 48 -N 24 -d 1 -j 1 $FLUIDITYDIR/bin/flredecomp -i 1 -n 48 jet_sim set_sim_48
+
+# Run simulation
+aprun -n 48 -N 24 -d 1 -j 1 $FLUIDITYDIR/bin/fluidity -l -p -v2 jet_sim_48.flml
+  \end{lstlisting}
 \end{frame}
-
-\begin{frame}
-    \frametitle{HECToR: A run-through}
-\begin{itemize}
-\item Set-up on local machine
-\item Copy to HECToR
-\item Create PBS script
-\item qsub
-\item Copy results back to local machine \textbf{or} use paraview on HECToR
-\end{itemize}
-\end{frame}
-
-
-\section{Post-running}
-\begin{frame}
-    \frametitle{Visualisation}
-No different from serial - except .pvtu files, not .vtu
-\vspace{5mm}
-
-Log files (if used) will be one per processor.
-\end{frame}
-
 
 \end{document}
-
