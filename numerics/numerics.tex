@@ -22,7 +22,7 @@
 \def\newblock{\beamer@newblock}
 
 % items enclosed in square brackets are optional
-\title[Numerics]{Numerical considerations when configuring Fluidity}
+\title[Numerical considerations]{Numerical considerations when configuring Fluidity}
 \subtitle[]{}
 \institute{Applied Modelling and Computation Group\\
 Department of Earth Science and Engineering\\
@@ -48,7 +48,7 @@ Imperial College London}
 \renewcommand\emph[1]{{\bf #1}}
 \newcommand\backgroundon{%
   \usebackgroundtemplate{%
-    \tikz\node[opacity=0.3]
+    \tikz\node[opacity=0.5]
     {\begin{minipage}{\paperwidth}
         \vspace{10ex}
         \hspace{-1ex}
@@ -144,17 +144,22 @@ Imperial College London}
     \small
     \begin{minipage}{0.7\textwidth}
       Consider first--order--upwind finite volume for advection
-      of a concentration $c$. For simplicity, assume that the
-      volume fluxes, normal velocity $u_n$ times width $w$,
-      in and out of cell 2 are equal (i.e.
-      incompressible flow). For cell 2 with area $A_2$, we have:
+      of a concentration $T$. In cell 2:
+      \begin{align*}
+        A_2 T^{n+1}_2 = A_2 T^n_2
+        +&
+        \Delta t~\vec{u_{12}}\cdot\vec n_{12}~w_{12}~T^n_1 \\
+        -& \Delta t~\vec{u_{23}}\cdot\vec n_{23}~w_{23}~T^n_2.
+      \end{align*}
+      For incompressible flow however
       \begin{equation*}
-        A_2 c^{n+1}_2 = A_2 c^n_2 + \Delta t \left(u_n w c^n_1-u_n w c^n_2\right)
+        \vec{u_{12}}\cdot\vec n_{12}~w_{12} = \vec{u_{23}}\cdot\vec
+        n_{23}~w_{23}.
       \end{equation*}
       This can be rewritten as an interpolation
       \begin{equation*}
-        c^{n+1}_2 = \left(1-\frac{\Delta t~u_n w}{A_2}\right) c^n_2
-        +\frac{\Delta t~u_n w}{A_2} c^n_1
+        T^{n+1}_2 = \left(1-C\right) T^n_2 + C~T^n_1,~
+          C = \frac{\vec{u_{12}}\cdot\vec{n_{12}}~w_{12}}{A_2}.
       \end{equation*}
     \end{minipage}%
     \begin{minipage}{0.3\textwidth}
@@ -170,14 +175,14 @@ Imperial College London}
     \begin{minipage}{0.7\textwidth}
     For first order upwind finite volume, the concentration in cell 2 is given
     by
-    \begin{equation*}
-      c^{n+1}_2 = \left(1-\frac{\Delta t~u_n w}{A_2}\right) c^n_2
-        +\frac{\Delta t~u_n w}{A_2} c^n_1
-    \end{equation*}
+      \begin{equation*}
+        T^{n+1}_2 = \left(1-C\right) T^n_2 + C~T^n_1,\quad
+          C = \frac{\vec{u_{12}}\cdot\vec{n_{12}}~w_{12}}{A_2}.
+      \end{equation*}
 
-    Rewriting $u_n=\|u\| \hat u\cdot\vec n$, this leads to a CFL condition:
+    Rewriting $\vec u\cdot\vec n=\|u\| \hat u\cdot\vec n$, this leads to a CFL condition:
     \begin{equation*}
-        \frac{\Delta t~\|u\| \hat u\cdot\vec n~w}{A_2}<1
+        C=\frac{\Delta t~\|u\| \hat u\cdot\vec n~w}{A_2}<1
     \end{equation*}
     In other words $\Delta x=\frac{A_2 \hat u\cdot\vec n}w$.
     \end{minipage}%
