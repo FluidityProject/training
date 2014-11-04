@@ -1,25 +1,27 @@
 %-- Add sections and your outline will be created automatically --%
-\section{Tephra settling}
+\subsection{Tephra settling}
 
 % Frame starts a new slide
 \begin{frame}
   \frametitle{Tephra settling}
   \begin{itemize}
-    \item Fluidity is used to replicate a laboratory experiment of tephra (fine volcanic ash
-particles) settling through a tank of water (Carey, 1997).\newline
-    \item Small tephra particles can settle either individually, or collectively as a cloud of particles (a plume).\newline
-    \item Plumes are generated when the bulk density of the tephra-water mixture becomes large enough, yielding settling velocities much greater than those expected of single particles (which settle at a velocity given by Stokes law).
+  \item Replicates a laboratory experiment of tephra (fine volcanic ash particles) settling through a tank of water
+    (Carey, 1997)
+  \item Small tephra particles can settle either individually according to Stokes' law, or collectively as a cloud of particles (a plume)
+  \item Dispersed multiphase approach, adaptive timestepping
+  \item Run time: 1 hr.
+    % \item Plumes are generated when the bulk density of the tephra-water mixture becomes large enough, yielding settling velocities much greater than those expected of single particles (which settle at a velocity given by Stokes law).
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Tephra settling - Simulation setup}
-  \begin{itemize}
-    \item The simulation uses a 0.3 x 0.7 metre domain, replicating the cross-section of the water tank used in the experiments.\newline
-    \item No normal flow boundary conditions are weakly imposed along with a zero velocity initial condition, and the initial volume fraction of the particle phase is set to $1.0 \times 10^{-7}$.\newline
-    \item The influx of particles from the air above is simulated using a \texttt{flux} boundary condition at the top of the domain. This allows tephra to flux in at a rate of $0.472\ \mathrm{gm^{-2}s^{-1}}$.
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Tephra settling - Simulation setup}
+%   \begin{itemize}
+%     \item The simulation uses a 0.3 x 0.7 metre domain, replicating the cross-section of the water tank used in the experiments.
+%     \item No normal flow boundary conditions are weakly imposed along with a zero velocity initial condition, and the initial volume fraction of the particle phase is set to $1.0 \times 10^{-7}$.
+%     \item The influx of particles from the air above is simulated using a \texttt{flux} boundary condition at the top of the domain. This allows tephra to flux in at a rate of $0.472\ \mathrm{gm^{-2}s^{-1}}$.
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Tephra settling - Numerical results (1)}

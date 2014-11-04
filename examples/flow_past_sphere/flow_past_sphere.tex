@@ -1,11 +1,12 @@
 %-- Add sections and your outline will be created automatically --%
-\section{Flow past a sphere}
+\subsection{Flow past a sphere}
 
 % Frame starts a new slide
 \begin{frame}
     \frametitle{Flow past a sphere}
 \begin{itemize}
 \item Drag calculation at different Reynolds numbers
+\item Run time: 9 hr. (8 cpu)
 \item Adaptive mesh resolves dynamics near surface
 %\item Option: \option{Velocity/stat/compute\_body\_forces\_on\_surfaces}
 \end{itemize}
@@ -49,8 +50,8 @@
 \begin{frame}
 \frametitle{Flow past a sphere, exercises}
 \begin{itemize}
-\item Write an offline python diagnostic to calculate the drag.
-\item Investigate impact different discretisations and adaptivity parameters on the drag.
+\item Write an offline python diagnostic to calculate the drag coefficient from the vector force on the sphere.
+\item Investigate impact of different discretisations and adaptivity parameters on the drag.
 \item Investigate different shaped objects.
 \end{itemize}
 \end{frame}

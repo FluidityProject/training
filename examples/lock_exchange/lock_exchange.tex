@@ -1,14 +1,14 @@
 %-- Add sections and your outline will be created automatically --%
-\section{The lock--exchange}
+\subsection{The lock--exchange}
 
 % Frame starts a new slide
 \begin{frame}
     \frametitle{The lock--exchange}
 \begin{itemize}
-\item Flat bottomed tank, separated into two portions by a barrier.
-\item Portions are filled with fluids of different density (temperature).
-\item As the barrier is removed, the denser fluid collapses under the lighter.
-\item Uses a control volume discretisation and adaptivity.
+\item Fluids of different densities (temperature) separated by a barrier. As the barrier is removed, the denser fluid
+  collapses under the lighter.
+\item Boussinesq flow, control volume discretisation, mesh adaptivity
+\item Run time: 10 min.
 \end{itemize}
 
 \begin{figure}
@@ -53,7 +53,10 @@
 \begin{frame}
     \frametitle{The lock--exchange, exercises}
 \begin{itemize}
+\item Increase the simulation time from the default settings (to e.g. 30 secs) and calculate the average Froude number
 \item Play with the adaptivity options.
+\item Change the diffusivity and viscosity values.
+\item Run with a fixed mesh (this will require making a new input mesh)
 \item Try adding some detectors to visualise the particle trajectories.
 \end{itemize}
 

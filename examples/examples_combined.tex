@@ -1,0 +1,79 @@
+% small.tex
+\documentclass[10pt]{beamer}
+\usetheme{amcg}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\thefootnote}{}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{subfigure}
+\usepackage{listings}
+
+% items enclosed in square brackets are optional
+\title[Introduction to the examples]{Introduction to the examples}
+\subtitle[]{}
+\institute{Department of Earth Science and Engineering, Imperial College London}
+\author[Richard Ferrier]{\large{Richard Ferrier}}
+\date{}
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+%--- the titlepage frame -------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%-- Overview slide --- %
+\section*{Outline}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{CFD Examples}
+
+\input{top_hat/top_hat}
+\input{driven_cavity/driven_cavity}
+\input{backward_facing_step/backward_facing_step}
+\input{flow_past_sphere/flow_past_sphere}
+\input{water_collapse/water_collapse}
+\input{tephra_settling/tephra_settling}
+
+\addtocontents{toc}{\newpage}
+
+\section{GFD Examples}
+
+\input{lock_exchange/lock_exchange}
+\input{hokkaido-nansei-oki_tsunami/hokkaido-nansei-oki_tsunami}
+\input{rotating_channel/rotating_channel}
+\input{restratification_after_oodc/restratification_after_oodc}
+\input{tides_in_the_Mediterranean_Sea/tides_in_the_Mediterranean_Sea}
+\input{stokes_square_convection/stokes_square_convection}
+
+\section*{Getting started}
+\begin{frame}
+  \frametitle{Getting started}
+  \begin{itemize}
+  \item The examples have been run in advance and the output can be found in \texttt{/scratch/examples}
+  \item You may need to specify your Fluidity binaries folder \\
+    \texttt{export PATH=<<fluidity dir>>/bin/:\$PATH}
+  \item and Python tools folder \\
+    \texttt{export PYTHONPATH=<<fluidity dir>>/python/:\$PYTHONPATH}
+  \item If you get `permission denied' running a postprocessing script, try \\
+    \texttt{chmod u+x <<script>>}
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+
