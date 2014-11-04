@@ -46,16 +46,29 @@ Imperial College London}
 \newcommand\poo{P1-P1}
 \newcommand\podgpt{P1$_{\text{DG}}$-P2}
 \renewcommand\emph[1]{{\bf #1}}
+\newcommand\backgroundon{%
+  \usebackgroundtemplate{%
+    \tikz\node[opacity=0.3]
+    {\begin{minipage}{\paperwidth}
+        \vspace{10ex}
+        \hspace{-1ex}
+        \includegraphics[width=\paperwidth]{water.jpg}
+    \end{minipage}};}}
+\newcommand\backgroundoff{%
+  \usebackgroundtemplate{}}
 \begin{document}
+
 
 % This little snippet adds the outline slide with the
 % current section highlighted between each section
 \AtBeginSection[]
 {
-   \begin{frame}
-       \frametitle{Outline}
-       \tableofcontents[currentsection]
-   \end{frame}
+  \backgroundon
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \backgroundoff
 }
 
 %--- the titlepage frame -------------------------%
@@ -65,10 +78,12 @@ Imperial College London}
 
 %-- Overview slide --- %
 \section*{Outline}
+\backgroundon
 \begin{frame}
   \frametitle{Outline}
   \tableofcontents
 \end{frame}
+\backgroundoff
 
 %-- Add sections and your outline will be created automatically --%
 \section{Time integration}
