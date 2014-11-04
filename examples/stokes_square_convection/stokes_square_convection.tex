@@ -3,25 +3,23 @@
 
 % Frame starts a new slide
 \begin{frame}
-    \frametitle{Stokes square convection}
-\begin{itemize}
-\item A steady–state isoviscous convection at a Rayleigh number (Ra) of $10^5$ , in a
-  two dimensional square domain of unit dimensions 
-\item comparison of numerical results against a well established two dimensional cartesian geometry
-  benchmark result for Stokes flow
-\end{itemize}
+  \frametitle{Stokes square convection}
+  \begin{minipage}[]{0.45\linewidth}
+    \begin{itemize}
+    \item Steady-state isoviscous convection at a Rayleigh number (Ra) of $10^5$ , in a two-dimensional square domain
+    \item Comparison against a well-established two-dimensional cartesian geometry benchmark result for Stokes flow
+    \item Run time: 15 min.
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}[]{0.45\linewidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{./stokes_square_convection/Temperature_planform.png}
+      \caption{Steady–state temperature field, on a uniform structured mesh of 48 $\times$ 48 elements. Contours are
+        spaced at intervals of 0.1.}
+    \end{figure}
+  \end{minipage}
 \end{frame}
-
-\begin{frame}
-    \frametitle{Stokes square convection}
-\begin{figure}
-  \includegraphics[width=0.5\textwidth]{./stokes_square_convection/Temperature_planform.png}
-  \caption{Steady–state temperature field from an isoviscous Stokes simulation at $Ra = 1 \times
-    10^5$, on a uniform structured mesh of 48 × 48 elements. Contours are spaced at intervals of
-    0.1.}
-\end{figure}
-\end{frame}
-%
+  % 
 \begin{frame}
     \frametitle{Stokes square convection}
 \begin{figure}

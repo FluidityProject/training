@@ -7,22 +7,21 @@
 \usepackage{mathptmx}
 \usepackage{helvet}
 \newcommand\TILDE{\char`\~}
-\usepackage{listings}
 \usepackage{subfigure}
+\usepackage{listings}
 
 % items enclosed in square brackets are optional
-\title[All examples]{Introduction to the examples}
+\title[Introduction to the examples]{Introduction to the examples}
 \subtitle[]{}
 \institute{Department of Earth Science and Engineering, Imperial College London}
 \author[Richard Ferrier]{\large{Richard Ferrier}}
 \date{}
 \AtBeginSection[]
 {
-   \begin{frame}
-       \frametitle{Outline}
-       \tableofcontents[currentsection]
-       % sectionstyle=show/shaded, subsectionstyle=show/show/hide]
-   \end{frame}
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
 }
 
 \begin{document}
@@ -41,11 +40,14 @@
 
 \section{CFD Examples}
 
+\input{top_hat/top_hat}
 \input{driven_cavity/driven_cavity}
 \input{backward_facing_step/backward_facing_step}
 \input{flow_past_sphere/flow_past_sphere}
 \input{water_collapse/water_collapse}
 \input{tephra_settling/tephra_settling}
+
+\addtocontents{toc}{\newpage}
 
 \section{GFD Examples}
 
@@ -56,13 +58,18 @@
 \input{tides_in_the_Mediterranean_Sea/tides_in_the_Mediterranean_Sea}
 \input{stokes_square_convection/stokes_square_convection}
 
-%-- Data directory slide --- %
-\section*{Data}
+\section*{Getting started}
 \begin{frame}
-  \frametitle{Data}
-  \begin{center}
-  The examples have been run in advance \\ and the output can be found in \\ /scratch/release-examples
-  \end{center}
+  \frametitle{Getting started}
+  \begin{itemize}
+  \item The examples have been run in advance and the output can be found in \texttt{/scratch/examples}
+  \item You may need to specify your Fluidity binaries folder \\
+    \texttt{export PATH=<<fluidity dir>>/bin/:\$PATH}
+  \item and Python tools folder \\
+    \texttt{export PYTHONPATH=<<fluidity dir>>/python/:\$PYTHONPATH}
+  \item If you get `permission denied' running a postprocessing script, try \\
+    \texttt{chmod u+x <<script>>}
+  \end{itemize}
 \end{frame}
 
 \end{document}

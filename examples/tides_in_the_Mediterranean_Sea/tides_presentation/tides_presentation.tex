@@ -27,7 +27,7 @@ The following aspects will be outlined:
      \item Meshing 
         \begin{itemize}
         \item[$\circ$] Gmsh is used to produce a mesh on a spherical manifold
-        \item[$\circ$] An extrusion, creating a 3--D mesh is carried out within fluidity,
+        \item[$\circ$] An extrusion, creating a 3-D mesh is carried out within fluidity,
               controlled by options in Diamond.
      \end{itemize}
      \item Additional options in Diamond for:
@@ -55,7 +55,7 @@ Example available in directory:\\
 
 \end{frame}
 
-\begin{frame}{2--D mesh in Gmsh}
+\begin{frame}{2-D mesh in Gmsh}
 
 \begin{figure}[htbp!]
  \centering
@@ -72,14 +72,14 @@ Example available in directory:\\
 
 \begin{frame}{Extruding in Fluidity}
 \begin{itemize}
-\item 2--D horizontal mesh is extruded vertically within Fluidity.
+\item 2-D horizontal mesh is extruded vertically within Fluidity.
 \end{itemize}
 \begin{figure}[htbp!]
  \centering
   \includegraphics[width=1.0\textwidth]{figures/mesh_extrusion.png}
 \end{figure}
 \begin{itemize}
-\item Flexibility to choose layered $\sigma$ or $z$--coordinates.
+\item Flexibility to choose layered $\sigma$ or $z$-coordinates.
 \item Bathymetry extracted from NetCDF file ({\it e.g.} $GEBCO$ dataset.)
 \end{itemize}
 
@@ -98,7 +98,7 @@ Example available in directory:\\
     \item[$\circ$] Appropriate choice for P1 grids.
     \item[$\circ$] Suitable for barotropic simulations.
   \end{itemize}
-  \item Super--parametric mapping
+  \item Super-parametric mapping
   \begin{itemize}
     \item[$\circ$] Element faces on sea surface are described by $n^{th}$ order polynomials
     \item[$\circ$] Order of polynomial equal to the degree of the mesh.
@@ -113,7 +113,7 @@ Example available in directory:\\
   \item Gravity force and Coriolis pseudo-force are set under physical parameters
   \begin{itemize}
     \item[$\circ$] Gravity magnitude and direction
-    \item[$\circ$] Coriolis ($f$--, $\beta$--plane, on-sphere)
+    \item[$\circ$] Coriolis ($f$-, $\beta$-plane, on-sphere)
   \end{itemize}
   \item Ocean floor: no-normal-flow \& drag wall-law,
   \begin{align*}

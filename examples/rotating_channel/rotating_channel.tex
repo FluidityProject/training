@@ -5,7 +5,7 @@
 \begin{frame}
     \frametitle{Rotating periodic channel}
 \begin{itemize}
-\item Domain: Unit square, periodic in zonal direction and zero--slip at North and South boundaries and Coriolis forcing.
+\item Unit square domain, periodic in zonal direction and zero-slip at North and South boundaries.  Coriolis forcing.
 \item The flow is driven by a velocity source term:
 \begin{equation*}
   \vec{F}=
@@ -14,8 +14,9 @@
     0
   \end{bmatrix}
 \end{equation*}
-\item Parameters are chosen such that the solution converges to a steady state with a known analytical solution.
+\item Provides a convergence test for the $P_{1DG}P_2$ element pair.
 \item A good example of using python state for online diagnostics and analysis, and also using python for setting initial conditions.
+\item Run time: 10 min. 
 \end{itemize}
 \end{frame}
 %
@@ -39,6 +40,9 @@
     \frametitle{Rotating periodic channel, exercises}
 \begin{itemize}
 \item Understand the use of analytic forcing functions in Fluidity using Python.
+\item For the Continuous Galerkin example, see what the effect is of removing the SUPG stabilisation
+\item Change the resolution of the adapted meshes
+\item Change the spatial and temporal discretisations to get a less diffusive advection scheme
 \end{itemize}
 \end{frame}
 
