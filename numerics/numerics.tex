@@ -11,6 +11,9 @@
 \usepackage{cancel}
 \newcommand\TILDE{\char`\~}
 \usepackage{listings}
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{\textwidth} % Horizontale Einheit
+\setlength{\TPVertModule}{\textheight} % Vertikale Einheit
 \usepackage[latin1]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,backgrounds,fit,shadows,positioning}
@@ -24,7 +27,7 @@
 \institute{Applied Modelling and Computation Group\\
 Department of Earth Science and Engineering\\
 Imperial College London}
-\author[Jon Hill]{\large{Jon Hill} and Stephan Kramer}
+\author[Stephan Kramer]{Stephan Kramer}
 \date{}
 
 \newcommand\pp[2]{\frac{\partial #1}{\partial #2}}
@@ -85,8 +88,13 @@ Imperial College London}
   diffusion matrix $\mat D$.
 \end{frame}
 
-\begin{frame}{Explicit Euler}
-  The explicit \emph{forward Euler} time stepping method gives:
+\begin{frame}{Explicit Euler\hspace{10ex}.}
+  \begin{textblock}{0.3}(.8,0)
+     \includegraphics[width=\textwidth]{forward-euler.png}
+  \end{textblock}
+  \begin{minipage}{0.7\textwidth}
+  Time integration with the  explicit \\
+  \emph{forward Euler} time stepping method:
   \begin{equation*}
     \mat M\frac{\vT^{n+1}-\vT^n}{\Delta t} 
     + \mat A(\vec u) \vT^n + \mat D \vT^n = 0
@@ -96,8 +104,15 @@ Imperial College London}
     \mat M \vT^{n+1} = \mat M \vT^n - \Delta t \left(
     \mat A(\vec u) \vT^n + \mat D \vT^n \right)
   \end{equation*}
+\end{minipage}
+
+  \only<1>{
+    \vspace{1ex}
   Even for an explicit method we still end up with a matrix equation to solve!
-  In some cases we approximate the mass matrix by \emph{mass lumping}.
+  For Continuous Galerkin FEM the inverse mass matrix is dense.
+  In some cases we approximate the mass matrix by a diagonal matrix
+  in a process called \emph{mass lumping}.}
+  \only<2>{
   \begin{block}{Courant condition}
     The explicit method is only \emph{conditionally} stable. For advection,
     a Courant
@@ -105,7 +120,32 @@ Imperial College London}
     \begin{equation*}
       \frac{u \Delta t}{\Delta x} < 1
     \end{equation*}
-  \end{block}
+  \end{block}}
+\end{frame}
+
+\begin{frame}{Courant condition \& unstructured}
+  Courant condition depends on numerical scheme.
+  \begin{example}
+    \small
+    \begin{minipage}{0.7\textwidth}
+      Consider first--order--upwind finite volume for advection
+      of a concentration $c$. For simplicity, assume that the
+      volume fluxes, normal velocity $u_n$ times width $w$,
+      in and out of cell 2 are equal (i.e.
+      incompressible flow). For cell 2 with area $A_2$, we have:
+      \begin{equation*}
+        A_2 c^{n+1}_2 = A_2 c^n_2 + \Delta t \left(u_n w c^n_1-u_n w c^n_2\right)
+      \end{equation*}
+      This can be rewritten as an interpolation
+      \begin{equation*}
+        c^{n+1}_2 = \left(1-\frac{\Delta t~u_n w}{A_2}\right) c^n_2
+        +\frac{\Delta t~u_n w}{A_2} c^n_1
+      \end{equation*}
+    \end{minipage}%
+    \begin{minipage}{0.3\textwidth}
+      \includegraphics[width=\textwidth]{three_triangles}
+    \end{minipage}
+  \end{example}
 \end{frame}
 
 \begin{frame}{Courant condition \& unstructured}
@@ -116,17 +156,15 @@ Imperial College London}
     For first order upwind finite volume, the concentration in cell 2 is given
     by
     \begin{equation*}
-      c^{n+1}_2 = \left(1-\frac{\Delta t~u_n l_{12}}{A_2}\right) c^n_2
-        +\frac{\Delta t~u_n~l_{12}}{A_2} c^n_1
+      c^{n+1}_2 = \left(1-\frac{\Delta t~u_n w}{A_2}\right) c^n_2
+        +\frac{\Delta t~u_n w}{A_2} c^n_1
     \end{equation*}
-    where $A_2$ is the area of cell 2, and $l_{12}$ the length of the edge
-    between cell 1 and 2.
 
-    This leads to a CFL condition:
+    Rewriting $u_n=\|u\| \hat u\cdot\vec n$, this leads to a CFL condition:
     \begin{equation*}
-        \frac{\Delta t~u_n~l_{12}}{A_2}<1
+        \frac{\Delta t~\|u\| \hat u\cdot\vec n~w}{A_2}<1
     \end{equation*}
-    In other words $\Delta x=A_2/l_{12}$.
+    In other words $\Delta x=\frac{A_2 \hat u\cdot\vec n}w$.
     \end{minipage}%
     \begin{minipage}{0.3\textwidth}
     \includegraphics[width=\textwidth]{three_triangles}
@@ -135,8 +173,13 @@ Imperial College London}
 \end{example}
 \end{frame}
 
-\begin{frame}{Implicit Euler}
-  The implicit \emph{backward Euler} time-integration method gives:
+\begin{frame}{Implicit Euler\hspace{10ex}.}
+  \begin{textblock}{0.3}(.8,0)
+     \includegraphics[width=\textwidth]{backward-euler.png}
+  \end{textblock}
+  \begin{minipage}{0.7\textwidth}
+  The implicit \emph{backward Euler} \\
+  time-integration method gives:
   \begin{equation*}
     \mat M\frac{\vT^{n+1}-\vT^n}{\Delta t} 
     + \mat A(\vec u) \vT^{n+1} + \mat D \vT^{n+1} = 0
@@ -145,6 +188,9 @@ Imperial College London}
   \begin{equation*}
     \left[ \mat M + \Delta t\left(\mat A(\vec u) + \mat D\right) \right] \vT^{n+1} = \mat M \vT^n 
   \end{equation*}
+  \end {minipage}
+
+  \vspace{1ex}
   This method is \emph{unconditionally} stable, i.e. no time step restriction.
 
   \vspace{1em}
@@ -920,7 +966,7 @@ Imperial College London}
 \begin{frame}{Linear solvers}
   \begin{block}{Computational methods to solver linear systems}
   \begin{itemize}
-    \item Direct solvers. Only small problems ($<\approx$5000 DOFs)
+    \item Direct solvers. Only smallish problems (typically 2D)
     \item Iterative solvers - we use the PETSc library
   \end{itemize}
 \end{block}
