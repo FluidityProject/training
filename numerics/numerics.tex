@@ -146,8 +146,8 @@ Imperial College London}
       Consider first--order--upwind finite volume for advection
       of a concentration $T$. In cell 2:
       \begin{align*}
-        A_2 T^{n+1}_2 = A_2 T^n_2
-        +&
+        A_2 T^{n+1}_2 = A_2 T^n_2 
+        +& 
         \Delta t~\vec{u_{12}}\cdot\vec n_{12}~w_{12}~T^n_1 \\
         -& \Delta t~\vec{u_{23}}\cdot\vec n_{23}~w_{23}~T^n_2.
       \end{align*}
@@ -279,9 +279,9 @@ Imperial College London}
 \begin{frame}{Discretisation for advection-diffusion}
   Three methods:
   \begin{itemize}
-    \item Continuous Galerkin
-    \item Control Volumes (Finite Volume)
-    \item Discontinuous Galerkin
+    \item \emph{Continuous Galerkin} Finite Element Method
+    \item \emph{Control Volumes} / Finite Volume Method
+    \item \emph{Discontinuous Galerkin} Finite Element Method
   \end{itemize}
 \end{frame}
 
