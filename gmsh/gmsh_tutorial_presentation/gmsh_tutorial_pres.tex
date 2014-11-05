@@ -76,9 +76,7 @@
       \vspace{10pt}
       \item Fetch \& open a copy of the present slides:
       \begin{itemize}
-         \item[$\circ$] For the duration of the training event slides are on \emph{scratch}
-         \item[\$] \emph{cp /scratch/gmsh\_tutorial\_presentation.pdf .} 
-         \item[\$] \emph{evince gmsh\_tutorial\_presentation.pdf \&} \\ \hspace{10pt} The ampersand is important.
+         \item[$\circ$] From GitHub (under meshing): \url{http://fluidityproject.github.io/training/}
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -95,9 +93,8 @@
      \vspace{10pt}
      \item The slides, as well as a more detailed tutorial, are freely available.\\
      \begin{itemize}
-         \item[$\circ$] You can download via Figshare:
-         \item[$\circ$] \href{http://figshare.com/s/0dbd16a2635b11e4a71206ec4b8d1f61}{slides}
-         \item[$\circ$] \url{tutorial document}
+         \item[$\circ$] Slides: via \href{http://figshare.com/s/0dbd16a2635b11e4a71206ec4b8d1f61}{Figshare} or \href{http://fluidityproject.github.io/training/}{GitHub}
+         \item[$\circ$] Tutorial document: via \href{}{Figshare}
      \end{itemize}
   \end{itemize}
 \end{frame}
@@ -141,13 +138,14 @@ where $ele$ is the number of elements in the tessellation.
    \item Lets fetch a Gmsh file and open it.
    \item Download a simple example file:
    \begin{itemize}
-      \item[$\circ$] Point your browser to \href{http://figshare.com/s/b0936b565f8211e4aee906ec4b8d1f61}{here}
+      \item[$\circ$] A torus!
+      \item[$\circ$] Point your browser to \href{http://figshare.com/s/42c5b418641811e4a3e306ec4bbcf141}{here}
       \item[$\circ$] Look at the file contents, it is a geometry description.
       \item[$\circ$] Click on ``Download''.
    \end{itemize}\vspace{10pt}
    \item Go back to your terminal
    \begin{itemize}
-      \item[\$] \emph{mv \$HOME/Downloads/annulus.geo .} \\to move the downloaded file into the new directory
+      \item[\$] \emph{mv \$HOME/Downloads/torus.geo .} \\to move the downloaded file into the working directory
    \end{itemize}
 \end{itemize}
 \end{frame}
@@ -156,7 +154,7 @@ where $ele$ is the number of elements in the tessellation.
   \begin{itemize} 
      \item Open the file, with Gmsh:
      \begin{itemize} 
-         \item[\$] \emph{gmsh annulus.geo \&} \\ \hspace{10pt} The ampersand is important.
+         \item[\$] \emph{gmsh torus.geo \&} \\ \hspace{10pt} The ampersand is important.
      \end{itemize} 
      \item The Gmsh window is composed of two panels:
   \end{itemize}
@@ -172,8 +170,8 @@ where $ele$ is the number of elements in the tessellation.
 \vspace{-5pt}
 \begin{figure}[htbp!]
  \centering
-  \includegraphics[width=1.0\textwidth]{../figures/annulus1}
-  \label{fig:annulus1}
+  \includegraphics[width=1.0\textwidth]{../figures/torus_z_view}
+  \label{fig:torus_z_view}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -202,7 +200,7 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{Meshing and saving the mesh}
 \begin{itemize}
-\item Mesh the annulus
+\item Mesh the torus:
 \begin{itemize}
   \item[$\circ$] \lstinline{Mesh > 3D}
   \item[$\circ$] Once again, try modifying the view.
@@ -210,10 +208,10 @@ where $ele$ is the number of elements in the tessellation.
 \vspace{5pt}
 \item To save the mesh click on File (menu window) and select Save Mesh.
 \begin{itemize}
-  \item[$\circ$] This creates a file ``annulus.msh'', storing the mesh.
+  \item[$\circ$] This creates a file ``torus.msh'', storing the mesh.
 \end{itemize}
 \vspace{5pt}
-\item More information on the annulus is available in the tutorial document fetched earlier.
+\item More information on the torus is available in the tutorial document fetched earlier.
 \begin{itemize}
   \item[$\circ$] Including instructions how to build the geometry.
 \end{itemize}
@@ -222,18 +220,18 @@ where $ele$ is the number of elements in the tessellation.
 
 \begin{frame}{The various files}
    \begin{itemize}
-      \item annulus.geo : Stores the geometry as an ASCII script file.
+      \item torus.geo : Stores the geometry as an ASCII script file.
       \begin{itemize}
          \item[$\circ$] You have already seen the contents, when downloading.
-         \item[\$] \emph{cat annulus.geo} \\ \hspace{10pt} To list the file lines (catenate) in your terminal
+         \item[\$] \emph{cat torus.geo} \\ \hspace{10pt} To list the file lines (catenate) in your terminal
          \item[$\circ$] Possible to write this file from scratch with a text editor.
          \item[$\circ$] Possible to use the Gmsh GUI to create this file.
       \end{itemize}\vspace{10pt}
-      \item annulus.msh : Stores the mesh
+      \item torus.msh : Stores the mesh
       \begin{itemize}
          \item[$\circ$] Also contains tags (numerical ID) on element vertices, edges and faces that we can use to assign boundary conditions.
          \item[$\circ$] Can be ASCII or binary.
-         \item[\$] \emph{cat annulus.msh} \\ \hspace{10pt} The file we generated here is ASCII
+         \item[\$] \emph{cat torus.msh} \\ \hspace{10pt} The file we generated here is ASCII
       \end{itemize}
    \end{itemize}
 \end{frame}
@@ -244,7 +242,7 @@ where $ele$ is the number of elements in the tessellation.
       \item Fluidity can also read meshes in triangle format.
       \begin{itemize}
          \item[$\circ$] The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
-         \item[\$] \emph{gmsh2triangle annulus.msh} \\ \hspace{10pt} Generates annulus.ele, annnulus.face, annulus.node
+         \item[\$] \emph{gmsh2triangle torus.msh} \\ \hspace{10pt} Generates torus.ele, torus.face, torus.node
          \item[\$] \emph{ls -l} \\ \hspace{10pt} to list the files.
          \item[\$] \emph{gmsh2triangle} \\ \hspace{10pt} Shows usage and options.\vspace{10pt}
       \end{itemize}
