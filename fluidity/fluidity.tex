@@ -11,10 +11,10 @@
 \usepackage{listings}
 
 % items enclosed in square brackets are optional; explanation below
-\title[Fluidity]{Downloading and building Fluidity}
+\title[Fluidity]{Obtaining and Compiling Fluidity}
 \subtitle[]{}
 \institute{1 - Dept of Earth Science and Engineering, Imperial College London}
-\author[Dave Robinson]{\large{Dave Robinson}\inst{1}}
+\author[Tim Greaves]{\large{Tim Greaves}\inst{1}}
 \date{}
 
 
@@ -26,115 +26,136 @@
   \titlepage
 \end{frame}
 
-%-- Overview slide --- %
-\section*{Outline}
 \begin{frame}
-  \frametitle{Outline}
-  \tableofcontents
-\end{frame}
-
-\begin{frame}
-        \frametitle{Today...}
-...we will learn how to:
+  \frametitle{Session Overview}
 \begin{itemize}
-    \item Build Fluidity
-    \item Make a mesh
-    \item Set up a Fluidity simulation
-    \item Run a Fluidity simulation
-    \item Look at the output
-    \item Run Fluidity in parallel
+    \item Installing Fluidity from packages
+    \item Obtaining Fluidity sourcecode
+    \item GitHub and Buildbot
+    \item Configuring, building, testing and installing
+    \item A brief introduction to running Fluidity
+    \item Updating Fluidity
 \end{itemize}
 \end{frame}
 
 
 \section{Getting Fluidity}
 \begin{frame}
-        \frametitle{Where to get Fluidity}
+        \frametitle{How to obtain Fluidity}
 \begin{itemize}
     \item {\bf Binary} (release only)
-	  \\Prebuilt Debian package available through wajig, apt-get, etc.
+	  \\Prebuilt packages are available for Ubuntu LTS, Red Hat 6 (and
+              derivatives), and OpenSuSE (not officially supported)
     \item {\bf Source} (release, trunk or branch)
-	  \\Download using bzr commands, accessing Launchpad.
-    \item {\bf Archived} (release only)
-	  \\Tarballed release source code (.tgz)
+	  \\Available from GitHub as a tarball (release only) or git repository
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{Downloading the Release binary}
+        \frametitle{Installing the Fluidity package: Ubuntu}
 \lstset{language=bash}
-{\centering{\color{red} *** please don't do this bit now ***}}
-\begin{lstlisting}[language=bash,basicstyle=\ttfamily\small]
+Add the Fluidity package repository to your system:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
 sudo apt-add-repository -y ppa:fluidity-core/ppa
 sudo apt-get update
+\end{lstlisting}
+Then install Fluidity:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
 sudo apt-get -y install fluidity
 \end{lstlisting}
-The binary of Fluidity requires no compiling or building and will be updated automatically by apt-get.
+This is a ready-to-run binary package and comes with a PDF manual and the
+Fluidity examples.
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{Downloading the Release source}
+        \frametitle{Installing the Fluidity package: Red Hat}
 \lstset{language=bash}
-{\centering{\color{red} *** please don't do this bit now ***}}
-\\ Alternatively, the source code for the release can be accessed using bzr.
-\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-bzr co lp:fluidity/4.1 fluidity-release/
-\end{lstlisting}    
-This will require configuring and building, which we will cover later.
+RHEL (Or CentOS) 6.5 is recommended for Fluidity, and requires the EPEL
+repository to be enabled 
+
+\hspace{10mm}(see http://fedoraproject.org/wiki/EPEL). 
+
+Add the Fluidity repository to your system:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
+sudo yum-config-manager --add-repo \
+  https://fluidityproject.github.com/yum/fluidity-rhel6.repo
+\end{lstlisting}
+Then install Fluidity:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
+sudo yum install fluidity
+\end{lstlisting}
+This is a ready-to-run binary package and comes with a PDF manual and the
+Fluidity examples.
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{Downloading the Trunk source}
+        \frametitle{Downloading Sourcecode}
 \lstset{language=bash}
-The source code for the trunk (or any branch) can also be accessed using bzr.
-\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-bzr co lp:fluidity/ fluidity/
+The source code for the latest release of Fluidity can be downloaded from:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
+https://github.com/FluidityProject/fluidity/releases/latest
+\end{lstlisting}    
+The latest development source for Fluidity (`master branch') can be cloned using git:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
+git clone https://github.com/FluidityProject/fluidity.git
 \end{lstlisting}    
 \end{frame}
 
-
 \begin{frame}
-        \frametitle{Launchpad}
+        \frametitle{http://github.com/FluidityProject}
 \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/launchpad-home.png}
+    \includegraphics[width=0.9\textwidth]{images/github-home.png}
 \end{center}
-http://launchpad.net/fluidity
-\end{frame}
-\begin{frame}
-        \frametitle{Launchpad}
-\begin{center}
-    \includegraphics[width=0.9\textwidth]{images/launchpad-bugs.png}
-\end{center}
-http://launchpad.net/fluidity
-\end{frame}
-\begin{frame}
-        \frametitle{Launchpad}
-\begin{center}
-    \includegraphics[width=0.9\textwidth]{images/launchpad-blueprint.png}
-\end{center}
-http://launchpad.net/fluidity
-\end{frame}
-\begin{frame}
-        \frametitle{Launchpad}
-\begin{center}
-    \includegraphics[width=0.9\textwidth]{images/launchpad-code.png}
-\end{center}
-http://launchpad.net/fluidity
-\end{frame}
-\begin{frame}
-        \frametitle{Launchpad}
-\begin{center}
-    \includegraphics[width=0.9\textwidth]{images/launchpad-code2.png}
-\end{center}
-http://launchpad.net/fluidity
 \end{frame}
 
 \begin{frame}
-\frametitle{Buildbot}
+        \frametitle{http://github.com/FluidityProject}
 \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-master.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{http://github.com/FluidityProject}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-changebranch.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{http://github.com/FluidityProject}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-changedbranch.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{http://github.com/FluidityProject}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-issues.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{http://github.com/FluidityProject}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-pullrequests.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{http://github.com/FluidityProject}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{images/github-wiki.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+http://buildbot-ocean.ese.ic.ac.uk:8080/waterfall
+
 \includegraphics[width=0.9\textwidth]{images/buildbot.png}
 \end{center}
-http://buildbot-ocean.ese.ic.ac.uk:8080/waterfall
 \end{frame}
 
 \section{Configuring and building}
@@ -149,7 +170,6 @@ Set up compile-time options, such as:
 \end{itemize}
 \lstset{language=bash}
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-module load petsc-gcc4
 cd [fluidity directory]
 ./configure --enable-2d-adaptivity
 \end{lstlisting}
@@ -158,18 +178,33 @@ cd [fluidity directory]
 \begin{frame}[fragile]
         \frametitle{Building}
 \lstset{language=bash}
+Before building Fluidity, clean your source code:
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-make clean && make -j 4 && make fltools
+make clean
 \end{lstlisting}
+Now make the main code:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
+make -j 4
+\end{lstlisting}
+And build the Fluidity tool suite:
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
+make fltools
+\end{lstlisting}
+
+
+
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Python}
 \lstset{language=bash}
 Fluidity contains several Python packages that are required for it to run.  
-The Fluidity python directory must be added to the existing environment variable PYTHONPATH.
+Where you have not installed Fluidity system-wide, the Fluidity python
+directory must be added to the existing environment variable PYTHONPATH.
+
+From the fluidity/ directory, run:
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily\footnotesize]
-export PYTHONPATH=$PYTHONPATH:/data/fluidity/python
+export PYTHONPATH=$PYTHONPATH:$PWD/python
 \end{lstlisting}
 This can be checked by using the echo command.
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily\footnotesize]
@@ -177,13 +212,14 @@ echo $PYTHONPATH
 \end{lstlisting}
 \end{frame}
 
-\section{Installing}
+\section{Testing}
 \begin{frame}[fragile]
         \frametitle{Tests}
 \lstset{language=bash}
-If you wished to check that a particular build of Fluidity passes the group's library of verification tests then you can use one of these commands.
 
-{\center{\color{red} *** please don't do this bit now ***}}
+To check that all the verification tests run and pass with 
+your Fluidity build, you can issue the following commands:
+
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily]
 make unittest
 make test
@@ -194,7 +230,8 @@ make mediumtest
 \begin{frame}[fragile]
         \frametitle{Installing}
 \lstset{language=bash}
-Installing Fluidity enables access for all other users of your computer.
+Installing Fluidity enables access for all other users of your computer; this
+may require 'sudo' or other administrative access.
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily]
 make install
 make install-diamond
@@ -205,7 +242,7 @@ make install-user-schemata
 \begin{frame}
     \frametitle{Running Fluidity}
 From source:    
-\\ \texttt{[fl. dir.]/bin/fluidity -v2 -l [filename].flml}
+\\ \texttt{<fluidity-clone>/bin/fluidity -v2 -l [filename].flml}
 \\ [0.5cm]
 From binary:    
 \\ \texttt{fluidity -v2 -l [filename].flml}
@@ -214,30 +251,14 @@ From binary:
 \begin{frame}[fragile]
         \frametitle{Updating}
 \lstset{language=bash}
-\begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-bzr up
-    
-M preprocessor/Populate_State.F90
-\end{lstlisting}
+If you want to update your local clone of the Fluidity repository to the newest
+commit, run:
 
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily]
-bzr status
-bzr status -SV
-bzr diff filename
+git pull
 \end{lstlisting}
-\end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{edit \textasciitilde /.bashrc}
-.bashrc is a file run everytime you open a new terminal.
-\\ \vspace{10pt}
-\texttt{cd}
-\\ \texttt{gedit .bashrc \&}
-\\ \vspace{10pt}
-Go to the end of the file and add the following lines:
-\\ \vspace{10pt}
-\texttt{module load petsc-gcc4}
-\\ \texttt{export PYTHONPATH=\$PYTHONPATH:/data/[your username]/fluidity/python}
+from within the local clone.
 
 \end{frame}
 
