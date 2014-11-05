@@ -1,4 +1,4 @@
-PDFS=set_up.pdf
+PDFS=diamond.pdf
 
 default: $(PDFS)
 
