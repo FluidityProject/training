@@ -7,11 +7,12 @@ DIRS=placeholders\
 	 diamond\
 	 fluidity\
 	 intro\
-	 header
+	 header\
+	 simulation_breaks\
+	 parallel\
 
-FILES=	./intro/intro.pdf\
+FILES=	./Piggott-FluidityTraining-051114.pdf\
 	./IntroToFEM/IntroToFEMJRP.pdf\
-	./DavidsFEMDaySlides.pdf \
 	./numerics/numerics.pdf\
 	\
 	./intro/intro_day2.pdf\
@@ -19,10 +20,11 @@ FILES=	./intro/intro.pdf\
 	./diamond/set_up.pdf\
 	./gmsh_tutorial_pres.pdf\
 	./running_visualisation/running_visualisation.pdf\
+	./parallel/parallel.pdf\
 	\
 	./intro/intro_day3.pdf\
 	./examples/examples_combined.pdf\
-
+	./simulation_breaks/simulation_break.pdf
 
 default:
 	for dir in $(DIRS); do \
