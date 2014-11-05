@@ -1,0 +1,2942 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+%\usetheme{Warsaw}
+\usetheme{amcg}
+%\usepackage{eulervm}
+\usepackage{bm}
+% or ...
+
+%\usecolortheme{orchid}
+%\setbeamertemplate{footline}[text line]{} % makes the footer EMPTY
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This file is a solution template for:
+\end_layout
+
+\begin_layout Itemize
+Talk at a conference/colloquium.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk length is about 20min.
+ 
+\end_layout
+
+\begin_layout Itemize
+Style is ornate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+In principle, this file can be redistributed and/or modified under the terms
+ of the GNU Public License, version 2.
+ However, this file is supposed to be a template to be modified for your
+ own needs.
+ For this reason, if you use this file as a template and not specifically
+ distribute it as part of a another package/program, the author grants the
+ extra permission to freely copy and modify this file as you see fit and
+ even to delete this copyright notice.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Mesh Adaptivity and Fluidity
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mesh Adaptivity and Fluidity
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+James
+\begin_inset space ~
+\end_inset
+
+Percival
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+James Percival
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+- optional, use only with lots of authors
+\end_layout
+
+\begin_layout Plain Layout
+- if there are really lots of authors, use 
+\begin_inset Quotes eld
+\end_inset
+
+Author et al.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+AMCG,
+\begin_inset Newline newline
+\end_inset
+
+Department of Earth Science and Engineering
+\begin_inset Newline newline
+\end_inset
+
+Imperial College London
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Use the 
+\begin_inset Quotes eld
+\end_inset
+
+Institute mark
+\begin_inset Quotes erd
+\end_inset
+
+ inset (
+\family sans
+Insert\SpecialChar \menuseparator
+Custom Insets\SpecialChar \menuseparator
+InstituteMark
+\family default
+) only if there are several affiliations.
+\end_layout
+
+\begin_layout Itemize
+Keep it simple, no one is interested in your street address.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+AMCG
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, but mostly needed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Fluidity Training 2014
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Either use conference name or its abbreviation.
+ 
+\end_layout
+
+\begin_layout Itemize
+Not really informative to the audience, more for people (including yourself)
+ who are reading the slides online
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Fluidity Training 2014
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, should be abbreviation of conference name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you have a file called "institution-logo-filename.xxx", where xxx is a
+ graphic format that can be processed by latex or pdflatex, resp., then you
+ can add a logo by uncommenting the following:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{institution-logo-filename}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning
+ of every subsection.
+ Delete this, if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+%  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+%    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+%    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%  }
+\end_layout
+
+\begin_layout Plain Layout
+
+%}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Mesh Adaptivity
+\end_layout
+
+\begin_layout Subsection
+Grids and meshes in computational science
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Grids & Meshes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Aside from spectral/particle based methods, computational grids and meshes
+ are ubiquitous in computational science:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Grids}
+\end_layout
+
+\end_inset
+
+ of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{points}
+\end_layout
+
+\end_inset
+
+ for finite difference methods
+\end_layout
+
+\begin_layout Itemize
+Tesselations of subvolumes for finite volume methods
+\end_layout
+
+\begin_layout Itemize
+Tesselations of elements for finite element methods
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Uniform.pdf
+	lyxscale 25
+	width 25text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Nonuniform.pdf
+	lyxscale 25
+	width 25text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Unstructured.pdf
+	lyxscale 25
+	width 25text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Grids & Meshes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Meshes/grids:
+\end_layout
+
+\begin_layout Itemize
+can be structured or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{unstructured}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+describe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{geometry}
+\end_layout
+
+\end_inset
+
+ of problem.
+\end_layout
+
+\begin_layout Itemize
+define a local resolvable 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{resolution}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+help determine bounds on solution error.
+\end_layout
+
+\begin_layout Standard
+Frequently fine resolution is only required in limited regions, which change
+ with time.
+\end_layout
+
+\begin_layout Standard
+Idea: progressively modify the mesh to put resolution where it is needed.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Adaptive Mesh Refinement
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Mesh Refinement (AMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When this idea is followed through on structured meshes, it is often called
+ adaptive mesh refinement.
+ Blocks are subdivided in areas of refinement.
+ Good for computer memory access, less good for physics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.65cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MDP_00.png
+	scale 45
+	BoundingBox 0bp 0bp 1000bp 600bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Mesh Refinement (AMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When this idea is followed through on structured meshes, it is often called
+ adaptive mesh refinement.
+ Blocks are subdivided in areas of refinement.
+ Good for computer memory access, less good for physics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.65cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MDP_01.png
+	scale 45
+	BoundingBox 0bp 0bp 1000bp 600bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Mesh Refinement (AMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When this idea is followed through on structured meshes, it is often called
+ adaptive mesh refinement.
+ Blocks are subdivided in areas of refinement.
+ Good for computer memory access, less good for physics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.65cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MDP_02.png
+	scale 45
+	BoundingBox 0bp 0bp 1000bp 600bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Mesh Refinement (AMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When this idea is followed through on structured meshes, it is often called
+ adaptive mesh refinement.
+ Blocks are subdivided in areas of refinement.
+ Good for computer memory access, less good for physics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.65cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MDP_03.png
+	scale 45
+	BoundingBox 0bp 0bp 1000bp 600bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Mesh Refinement (AMR)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+When this idea is followed through on structured meshes, it is often called
+ adaptive mesh refinement.
+ Blocks are subdivided in areas of refinement.
+ Good for computer memory access, less good for physics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.65cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MDP_04.png
+	scale 45
+	BoundingBox 0bp 0bp 1000bp 600bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Adaptive meshing for FEM
+\end_layout
+
+\begin_layout Subsection
+Forms of element adaptivity
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finite elements: 
+\begin_inset Formula $h$
+\end_inset
+
+ adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_0.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_h1.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $h$
+\end_inset
+
+ adapt
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Adapt by using more, smaller elements (
+\begin_inset Formula $h$
+\end_inset
+
+ = step size)
+\end_layout
+
+\begin_layout Itemize
+Analagous to AMR.
+\end_layout
+
+\begin_layout Itemize
+Decreases error estimates, increases complexity (refinement)
+\end_layout
+
+\begin_layout Itemize
+Increases error estimates, decreases complexity (coarsening)
+\end_layout
+
+\begin_layout Itemize
+Implemented in Fluidity.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finite elements: 
+\begin_inset Formula $r$
+\end_inset
+
+ adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_0.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_r1.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r$
+\end_inset
+
+ adapt
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Adapt by repositioning nodes so that elements are 
+\begin_inset Quotes eld
+\end_inset
+
+better
+\begin_inset Quotes erd
+\end_inset
+
+ shape
+\end_layout
+
+\begin_layout Itemize
+Decreases error, maintains complexity.
+\end_layout
+
+\begin_layout Itemize
+Implemented in Fluidity.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finite elements: 
+\begin_inset Formula $p$
+\end_inset
+
+ adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_0.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename adapt_p1.png
+	lyxscale 25
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+ adapt
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Adapt by using higher/lower order elements as required in different parts
+ of mesh
+\end_layout
+
+\begin_layout Itemize
+Decreases error estimates, increases complexity (refinement)
+\end_layout
+
+\begin_layout Itemize
+Increases error estimates, decreases complexity (coarsening)
+\end_layout
+
+\begin_layout Itemize
+Complex coupling with 
+\begin_inset Formula $h$
+\end_inset
+
+ adaptivity.
+\end_layout
+
+\begin_layout Itemize
+Not currently implemented in Fluidity
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Solution error and mesh resolution in FEM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Revision of Céa's lemma
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Céa's lemma provides inequality.
+\begin_inset Formula 
+\[
+\mbox{error}:=\left\Vert \psi-\psi^{\delta}\right\Vert \leq\frac{\alpha C}{c}\sup_{\Omega_{i}}h_{i}\sup_{x\in\Omega}\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|
+\]
+
+\end_inset
+
+Used this to show convergence as 
+\begin_inset Formula $h\rightarrow$
+\end_inset
+
+0.
+ But also a connection to adaptive meshing.
+ Go element by element
+\begin_inset Formula 
+\[
+\left\Vert \psi-\psi^{\delta}\right\Vert \leq\frac{\alpha}{c}\sum_{i}h_{i}^{2}\sup_{x\in\Omega_{i}}\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One definition of 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ mesh will minimise this representation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{error estimate}
+\end_layout
+
+\end_inset
+
+.
+ When 
+\begin_inset Formula $\left|\frac{\partial^{2}\psi}{\partial x^{2}}\right|$
+\end_inset
+
+ is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{small}
+\end_layout
+
+\end_inset
+
+, element size 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ can be 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{large}
+\end_layout
+
+\end_inset
+
+, and vice versa.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Connection to mesh adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../IntroToFEM/adapt_ex1.png
+	height 90theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Connection to mesh adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../IntroToFEM/adapt_ex2.png
+	height 90theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+Mesh optimization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Connection to mesh adaptivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Problem: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We don't know true solution,
+\begin_inset Formula $\psi$
+\end_inset
+
+, so can't find 
+\begin_inset Formula $\frac{\partial^{2}\psi}{\partial x^{2}}$
+\end_inset
+
+ etc.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Solution:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+We have an existing value of FE solution, 
+\begin_inset Formula $\psi^{\delta}$
+\end_inset
+
+, Esimate derivatives from that.
+ 
+\end_layout
+
+\begin_layout Standard
+In 2D/3D 
+\begin_inset Formula $\frac{\partial^{2}\psi}{\partial x^{2}}$
+\end_inset
+
+ gets replaced in the formula with the Hessian matrix,
+\begin_inset Formula 
+\[
+\mathcal{H}\left(\psi\right)=\left(\begin{array}{ccc}
+\frac{\partial^{2}\psi}{\partial x^{2}} & \frac{\partial^{2}\psi}{\partial x\partial y} & \frac{\partial^{2}\psi}{\partial x\partial z}\\
+\frac{\partial^{2}\psi}{\partial x\partial y} & \frac{\partial^{2}\psi}{\partial y^{2}} & \frac{\partial^{2}\psi}{\partial y\partial z}\\
+\frac{\partial^{2}\psi}{\partial x\partial z} & \frac{\partial^{2}\psi}{\partial y\partial z} & \frac{\partial^{2}\psi}{\partial z^{2}}
+\end{array}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mesh optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Taking useful approximations to the error estimate, (see Chapter 7 of Fluidity
+ manual) our goal for a mesh with 
+\begin_inset Quotes eld
+\end_inset
+
+nicely spread
+\begin_inset Quotes erd
+\end_inset
+
+ error estimate is
+\begin_inset Formula 
+\[
+\frac{1}{\epsilon}\bm{v}_{k}^{T}\mathcal{M}\bm{v}_{k}=1
+\]
+
+\end_inset
+
+where the 
+\begin_inset Formula $\bm{v}$
+\end_inset
+
+s are the (vector) edges of the mesh, 
+\begin_inset Formula $\mathcal{M}=\mathcal{M}\left(\psi^{\delta}\right)$
+\end_inset
+
+ is a function of the Hessian matrix (called the mesh metric tensor).
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{interpolation error bound}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+, is a normalizing factor which also nondimensionalizes the problem.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on the interpolation error bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ has the same physical units as the field, 
+\begin_inset Formula $\psi$
+\end_inset
+
+, so can sensibly be specified in either:
+\end_layout
+
+\begin_layout Enumerate
+absolute units (eg.
+ 1 m/s for a velocity field) or,
+\end_layout
+
+\begin_layout Enumerate
+relative units (eg.
+ 5% of the local value of 
+\begin_inset Formula $\psi^{\delta}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+It is also the principle control on the 
+\begin_inset Formula $\emph{number}$
+\end_inset
+
+ of nodes and elements required.
+ It is thus often hard to guess without experimentation, and simulation
+ data from fixed resolution runs.
+ In the absence of other information, a fraction (e.g.
+ 10%) of the total variation in 
+\begin_inset Formula $\psi$
+\end_inset
+
+ expected across the entire domain may be a suitable first choice.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of the Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename MeshAdaptivity.png
+	height 90theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Points to remember
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mathematics has been given for a single variable, but in practice CFD involves
+ multiple prognostic variables.
+\end_layout
+
+\begin_layout Itemize
+Extension trivial, but each field requires own 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{interpolation error bound}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Haven't discussed the choice function in 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Implementation in parallel introduces additional complications
+\end_layout
+
+\begin_layout Itemize
+See Fluidity manual for more details.
+\end_layout
+
+\begin_layout Itemize
+Can minimize error estimate, but this may make numerics tricky.
+ Answer through additional constraints.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Further considerations
+\end_layout
+
+\begin_layout Subsection
+Bounds, gradation and metric advection
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metric Tensor Bounds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Usually desriable to have some additional constraints on the target lengths
+ in the mesh error metric tensor.
+ Fluidity accepts 2 inputs, giving the equation of bounding ellipses/ellipsoids
+ on the edge lengths in symmetric positive definite tensorial form:
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\Phi & =\left(\begin{array}{cc}
+a_{11} & a_{21}\\
+a_{21} & a_{22}
+\end{array}\right)\\
+ & =R\left(\begin{array}{cc}
+d_{1} & 0\\
+0 & d_{2}
+\end{array}\right)R^{T}
+\end{alignat*}
+
+\end_inset
+
+
+\begin_inset Formula $R=\left(\begin{array}{cc}
+\cos\left(\theta\right) & -\sin\left(\theta\right)\\
+\sin\left(\theta\right) & \cos\left(\theta\right)
+\end{array}\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{alignat*}{1}
+\left(\begin{array}{cc}
+x & y\end{array}\right)\Phi^{-1}\Phi^{-1}\left(\begin{array}{c}
+x\\
+y
+\end{array}\right) & =1.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename MetricEllipse.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on Metric Tensor Bounds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bounds are soft limits, not hard ones.
+\end_layout
+
+\begin_layout Itemize
+Interpolation error bounds should be primary control.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Maximum edge lengths}
+\end_layout
+
+\end_inset
+
+ often come from the geometry.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Also need to have enough resolution for phenomena to form.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Minimum edge lengths}
+\end_layout
+
+\end_inset
+
+ often come from the physics.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Also bad idea to have too many lengthscales in problem at once.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Example in domain with sides 
+\begin_inset Formula $L\times L\times H$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mbox{max.}=\left(\begin{array}{ccc}
+\frac{L}{10} & 0 & 0\\
+0 & \frac{L}{10} & 0\\
+0 & 0 & \frac{H}{10}
+\end{array}\right),\quad\mbox{min.}=\left(\begin{array}{ccc}
+\frac{L}{100} & 0 & 0\\
+0 & \frac{L}{100} & 0\\
+0 & 0 & \frac{H}{100}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metric Advection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The new mesh is optimized to have a small error metric at time it is calculated.
+ However, remeshing each time step would be both expensive and potentially
+ damaging to the solution.
+ Ideally would like to have bound on the error estimate which remains reasonable
+ as the simulation progresses.
+ 
+\end_layout
+
+\begin_layout Standard
+For advection dominated problems we can do this by treating the metric tensor
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+just another variable
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial\mathcal{M}}{\partial t}+\bm{u}\left(t_{0}\right)\cdot\nabla\mathcal{M}=0,\quad t\in[t_{0},t_{f}]
+\]
+
+\end_inset
+
+And attempt to set
+\begin_inset Formula 
+\[
+\frac{1}{\epsilon}\max_{\tau\in[t_{0},t_{f}]}\left(\bm{v}_{k}^{T}\mathcal{M}\left(\tau\right)\bm{v}_{k}\right)=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on Metric Advection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Metric advection increases limit on the period between adapts (usually)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rule of thumb for transient problem: 10 - 20 time steps.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Avoids issues with dissipation & balance linked to frequent mesh adaptation.
+\end_layout
+
+\begin_layout Itemize
+Fairly robust to choice of advection scheme, so long as it's stable
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(see next set of talks)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+May increase problem sizes (larger areas with high resolution)
+\end_layout
+
+\begin_layout Itemize
+May misbehave if the physics of the system bifurcates.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Metric Gradation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Often a bad idea to have length scales changing very rapidly between neighbourin
+g elements.
+ (conditioning)
+\end_layout
+
+\begin_layout Itemize
+Post-processing of 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ can enforce smooth increases in the metric away from minima:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Isotropic 
+\begin_inset Formula $\|\bm{v}_{i}\|/\|\bm{v}_{j}\|\leq$
+\end_inset
+
+
+\family roman
+\color green
+1.5
+\family default
+\color inherit
+ if i, j are neighbouring edges (default)
+\end_layout
+
+\begin_layout Itemize
+anisotropic 
+\begin_inset Formula $\bm{v}_{i}\cdot\underline{\Gamma}\cdot\bm{v}_{j}\leq\|\bm{v}_{j}\|^{2}$
+\end_inset
+
+ if i, j are neighbouring edges
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on Metric Gradation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A typical choice would be
+\begin_inset Formula 
+\[
+\underline{\Gamma}=\left(\begin{array}{cc}
+1.5 & 0\\
+0 & 1.5
+\end{array}\right)\mbox{ or, to same result}\left(\begin{array}{cc}
+1/1.5 & 0\\
+0 & 1/1.5
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The default gradation is good unless there's a special reason to have a
+ very smooth variation.
+\end_layout
+
+\begin_layout Itemize
+Anisotropic gradation is more suited to anistropic problems (fronts/filaments/hi
+gh aspect ratios)
+\end_layout
+
+\begin_layout Itemize
+Sometimes want to limit individual element aspect ratios as well.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Variable mesh to mesh interpolation
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mesh to Mesh interpolation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Having found an improved mesh to represent our solutions, must still transfer
+ variable data (velocities, pressures etc) from the old mesh onto the new
+ one.
+ This is the mesh to mesh interpolation problem.
+ Ideal method would:
+\end_layout
+
+\begin_layout Itemize
+be fast computationally
+\end_layout
+
+\begin_layout Itemize
+be conservative where relevant
+\end_layout
+
+\begin_layout Itemize
+remain bounded (for data which have meaningful bounds)
+\end_layout
+
+\begin_layout Itemize
+return the original data for the original mesh
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consistent Interpolation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Conceptually simplest scheme is to set nodes of the new mesh to the function
+ values on the old mesh,
+\begin_inset Formula 
+\[
+\psi_{i}^{\mbox{new}}=\psi^{\mbox{new}}\left(\bm{p}_{i}\right)=\sum_{j}N_{j}^{\mbox{old}}\left(\bm{p}_{j}\right)\psi_{j}^{\mbox{old}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ConsistentInterpolation.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on Consistent Interpolation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fast.
+\end_layout
+
+\begin_layout Itemize
+Nonconservative.
+\end_layout
+
+\begin_layout Itemize
+Bounded.
+\end_layout
+
+\begin_layout Itemize
+Preserves data under identity mesh transformation.
+\end_layout
+
+\begin_layout Itemize
+Doesn't like discontinuous data.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Galerkin projection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A second option is to treat the problem
+\begin_inset Formula 
+\[
+\psi^{\mbox{new}}=\psi^{\mbox{old}}
+\]
+
+\end_inset
+
+as a standard finite element problem.
+ Obtain Galerkin projection equation
+\begin_inset Formula 
+\[
+\sum_{j}\int_{\Omega}N_{i}^{\mbox{new}}N_{j}^{\mbox{new}}\psi_{j}^{\mbox{new}}dV=\sum_{k}\int_{\Omega}N_{i}^{\mbox{new}}N_{k}^{\mbox{old}}\psi_{k}^{\mbox{old}}dV
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Left hand side is standard sparse mass matrix.
+ The right hand side is more complicated, but can be dealt with by supermeshing.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notes on Galerkin projection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Significantly slower than consistent interpolation.
+\end_layout
+
+\begin_layout Itemize
+Conservative.
+\end_layout
+
+\begin_layout Itemize
+Not bounded (especially near discontinuities/extrema)
+\end_layout
+
+\begin_layout Itemize
+Preserves data under identity mesh transformation.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fluidity mesh adaptivity places resolution in regions of high curvature
+\end_layout
+
+\begin_layout Itemize
+Minimizes the interpolation error estimate for a given number of nodes
+\end_layout
+
+\begin_layout Itemize
+Uses 
+\begin_inset Formula $hr$
+\end_inset
+
+ adaptive scheme.
+\end_layout
+
+\begin_layout Itemize
+Interpolate data from old to new mesh using chosen scheme.
+\end_layout
+
+\begin_layout Itemize
+For a new problem, usually best to do fixed resolution runs first.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Grandy
+\begin_inset Quotes erd
+\end_inset
+
+ interpolation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+Galerkin projection can be modified to be bounded by averaging data only
+ constant functions on the elements, projecting in that space, then performing
+ a final projection to the normal shape functions
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\tilde{\psi}^{\mbox{old}}\left(\bm{p}\right)\int_{\Omega^{(i)}}dV=\begin{cases}
+\int_{\Omega^{(i)}}\psi^{\mbox{old}}dV & \bm{p}\in\Omega^{(i)}\\
+0 & \mbox{otherwise.}
+\end{cases},\qquad
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\psi}_{i}^{\mbox{new}}\int_{\Omega_{(i)}^{\mbox{new}}}dV=\int_{\Omega_{(i)}^{\mbox{new}}}\tilde{\psi}^{\mbox{old}}dV.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{j}\int_{\Omega}N_{i}^{\mbox{new}}N_{j}^{\mbox{new}}\psi_{j}^{\mbox{new}}dV=\sum_{k}\int_{\Omega}N_{i}^{\mbox{new}}\tilde{\psi}_{k}^{\mbox{old}}dV.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Slower than consistent interpolation
+\end_layout
+
+\begin_layout Itemize
+Is conservative.
+\end_layout
+
+\begin_layout Itemize
+Is only bounded for discontinuous elements.
+\end_layout
+
+\begin_layout Itemize
+Doesn't preserve data under identity mesh transformation.
+\end_layout
+
+\begin_layout Itemize
+Very dissipative.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+References
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatebookbibitems
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Start with overview books.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Fluidity Manual
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ AMCG
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 2014
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Followed by interesting articles.
+ Keep the list short.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Start with overview books.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatearticlebibitems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+C.
+ C.
+ Pain, A.
+ P.
+ Umpleby, et al.
+ Tetrahedral mesh optimisation and adaptivity for steady-state and transient
+ finite element calculations.
+
+\shape italic
+\color green
+ 
+\color black
+Computer Methods in Applied Mechanics and Engineering
+\shape default
+\color inherit
+, 2001.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Farrell"
+key "key-4"
+
+\end_inset
+
+P.
+ E.
+ Farrell and J.
+ R.
+ Maddison.
+ Conservative interpolation between volume meshes by local Galerkin projection.
+ 
+\shape italic
+\color black
+Computer Methods in Applied Mechanics and Engineering
+\shape default
+\color inherit
+, 2011.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

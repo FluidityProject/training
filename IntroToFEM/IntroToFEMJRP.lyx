@@ -736,6 +736,22 @@ Finite Difference Methods
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Columns
 
 \end_layout
@@ -762,7 +778,7 @@ Replace exact derivatives with approximate difference equations.
 \align center
 \begin_inset Graphics
 	filename images/fin_dif.png
-	width 100text%
+	width 140text%
 	BoundingBox 30bp 10bp 550bp 370bp
 	clip
 
@@ -859,7 +875,7 @@ If fluxes depend on derivatives then another method (e.g.
 \begin_layout ColumnsCenterAligned
 \begin_inset Formula 
 \[
-\frac{d}{dt}\int_{\Omega_{i}}\rho dV=\sum_{\mbox{faces}}\int_{\delta\Omega_{i}^{(j)}}\rho\bm{u}\cdot\bm{n}dS
+\frac{d}{dt}\int_{\Omega_{i}}\rho dV=\sum_{\mbox{\footnotesize faces}}\int_{\delta\Omega_{i}^{(j)}}\rho\bm{u}\cdot\bm{n}dS
 \]
 
 \end_inset
@@ -902,13 +918,29 @@ Spectral Methods
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout ColumnsCenterAligned
 
 \end_layout
 
 \begin_deeper
 \begin_layout Column
-5cm
+4.5cm
 \end_layout
 
 \begin_layout Itemize
@@ -955,9 +987,22 @@ Truncate infinite series and calculate behaviour of finite set of coefficients.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{alignat*}{1}
-f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)\\
- & \approx\sum_{n=1}^{N}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)
+f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(n\frac{\pi x}{L}\right)+b_{n}\sin\left(n\frac{\pi x}{L}\right)\\
+ & \approx\sum_{n=1}^{N}a_{n}\cos\left(n\frac{\pi x}{L}\right)+b_{n}\sin\left(n\frac{\pi x}{L}\right)
 \end{alignat*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.4cm}
+\end_layout
 
 \end_inset
 
@@ -968,7 +1013,8 @@ f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx
 \align center
 \begin_inset Graphics
 	filename images/spec_ex.png
-	width 100text%
+	lyxscale 40
+	width 135text%
 
 \end_inset
 
@@ -2110,7 +2156,7 @@ a\exp\left(X-x\right) & x>X
 \begin_inset Graphics
 	filename peakon.png
 	lyxscale 50
-	width 60text%
+	width 50text%
 
 \end_inset
 
@@ -2828,9 +2874,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_0.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2857,9 +2904,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_1.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2886,9 +2934,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_2.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2915,9 +2964,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_3.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2944,9 +2994,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_4.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2973,9 +3024,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_5.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -3002,9 +3054,10 @@ Finite Element Functions
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename images/N_6.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -3423,7 +3476,7 @@ Solutions: Finite Element
 \begin_inset Graphics
 	filename images/solnFE.png
 	lyxscale 40
-	width 90text%
+	width 80text%
 
 \end_inset
 
@@ -3481,7 +3534,7 @@ Solutions: Finite Difference
 \begin_inset Graphics
 	filename images/solnFD.png
 	lyxscale 40
-	width 90text%
+	width 80text%
 
 \end_inset
 
@@ -3539,7 +3592,7 @@ Solutions: Finite Volume
 \begin_inset Graphics
 	filename images/solnFV.png
 	lyxscale 40
-	width 90text%
+	width 80text%
 
 \end_inset
 
@@ -4198,7 +4251,7 @@ Finite Element Functions
 \begin_layout Standard
 \begin_inset Graphics
 	filename images/N2_0.png
-	width 100text%
+	width 85text%
 
 \end_inset
 
@@ -4227,7 +4280,7 @@ Finite Element Functions
 \begin_layout Standard
 \begin_inset Graphics
 	filename images/N2_1.png
-	width 100text%
+	width 85text%
 
 \end_inset
 
@@ -4256,7 +4309,7 @@ Finite Element Functions
 \begin_layout Standard
 \begin_inset Graphics
 	filename images/N2_2.png
-	width 100text%
+	width 85text%
 
 \end_inset
 
@@ -4285,7 +4338,7 @@ Finite Element Functions
 \begin_layout Standard
 \begin_inset Graphics
 	filename images/N2_3.png
-	width 100text%
+	width 85text%
 
 \end_inset
 
@@ -4314,7 +4367,7 @@ Finite Element Functions
 \begin_layout Standard
 \begin_inset Graphics
 	filename images/N2_4.png
-	width 100text%
+	width 85text%
 
 \end_inset
 
@@ -4369,7 +4422,7 @@ Good representation of slowly varying functions
 \align center
 \begin_inset Graphics
 	filename images/proj_p2.png
-	width 90text%
+	width 85text%
 
 \end_inset
 
@@ -4495,7 +4548,7 @@ Good representation of discontinuties/fronts/large gradients.
 \align center
 \begin_inset Graphics
 	filename images/proj_p1_dg.png
-	width 90text%
+	width 85text%
 
 \end_inset
 
@@ -5160,7 +5213,7 @@ Numerical method to calculate/approximate integrals:
 \align center
 \begin_inset Graphics
 	filename images/quad_func_0.pdf
-	width 70text%
+	height 55theight%
 	BoundingBox 0bp 20bp 576bp 412bp
 
 \end_inset
@@ -5206,7 +5259,7 @@ Numerical method to calculate/approximate integrals:
 \align center
 \begin_inset Graphics
 	filename images/quad_func_1.pdf
-	width 70text%
+	height 55theight%
 	BoundingBox 0bp 20bp 576bp 412bp
 
 \end_inset
@@ -5289,11 +5342,43 @@ Quadrature
 
 \begin_deeper
 \begin_layout Standard
-The degree or order of a quadrature rule over an interval is the largest
+A quadrature is called exact for functions where
+\begin_inset Formula 
+\[
+\int_{a}^{b}f\left(\bm{x}\right)d^{n}x=\sum_{x=1}^{N}w_{i}f\left(\bm{p}_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The degree (or order) of a quadrature rule over an interval is the largest
  integer, n such that method is exact for all
 \begin_inset Formula 
 \[
 p_{n}=a_{0}x^{n}+a_{1}x^{n-1}+\ldots a_{n}\quad a_{i}\in\mathbb{R}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a FE method, would a quadrature which captures the 
+\begin_inset Quotes eld
+\end_inset
+
+worst
+\begin_inset Quotes erd
+\end_inset
+
+ order of the terms in the integral, eg
+\begin_inset Formula 
+\[
+\int_{x_{j}}^{x_{j+1}}\nabla N_{i}^{(\tau)}N_{j}^{(u)}N_{j}^{(\tau)}dx.
 \]
 
 \end_inset
@@ -5600,7 +5685,7 @@ Summary
 status open
 
 \begin_layout Plain Layout
-Summary
+Final Summary
 \end_layout
 
 \end_inset

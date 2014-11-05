@@ -159,6 +159,8 @@ The Fluidity model primarily implements the last of these.
 
 \begin{frame}{Finite Difference Methods}
 
+
+\vspace{-2.5cm}
 \begin{columns}
 
 
@@ -172,7 +174,7 @@ The Fluidity model primarily implements the last of these.
 
 
 \noindent \begin{center}
-\includegraphics[bb=30bp 10bp 550bp 370bp,clip,width=1\textwidth]{images/fin_dif}
+\includegraphics[bb=30bp 10bp 550bp 370bp,clip,width=1.4\textwidth]{images/fin_dif}
 \[
 \frac{df}{dx}\approx\frac{\Delta f}{\Delta x}=\frac{f\left(x_{i+1}\right)-f\left(x_{i-1}\right)}{x_{i+1}-x_{i-1}}
 \]
@@ -200,7 +202,7 @@ must be used to find them.
 \column{5cm}
 
 \[
-\frac{d}{dt}\int_{\Omega_{i}}\rho dV=\sum_{\mbox{faces}}\int_{\delta\Omega_{i}^{(j)}}\rho\bm{u}\cdot\bm{n}dS
+\frac{d}{dt}\int_{\Omega_{i}}\rho dV=\sum_{\mbox{\footnotesize faces}}\int_{\delta\Omega_{i}^{(j)}}\rho\bm{u}\cdot\bm{n}dS
 \]
 
 
@@ -213,10 +215,12 @@ must be used to find them.
 
 \begin{frame}{Spectral Methods}
 
+
+\vspace{-1.cm}
 \begin{columns}[c]
 
 
-\column{5cm}
+\column{4.5cm}
 \begin{itemize}
 \item Represent variables as (limit of) sum of orthogonal \emph{basis functions}.
 \item \emph{Global} basis functions vary over entire domain.
@@ -228,14 +232,14 @@ coefficients.
 
 
 \begin{alignat*}{1}
-f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)\\
- & \approx\sum_{n=1}^{N}a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)
+f\left(x\right) & =\sum_{n=1}^{\infty}a_{n}\cos\left(n\frac{\pi x}{L}\right)+b_{n}\sin\left(n\frac{\pi x}{L}\right)\\
+ & \approx\sum_{n=1}^{N}a_{n}\cos\left(n\frac{\pi x}{L}\right)+b_{n}\sin\left(n\frac{\pi x}{L}\right)
 \end{alignat*}
-
+\vspace{-1.4cm}
 
 
 \begin{center}
-\includegraphics[width=1\textwidth]{images/spec_ex}
+\includegraphics[width=1.35\textwidth]{images/spec_ex}
 \par\end{center}
 
 
@@ -567,7 +571,7 @@ a\exp\left(X-x\right) & x>X
 
 
 \begin{center}
-\includegraphics[width=0.6\textwidth]{peakon}
+\includegraphics[width=0.5\textwidth]{peakon}
 \par\end{center}
 
 \end{frame}
@@ -787,49 +791,63 @@ of $\Omega$ over which the $N_{i}$s are smooth are often called
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_0}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_0}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_1}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_1}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_2}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_2}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_3}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_3}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_4}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_4}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_5}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_5}
+\par\end{center}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N_6}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/N_6}
+\par\end{center}
 
 \end{frame}
 
@@ -958,7 +976,7 @@ $\psi\left(0\right)=0$, \textrm{$\frac{d\psi}{dx}=1:$}
 
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/solnFE}
+\includegraphics[width=0.8\textwidth]{images/solnFE}
 \par\end{center}
 
 \end{frame}
@@ -971,7 +989,7 @@ $\psi\left(0\right)=0$, \textrm{$\frac{d\psi}{dx}=1:$}
 
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/solnFD}
+\includegraphics[width=0.8\textwidth]{images/solnFD}
 \par\end{center}
 
 \end{frame}
@@ -984,7 +1002,7 @@ $\psi\left(0\right)=0$, \textrm{$\frac{d\psi}{dx}=1:$}
 
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/solnFV}
+\includegraphics[width=0.8\textwidth]{images/solnFV}
 \par\end{center}
 
 \end{frame}
@@ -1219,35 +1237,35 @@ N_{2i+1}=\begin{cases}
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N2_0}
+\includegraphics[width=0.85\textwidth]{images/N2_0}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N2_1}
+\includegraphics[width=0.85\textwidth]{images/N2_1}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N2_2}
+\includegraphics[width=0.85\textwidth]{images/N2_2}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N2_3}
+\includegraphics[width=0.85\textwidth]{images/N2_3}
 
 \end{frame}
 
 \begin{frame}{Finite Element Functions}
 
 
-\includegraphics[width=1\textwidth]{images/N2_4}
+\includegraphics[width=0.85\textwidth]{images/N2_4}
 
 \end{frame}
 
@@ -1261,7 +1279,7 @@ N_{2i+1}=\begin{cases}
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/proj_p2}
+\includegraphics[width=0.85\textwidth]{images/proj_p2}
 \par\end{center}
 
 \end{frame}
@@ -1299,7 +1317,7 @@ N_{2i+1}=\begin{cases}
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{images/proj_p1_dg}
+\includegraphics[width=0.85\textwidth]{images/proj_p1_dg}
 \par\end{center}
 
 \end{frame}
@@ -1531,7 +1549,7 @@ Numerical method to calculate/approximate integrals:
 
 
 \begin{center}
-\includegraphics[bb=0bp 20bp 576bp 412bp,width=0.7\textwidth]{images/quad_func_0}
+\includegraphics[bb=0bp 20bp 576bp 412bp,height=0.55\textheight]{images/quad_func_0}
 \par\end{center}
 
 \end{frame}
@@ -1549,7 +1567,7 @@ Numerical method to calculate/approximate integrals:
 
 
 \begin{center}
-\includegraphics[bb=0bp 20bp 576bp 412bp,width=0.7\textwidth]{images/quad_func_1}
+\includegraphics[bb=0bp 20bp 576bp 412bp,height=0.55\textheight]{images/quad_func_1}
 \par\end{center}
 
 \end{frame}
@@ -1578,10 +1596,25 @@ p_{1}=a,\quad p_{2}=\frac{a+b}{2},\quad p_{3}=b,
 \begin{frame}{Quadrature}
 
 
-The degree or order of a quadrature rule over an interval is the largest
-integer, n such that method is exact for all
+A quadrature is called exact for functions where
+\[
+\int_{a}^{b}f\left(\bm{x}\right)d^{n}x=\sum_{x=1}^{N}w_{i}f\left(\bm{p}_{i}\right).
+\]
+
+
+
+The degree (or order) of a quadrature rule over an interval is the
+largest integer, n such that method is exact for all
 \[
 p_{n}=a_{0}x^{n}+a_{1}x^{n-1}+\ldots a_{n}\quad a_{i}\in\mathbb{R}.
+\]
+
+
+
+For a FE method, would a quadrature which captures the ``worst''
+order of the terms in the integral, eg
+\[
+\int_{x_{j}}^{x_{j+1}}\nabla N_{i}^{(\tau)}N_{j}^{(u)}N_{j}^{(\tau)}dx.
 \]
 
 
@@ -1590,7 +1623,7 @@ p_{n}=a_{0}x^{n}+a_{1}x^{n-1}+\ldots a_{n}\quad a_{i}\in\mathbb{R}.
 
 
 \section*{Summary}
-\begin{frame}{Summary}
+\begin{frame}{Final Summary}
 
 \begin{itemize}
 \item Finite element methods solve a \emph{weak form} of the \emph{exact}
