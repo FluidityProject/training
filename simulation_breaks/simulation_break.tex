@@ -1,0 +1,182 @@
+\documentclass[professionalfonts, 8pt]{beamer}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{url}  
+\usepackage{color}  
+\usepackage{float}
+\usepackage{textcomp}
+\usetheme{amcg}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{movie15}
+% \usepackage{multimedia}
+%\usepackage{hyperref}
+\usefonttheme{serif}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+%% \rmdefault{lmodern}\normalfont\upshape
+
+\begin{frame}{Fluidity Training}
+  \begin{center}
+  {\Huge What to do if your simulation breaks?}
+  \vspace{1.5cm}\\
+  \large Dave Robinson\\
+  \vspace{0.2cm}
+  7th November 2014
+  \end{center}
+\end{frame}
+
+\begin{frame}{Introduction}
+
+This presentation will cover:
+\vspace{1ex}
+\begin{description}
+ \item[$\cdot$] Reasons your simulation can fail
+ \item[$\cdot$] Sources of useful data
+ \item[$\cdot$] What can cause numerical instability?
+ \item[$\cdot$] Simplifying your problem
+ \item[$\cdot$] (Occasionally) helpful third party software 
+ \item[$\cdot$] HELP!
+\end{description}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Reasons that your simulation can fail}
+
+Roughly speaking, the reason that your simulation can failed will be placed in one of the following categories:
+\vspace{1ex}
+
+\begin{description}
+ \item[$\cdot$] Bad environment variables, missing/out-of-date dependent software or modules
+ \item[$\cdot$] Option errors, faulty Python scripts
+ \item[$\cdot$] Under/over/badly constrained initial and/or boundary conditions
+ \item[$\cdot$] Numerical instability
+ \item[$\cdot$] Partitioning, adaptivity, field projection
+\end{description}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sources of useful information}
+
+Information that can help you diagnose the failure can be gathered from:
+\vspace{1ex}
+
+\begin{description}
+ \item[$\cdot$] log file (``-l -v3'')
+ \item[$\cdot$] error file (including backtrace)
+ \item[$\cdot$] stat file
+ \item[$\cdot$] pbs output (if running on a HPC)
+ \item[$\cdot$] ``matrixdump'' and ``core'' files
+ \item[$\cdot$] vtus
+\end{description}
+
+It is also possible to re-run your simulation with extra diagnostic fields, increase your dump-rate, 
+and re-run the simulation with a Fluidity binary compiled with debugging enabled.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{What can cause numerical instability?}
+
+Thankfully, for most causes of failure, the error messages given by Fluidity are fairly self-explanatory.
+But, unfortunately, the cause of numerical instability is often a little more tricky to pin-point.
+The symptom described within an error message may not directly relate the underlying cause of failure.
+
+\vspace{1ex}
+For this reason, the best advice is to sanity check the various factors that can cause numerical instability:
+\begin{description}
+ \item[$\cdot$] Timestep, Courant Number, and temporal discretisation
+ \item[$\cdot$] Spatial discretisation and element pair
+ \item[$\cdot$] Mesh quality, Condition Number
+ \item[$\cdot$] Mesh resolution, interpolation error, Grid Reynolds Number
+ \item[$\cdot$] Field stabilisation, upwinding/slope-limiting
+ \item[$\cdot$] Strong/weak boundary conditions
+ \item[$\cdot$] Preconditioner, iterative solver, convergence criteria
+\end{description}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Simplifying your simulation}
+
+Once you have extracted any useful data from a broken simulation
+it is important that you make any further progress from a simpler simulation that {\it did} solve successfully.
+If no such simulation exists, then you need to create one!
+
+\vspace{1ex}
+There are several ways in which you can simplify your simulation:
+
+\begin{description}
+ \item[$\cdot$] Reduce the number of spatial dimensions
+ \item[$\cdot$] Simplify the geometry 
+ \item[$\cdot$] Smooth BCs with discontinuities in space or time
+ \item[$\cdot$] If you have a viscosity field, then set that to a value that gives you a Reynolds Number $\simeq 1000$
+ \item[$\cdot$] Remove any turbulence models and prescribe viscosity (as above)
+ \item[$\cdot$] Progressively remove prognostic fields
+ \item[$\cdot$] Remove adaptivity, lower the number of partitions
+\end{description}
+
+Then, add complexity back in \emph{\color{red}ONE STEP AT A TIME}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{(Occasionally) helpful third-party software}
+
+If you believe there might be a bug in the code
+then your first step should be to contact the development team and submit a bug report.
+
+\vspace{1ex}
+The following third-party software can then be useful for slowly stepping through the simulation solve to determine the root cause:
+\vspace{1ex}
+
+\begin{description}
+ \item[$\cdot$] Valgrind (checking for memory issues)
+ \item[$\cdot$] GDB (a free Open Source de-bugger)
+ \item[$\cdot$] DDT (a commercial alternative) 
+\end{description}
+
+Similarly ``vtune'' can be useful in determining which lines of code are taking up the most time in the solve.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{HELP!!!}
+
+If you've tried and failed to fix your problem, then there is a troubleshooting section to the Manual that's worth consulting.
+
+\vspace{1ex}
+But finally, Fluidity has a very eager and responsive development community.  
+We can be contacted either through the mailing list (inc. details)
+or through IRC (inc. details).
+
+\vspace{1ex}
+It would be helpful for you to include information about:
+\begin{description}
+ \item[$\cdot$] What simulation are you trying to run?
+ \item[$\cdot$] What momentum equation are you solving?
+ \item[$\cdot$] What discretisation are you using?
+ \item[$\cdot$] What similar simulations do you have that {\it did} work?
+ 
+\end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\begin{center}
+{\Huge Questions?}
+\end{center}
+\end{frame}
+
+\end{document}
