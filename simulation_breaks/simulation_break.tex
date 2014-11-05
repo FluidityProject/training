@@ -35,7 +35,7 @@
 This presentation will cover:
 \vspace{1ex}
 \begin{description}
- \item[$\cdot$] Reasons your simulation can fail
+ \item[$\cdot$] Some reasons your simulation can fail
  \item[$\cdot$] Sources of useful data
  \item[$\cdot$] What can cause numerical instability?
  \item[$\cdot$] Simplifying your problem
@@ -46,7 +46,7 @@ This presentation will cover:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Reasons that your simulation can fail}
+\begin{frame}{Some reasons that your simulation can fail}
 
 Roughly speaking, the reason that your simulation can failed will be placed in one of the following categories:
 \vspace{1ex}
@@ -69,7 +69,7 @@ Information that can help you diagnose the failure can be gathered from:
 \vspace{1ex}
 
 \begin{description}
- \item[$\cdot$] log file (``-l -v3'')
+ \item[$\cdot$] log file (``{\tt -l -v3}'')
  \item[$\cdot$] error file (including backtrace)
  \item[$\cdot$] stat file
  \item[$\cdot$] pbs output (if running on a HPC)
@@ -80,6 +80,32 @@ Information that can help you diagnose the failure can be gathered from:
 It is also possible to re-run your simulation with extra diagnostic fields, increase your dump-rate, 
 and re-run the simulation with a Fluidity binary compiled with debugging enabled.
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{``My simulation broke in 10 seconds flat!''}
+
+If your simulation broke very very quickly 
+then it was more than likely due to one of the following reasons:
+\vspace{1ex}
+
+\begin{description}
+ \item[$\cdot$] Bad environment variables, missing/out-of-date dependent software or modules
+ \item[$\cdot$] Option errors, faulty Python scripts
+\end{description}
+
+A common mistake, for instance, is having a mis-directed PYTHONPATH environment variable.  
+You can check this by typing ``{\tt echo \$PYTHONPATH}'' into your terminal window 
+(the list of paths should include {\tt [Fluidity directory]/python})
+
+\vspace{1ex}
+If you're suspicious that your Fluidity build isn't working correctly, navigate to the Fluidity directory and type ``{\tt make unittest}''.
+
+\vspace{1ex}
+For an option error, then hopefully the error message should give useful advice on what to correct,
+but if all else fails, backing-up your {\tt .flml} file and progressively removing fields can help. 
+Also, using the {\tt diff} and {\tt meld} commands to compare against working {\tt .flml} files.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,6 +157,26 @@ Then, add complexity back in \emph{\color{red}ONE STEP AT A TIME}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Monitoring the progress of a simulation}
+
+If you are suspicious that your simulation may crash and you want to monitor its progress,
+then the following commands can be useful:
+
+\vspace{1ex}
+\begin{description}
+ \item[] {\tt statplot *.stat} (press ``{\tt r}'' to refresh)
+ \item[] {\tt tail -f fluidity.log-0}
+ \item[] {\tt grep ``n/o iterations'' fluidity.log-0}
+ \item[] {\tt grep reason fluidity.log-0}
+\end{description}
+
+Note that for the last three to work you need to be logging with a verbosity of two or more, 
+i.e. {\tt ./fluidity -v2 -l my.flml}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{(Occasionally) helpful third-party software}
 
 If you believe there might be a bug in the code
@@ -158,8 +204,8 @@ If you've tried and failed to fix your problem, then there is a troubleshooting 
 
 \vspace{1ex}
 But finally, Fluidity has a very eager and responsive development community.  
-We can be contacted either through the mailing list (inc. details)
-or through IRC (inc. details).
+We can be contacted either through the mailing list ({\tt mailman.ic.ac.uk/mailman/listinfo/fluidity})
+or through IRC ({\tt \# amcg}).
 
 \vspace{1ex}
 It would be helpful for you to include information about:

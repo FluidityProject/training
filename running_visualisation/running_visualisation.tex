@@ -6,6 +6,7 @@
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \usepackage{mathptmx}
 \usepackage{helvet}
+\usefonttheme{serif}
 \newcommand\TILDE{\char`\~}
 \usepackage{listings}
 \lstset{
@@ -22,26 +23,16 @@
         emphstyle               = {[2]\textbf}
 }
 % items enclosed in square brackets are optional; explanation below
-\title[Running]{Running Fluidity and Visualising the Results}
-\subtitle[]{}
-\institute{1 - Dept of Earth Science and Engineering, Imperial College London}
-\author[Jon Hill]{\large{Jon Hill}\inst{1}}
-\date{}
-\AtBeginSection[]
-{
-   \begin{frame}
-       \frametitle{Outline}
-       \tableofcontents[currentsection]
-   \end{frame}
-}
-
-
 \begin{document}
-
-
-%--- the titlepage frame -------------------------%
-\begin{frame}
-  \titlepage
+ 
+\begin{frame}{Fluidity Training}
+  \begin{center}
+  {\Large Running Fluidity and Visualising the Results}
+  \vspace{1.5cm}\\
+  \large Dave Robinson\\
+  \vspace{0.2cm}
+  6th November 2014
+  \end{center}
 \end{frame}
 
 %-- Overview slide --- %
@@ -55,11 +46,21 @@
 \begin{frame}
     \frametitle{Running Fluidity}
 
-    \texttt{./fluidity}
+    Running source code:\\
+\texttt{[fluidity-directory]/fluidity my.flml}\\    
+\vspace{1ex}    
+    Running binary:\\
+\texttt{fluidity my.flml}
+
+\texttt{fluidity -l my.flml}
+
+\texttt{fluidity -l -v3 my.flml}
 
 \end{frame}
+
+
 \begin{frame}[fragile]
-    \frametitle{Running Fluidity}
+    \frametitle{{\tt fluidity --help}}
 \lstset{language=bash,basicstyle=\tiny}
 \begin{lstlisting}[language=bash]
 
@@ -91,15 +92,32 @@ Options:
 \end{frame}
 
 \begin{frame}
-    \frametitle{Running Fluidity}
+    \frametitle{Copy ``Top Hat'' example}
 
-\texttt{./fluidity my.flml}
+We're going to copy and run a ready-made example to show you what the process looks like.
 
-\texttt{./fluidity -l my.flml}
+\vspace{5mm}
+First, to prepare the files...\\
+{\tt cp -rv /scratch/examples/top\_hat .}\\
+{\tt cd top\_hat}\\
+{\tt make clean}\\
+{\tt make preprocess}
 
-\texttt{./fluidity -l -v3 my.flml}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Run ``Top Hat'' example}
+
+If you type ``{\tt ls}'' then you can see three sets of {\tt .flml} files and three ``{\tt line.*}'' files.
+These are the three separate set-up files and one (triangle) mesh, respectively.
+
+\vspace{5mm}
+{\tt fluidity -v3 -l top\_hat\_cg.flml \&}\\
+\vspace{5mm}
+This simulation is one-dimensional so will complete almost immediately.  
+If you now type ``{\tt ls}'' again you will see a whole string of vtu files containing results data.
+
+\end{frame}
 
 \section{Output}
 
@@ -156,9 +174,9 @@ You may also have log files:
 \begin{frame}
     \frametitle{Statplot}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{images/statplot.png}
+\includegraphics[width=0.6\textwidth]{images/statplot.png}\\
+\texttt{statplot top\_hat\_cg.stat}
 \end{center}
-Usage: \texttt{\TILDE/fluidity/bin/statplot my\_statfile.stat}
 \end{frame}
 
 \begin{frame}
@@ -174,7 +192,7 @@ Usage: \texttt{\TILDE/fluidity/bin/statplot my\_statfile.stat}
 \item s - scatter plot
 \item l - line plot
 \item r - refresh data
-\item R - refersh data, but keep current bounds
+\item R - refresh data, but keep current bounds
 \item x - switch x-axis from linear to log or vice versa
 \item y - switch y-axis from linear to log or vice versa
 \item q - quit (note: \textbf{no warnings!})
@@ -200,14 +218,18 @@ Things to try:
     \frametitle{Paraview}
 Open-source scientific visualisation software from KitView
 \begin{center}
-\includegraphics[width=0.7\textwidth]{images/paraview_example.png}
+\includegraphics[width=0.6\textwidth]{images/paraview_example.png}\\
+\vspace{5mm}
+{\tt sudo apt-get install paraview} $\dashleftarrow$ \emph{\color{red}But not now}
 \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{Paraview: main window}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{images/paraview_window.png}
+Launch by simply typing ``{\tt paraview \&}''\\
+\vspace{5mm}
+\includegraphics[width=0.7\textwidth]{images/paraview_window.png}
 \end{center}
 \end{frame}
 \begin{frame}
@@ -217,24 +239,29 @@ Open-source scientific visualisation software from KitView
 \end{center}
 \end{frame}
 \begin{frame}
-    \frametitle{Paraview: main window}
-\begin{center}
-\includegraphics[width=0.7\textwidth]{images/paraview_pipeline.png}
-\end{center}
+    \frametitle{Paraview: Copy data for visualisation}
+So we're going to copy across some ready-made data again
+to play around with.\\
+\vspace{5mm}
+{\tt cd ..} \\
+{\tt ls} \\
+{\tt cp -rv /scratch/examples/backward\_facing\_step\_2d .}\\
+{\tt cd backward\_facing\_step\_2d}\\
+{\tt ls}
+
 \end{frame}
 \begin{frame}
-    \frametitle{Paraview: main window}
+    \frametitle{Paraview: Open files}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{images/paraview_object.png}
+\begin{itemize}
+\item Click on ``OPEN'' icon
+\item Navigate into ``backward\_facing\_step\_2d'' and then ``kepsilon''
+\item Scroll to the bottom
+\item Double-click on ``...pvtu'' file
+\end{itemize}
 \end{center}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Paraview}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{images/paraview_open.png}
-\end{center}
-\end{frame}
 \begin{frame}
     \frametitle{Paraview}
 \begin{center}
@@ -253,32 +280,16 @@ Open-source scientific visualisation software from KitView
 \item Right click: Zoom-in and out
 \item Left-click: rotate
 \item Middle-button: move
-\item Zoom in and save a small part of the plot to file
+\item Use the drop-down menu to change field
+\item Use the green arrow keys to change the timestep
 \end{itemize}
-\end{frame}
+You are likely to use Paraview a lot for visualisation of data
+and learning to use it well is a whole training course in itself.
+Please consult the Paraview tutorials for further practice and worked examples:\\
+\begin{center}
+ {\tt www.paraview.org/Wiki/The\_ParaView\_Tutorial}
+\end{center}
 
-\begin{frame}
-	\frametitle{Animations}
-\begin{enumerate}
-\item File $\rightarrow$ Save Animation
-\item Set up parameters
-\item Click ``Save Animation''
-\item create folder and give filename
-\end{enumerate}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Animations}
-From PNGs produce movie via mencoder:
-\vspace{5mm}
-\begin{lstlisting}[language=bash]
-export opt=
-"vbitrate=4705000:mbd=2:keyint=132:vqblur=1.0:cmp=2:subcmp=2:dia=2:mv0:last_pred=3"
-mencoder -ovc lavc -lavcopts vcodec=msmpeg4v2:vpass=1:$opt -mf type=png:fps=10 -nosound -o /dev/null mf://*.png
-mencoder -ovc lavc -lavcopts vcodec=msmpeg4v2:vpass=2:$opt -mf type=png:fps=10 -nosound -o output.avi mf://*.png
-\end{lstlisting}
-\vspace{5mm}
-Script in ~fluidity/bin/encode
 \end{frame}
 
 \subsection{Python}
@@ -299,152 +310,17 @@ Script in ~fluidity/bin/encode
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Python VTU}
-\begin{lstlisting}[language=python]
-#!/usr/bin/env python
-import vtktools
-x0 = 0
-y0 = 0
-
-for file in filelist:
-  num = int(file.split(".vtu")[0].split('_')[-1])
-  u=vtktools.vtu(file)
-  time = u.GetScalarField('Time')
-  tt = time[0]
-  den = u.GetScalarField('Density')
-  p = u.GetLocations()
-  xyz_data = []
-  for i in range(0,len(den)):
-    if (x0-0.1<p[i,0]<x0+0.1 and y0-0.1<p[i,1]<y0+0.1):
-      xyz_data.append((p[i,0],p[i,1],-p[i,2],1024*den[i])
-\end{lstlisting}
-\end{frame}
-\begin{frame}[fragile]
-	\frametitle{Examples}
-\begin{lstlisting}[language=python]
-#!/usr/bin/env python
-from fluidity_tools import stat_parser
-
-# load in statfile to get element info
-stat=stat_parser( direc + '/' + stat_file )
-
-elements = stat['CoordinateMesh']['elements']
-nodes = stat['CoordinateMesh']['nodes']
-
-maxVelocity = stat["Fluid"]["Velocity%magnitude"]["max"]
-\end{lstlisting}
-\end{frame}
-
-
-\begin{frame}[fragile]
-	\frametitle{Examples}
-\begin{lstlisting}[language=python]
-#!/usr/bin/env python
-from pylab import *
-
-figure(x)
-title(warray[x]+" water gauge at "+str(xarray[x])+"m")
-xlabel('Time (s)')
-ylabel('Water Depth (m)')
-experiment = numpy.load(warray[x]+".npy")
-plot(experiment[:,0], experiment[:,1],marker='o',markerfacecolor='white',markersize=6, markeredgecolor='black',linestyle="None")
-
-time = results[:,1]
-plot(time, results[:,2+x],color='black',linestyle="dashed")
-axis([0.0, 2.5, 0.0, 0.5])
-legend(("Experiment", "Fluidity"), loc="upper left")
-savefig("water_gauge_"+warray[x]+".pdf")
-
-\end{lstlisting}
-\end{frame}
-
 \begin{frame}
-	\frametitle{Examples}
-\includegraphics[width=0.75\textwidth]{images/water_gauge_H1.pdf}
-\end{frame}
-
-
-\section{Parallel}
-\begin{frame}
-    \frametitle{FLML}
-No changes required!
+    \frametitle{Post-processing Python script}
+We have some read-made post-processing script to analyse the data we've copied locally.\\
 \vspace{5mm}
-
-[Optional]
-\begin{itemize}
-\item Remove fields from stat file
-\item Remove some fields from VTU
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/fulldomain.png}
-\end{frame}
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/partition1.png}
-\end{frame}
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/partition2.png}
-\end{frame}
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/partition3.png}
-\end{frame}
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/partition4.png}
-\end{frame}
-\begin{frame}
-    \frametitle{Decompose mesh}
-\vspace{-2mm}
-\includegraphics[width=\textwidth]{images/domain_decomp.png}
-\end{frame}
-
-\begin{frame}
-    \frametitle{\texttt{flredecomp}}
-    \scriptsize{\texttt{mpiexec -n 8 flredecomp -i 2 -o 8 InputFLML OutputFLML}}
+To view the script, type ``{\tt gedit postprocessor\_2d.py \&}''\\
 \vspace{5mm}
-
-Will decompose mesh from 2 to 8.
+If you don't know Python very well, don't worry, it's a very popular and easy language to pick-up.\\
 \vspace{5mm}
-
-\scriptsize{\texttt{mpiexec -n 8 flredecomp -i 8 -o 2 InputFLML OutputFLML}}
-\vspace{5mm}
-
-Will decompose mesh from 8 to 2.
-\\
-Both need running on 8 processors
-\\
-\textcolor{blue}{\textbf{Note:} Do not add .flml to files, e.g. InputFLML not InputFLML.flml}
-\\
-\textcolor{blue}{\textbf{Note:} Change of FLML filename to run}
+To run the script, type:\\
+{\tt make postprocess TYPE=reference}
 \end{frame}
-
-\subsection{Running}
-\begin{frame}
-    \frametitle{Local systems}
-
-\texttt{mpiexec -n 8 ../../bin/fluidity my\_flredecomped.flml}
-\end{frame}
-
-\subsection{Post-running}
-\begin{frame}
-    \frametitle{Visualisation}
-No different from serial - except .pvtu files, not .vtu
-\vspace{5mm}
-
-Log files (if used) will be one per processor.
-\end{frame}
-
 
 \end{document}
 
