@@ -1,19 +1,23 @@
-Diamond demo:
+Diamond demo
+============
 
-Explain window - LHS, documentation, data entry and comments
-Show blue highlighting
-show spud path
+* Remember to copy over:
+ stommel.{msh, ele, edge, node}
+ stommel_function.py
+to /scratch/diamond.
 
-Setup:
- prob type: oceans
- quad 3 - what's the rule again?
+* Explain window - LHS, documentation, data entry and comments
+* Show blue highlighting
+* Show spud path
+
+* Setup:
+ Problem type: oceans
+ Quadrature degree 3 - what's the rule again?
  Why anisotropic gradation if it's 0.7, 0, 0.7?
  Aspect ratio bound?
  Do we need stream function?
 
-
-
-show copy and paste
-show group
-show slice
+* Show copy and paste
+* Show group
+* Show slice
 
