@@ -1,4 +1,4 @@
-def Stommel_velocity(X, t):
+def stommel_velocity(X, t):
     from math import exp, sin, cos
     #L=1.e6; F=0.1; rho=1000.0; H=200.0; gamma=1.e-6;
     #A = F*L/(pi*gamma*rho*H) 
@@ -26,7 +26,7 @@ def Stommel_velocity(X, t):
     v = -A*sin(3.1415926535897933e-06*X[1])*(p*zplus*exp(X[0]*zplus) + q*zminus*exp(X[0]*zminus))
     return [u,v]
 
-def Stommel_temperature(X, t):
+def stommel_temperature(X, t):
   from math import exp
   L =1.e6
   T =  10.0*exp(-((X[0] - 2.*L/3.)**2 + (X[1] - L/3.)**2)/(2.*(L/12.5)**2))

@@ -77,8 +77,8 @@
         <value name="WholeMesh">
           <python>
             <string_value lines="20" type="code" language="python">def val(X, t):
-  import Stommel_function
-  return Stommel_function.Stommel_velocity(X,t)</string_value>
+  import stommel_function
+  return stommel_function.stommel_velocity(X,t)</string_value>
             <comment>psi(x,y) = A*sin(pi*y/L)*(p*exp(x*zplus) + q*exp(x*zminus) - 1.0)
 A = F*L/(pi*gamma*rho*H)
 L=1.e6
@@ -155,8 +155,8 @@ beta=1e-11</comment>
         <initial_condition name="WholeMesh">
           <python>
             <string_value lines="20" type="code" language="python">def val(X, t):
-  import Stommel_function
-  return Stommel_function.Stommel_temperature(X,t)</string_value>
+  import stommel_function
+  return stommel_function.stommel_temperature(X,t)</string_value>
           </python>
         </initial_condition>
         <output/>
