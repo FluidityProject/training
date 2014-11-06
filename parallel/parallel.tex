@@ -54,7 +54,7 @@
     \item[] How to run Fluidity in parallel:
       \begin{itemize}
         \vspace{1em}
-      \item (Almost) no changes to the .flml required!
+      \item No changes to the .flml required!
         \begin{itemize}
         \item Parallel compatible preconditioner (not eisenstat)
         \item Optional: Remove fields from output (.stat and .vtu)
@@ -145,6 +145,24 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{CX1}
+  \begin{lstlisting}[language=bash, basicstyle=\tiny]
+#!/bin/bash
+#PBS -N pile
+#PBS -l walltime=0:20:00
+# Resource requirements
+#PBS -l select=1:ncpus=8:mem=1550mb
+
+module load fluidity
+
+echo Working directory is $PBS_O_WORKDIR
+cd $PBS_O_WORKDIR
+
+mpiexec flredecomp -i 4 -o 8 flow_past_pile_50_checkpoint flow_past_pile_50_cp_n8
+
+mpiexec fluidity -v2 -l flow_past_pile_50_cp_n8.flml
+  \end{lstlisting}
+\end{frame}
 
 \begin{frame}[fragile]{Archer}
   \begin{lstlisting}[language=bash, basicstyle=\tiny]
