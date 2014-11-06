@@ -17,8 +17,8 @@ FILES=	./Piggott-FluidityTraining-051114.pdf\
 	\
 	./intro/intro_day2.pdf\
 	./fluidity/fluidity.pdf\
-	./gmsh_tutorial_pres.pdf\
-	./diamond/set_up.pdf\
+	./gmsh/gmsh_tutorial_pres.pdf\
+	./diamond/diamond.pdf\
 	./running_visualisation/running_visualisation.pdf\
 	./parallel/parallel.pdf\
 	\
