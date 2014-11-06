@@ -87,7 +87,7 @@
     \begin{itemize}
 
       \vspace{1em}
-    \item \lstinline+mpiexec -n 4 flredecomp -i 1 -n 4 serial parallel+
+    \item \lstinline+mpiexec -n 4 flredecomp -i 1 -o 4 serial parallel+
       \begin{itemize}
       \item Needs to be run in parallel!
       \item Decomposes mesh named in \lstinline+serial.flml+
@@ -112,7 +112,7 @@
       \end{itemize}
 
       \vspace{1em}
-    \item \lstinline+mpiexec -n 8 flredecomp -i 4 -n 8 par_4 par_8+
+    \item \lstinline+mpiexec -n 8 flredecomp -i 4 -o 8 par_4 par_8+
       \begin{itemize}
       \item Needs to be run on \lstinline+max(-i, -o)+ processes
       \item Enables re-starting on more/fewer processes
