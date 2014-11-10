@@ -12,7 +12,7 @@
     </dimension>
     <mesh name="CoordinateMesh">
       <from_file file_name="stommel">
-        <format name="triangle"/>
+        <format name="gmsh"/>
         <stat>
           <include_in_stat/>
         </stat>
@@ -65,11 +65,7 @@
     <finish_time>
       <real_value rank="0">1.0e7</real_value>
     </finish_time>
-    <nonlinear_iterations>
-      <integer_value rank="0">1</integer_value>
-    </nonlinear_iterations>
   </timestepping>
-  <physical_parameters/>
   <material_phase name="fluid">
     <vector_field name="Velocity" rank="1">
       <prescribed>
@@ -127,12 +123,6 @@ beta=1e-11</comment>
           <theta>
             <real_value rank="0">1.0</real_value>
           </theta>
-          <control_volumes>
-            <number_advection_iterations>
-              <integer_value rank="0">3</integer_value>
-            </number_advection_iterations>
-            <limit_theta/>
-          </control_volumes>
         </temporal_discretisation>
         <solver>
           <iterative_method name="gmres">
@@ -140,12 +130,12 @@ beta=1e-11</comment>
               <integer_value rank="0">30</integer_value>
             </restart>
           </iterative_method>
-          <preconditioner name="eisenstat"/>
+          <preconditioner name="sor"/>
           <relative_error>
-            <real_value rank="0">1.0e-6</real_value>
+            <real_value rank="0">1.0e-7</real_value>
           </relative_error>
           <max_iterations>
-            <integer_value rank="0">3000</integer_value>
+            <integer_value rank="0">1000</integer_value>
           </max_iterations>
           <never_ignore_solver_failures/>
           <diagnostics>
@@ -209,15 +199,11 @@ beta=1e-11</comment>
       <maximum_number_of_nodes>
         <integer_value rank="0">500000</integer_value>
       </maximum_number_of_nodes>
-      <anisotropic_gradation>
-        <tensor_field name="Gamma">
-          <anisotropic_symmetric>
-            <constant>
-              <real_value symmetric="true" dim2="dim" shape="2 2" dim1="dim" rank="2">0.7 0.0 0.0 0.7</real_value>
-            </constant>
-          </anisotropic_symmetric>
-        </tensor_field>
-      </anisotropic_gradation>
+      <enable_gradation>
+        <gradation_parameter>
+          <real_value rank="0">1.5</real_value>
+        </gradation_parameter>
+      </enable_gradation>
       <tensor_field name="MinimumEdgeLengths">
         <anisotropic_symmetric>
           <constant>

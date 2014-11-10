@@ -5,6 +5,15 @@
 \lstset{basicstyle=\ttfamily}
 \usepackage{tikz}
 \usepackage{ulem}
+\usepackage{hyperref}
+\xdefinecolor{lambdablue}{RGB}{19,41,58}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=lambdablue,
+  citecolor=lambdablue,
+  filecolor=lambdablue,
+  urlcolor=lambdablue
+}
 
 \title[Parallel Simulations]{Parallel simulations and using clusters}
 \subtitle[]{Fluidity Training Course 2014}
@@ -17,7 +26,7 @@
 
 \begin{frame}{Parallel Simulations}
   \begin{itemize}
-  \item[] {Large simulations require more than a laptop}
+  \item[] Large simulations require more than a laptop
     \begin{itemize}
       \vspace{1em}
     \item Fluidity runs in parallel via MPI
@@ -42,11 +51,12 @@
     \column[T]{0.7\textwidth}
 
     \begin{itemize}
-    \item[] {How to run Fluidity in parallel:}
+    \item[] How to run Fluidity in parallel:
       \begin{itemize}
         \vspace{1em}
       \item No changes to the .flml required!
         \begin{itemize}
+        \item Parallel compatible preconditioner (not eisenstat)
         \item Optional: Remove fields from output (.stat and .vtu)
         \end{itemize}
 
@@ -73,11 +83,11 @@
 
 \begin{frame}{Mesh decomposition}
   \begin{itemize}
-  \item[] {Mesh decomposition before the run:}
+  \item[] Mesh decomposition before the run:
     \begin{itemize}
 
       \vspace{1em}
-    \item \lstinline+mpiexec -n 4 flredecomp -i 1 -n 4 serial parallel+
+    \item \lstinline+mpiexec -n 4 flredecomp -i 1 -o 4 serial parallel+
       \begin{itemize}
       \item Needs to be run in parallel!
       \item Decomposes mesh named in \lstinline+serial.flml+
@@ -93,7 +103,7 @@
 
 \begin{frame}{Mesh decomposition}
   \begin{itemize}
-  \item[] {Mesh decomposition with checkpoints:}
+  \item[] Mesh decomposition with checkpoints:
     \begin{itemize}
       \vspace{1em}
     \item Switch on checkpointing!
@@ -102,7 +112,7 @@
       \end{itemize}
 
       \vspace{1em}
-    \item \lstinline+mpiexec -n 8 flredecomp -i 4 -n 8 par_4 par_8+
+    \item \lstinline+mpiexec -n 8 flredecomp -i 4 -o 8 par_4 par_8+
       \begin{itemize}
       \item Needs to be run on \lstinline+max(-i, -o)+ processes
       \item Enables re-starting on more/fewer processes
@@ -113,6 +123,45 @@
       \lstinline+mpiexec -n 8 fluidity par_8.flml+
     \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Running Fluidity on clusters}
+  \begin{itemize}
+  \item Set up simulation on local machine!
+    \vspace{1em}
+  \item Install Fluidity on cluster
+    \begin{itemize}
+    \item CX1/CX2: \lstinline+module load fluidity+
+    \item Archer: \href{https://github.com/FluidityProject/buildscripts/tree/master/uk/ac/archer}{instructions here}
+    \end{itemize}
+  \item Create \lstinline+.pbs+ submission script
+    \begin{itemize}
+    \item Submit with \lstinline+qsub+
+    \end{itemize}
+  \item Copy results back to local machine
+    \begin{itemize}
+    \item Visualisation as before
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CX1}
+  \begin{lstlisting}[language=bash, basicstyle=\tiny]
+#!/bin/bash
+#PBS -N pile
+#PBS -l walltime=0:20:00
+# Resource requirements
+#PBS -l select=1:ncpus=8:mem=1550mb
+
+module load fluidity
+
+echo Working directory is $PBS_O_WORKDIR
+cd $PBS_O_WORKDIR
+
+mpiexec flredecomp -i 4 -o 8 flow_past_pile_50_checkpoint flow_past_pile_50_cp_n8
+
+mpiexec fluidity -v2 -l flow_past_pile_50_cp_n8.flml
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Archer}
@@ -133,8 +182,10 @@ cd $PBS_O_WORKDIR
 # Workaround for python environment
 export LD_LIBRARY_PATH=$ANACONDA_LIB:$LD_LIBRARY_PATH
 
+export FLUIDITYDIR=path/to/my/fluidity/install
+
 # Decompose the mesh
-aprun -n 48 -N 24 -d 1 -j 1 $FLUIDITYDIR/bin/flredecomp -i 1 -n 48 jet_sim set_sim_48
+aprun -n 48 -N 24 -d 1 -j 1 $FLUIDITYDIR/bin/flredecomp -i 1 -o 48 jet_sim set_sim_48
 
 # Run simulation
 aprun -n 48 -N 24 -d 1 -j 1 $FLUIDITYDIR/bin/fluidity -l -p -v2 jet_sim_48.flml

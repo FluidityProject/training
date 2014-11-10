@@ -101,7 +101,10 @@
 \begin{frame}
     \frametitle{Before we start...}
 
-Make a directory in your data/$<$username$>$ directory: \texttt{mkdir stommel}
+Make a directory in your \texttt{\$HOME} directory:\\
+\texttt{cd \$HOME}
+\\
+\texttt{mkdir stommel}
 \\
 \texttt{cd stommel}
 \\
@@ -113,16 +116,16 @@ Make a directory in your data/$<$username$>$ directory: \texttt{mkdir stommel}
     \frametitle{Create a FLML}
 Live demo
 
-\texttt{diamond -s /data/<username>/fluidity/schema/fluidity\_options.rng stommel.flml}
+\texttt{diamond -s \$HOME/fluidity/schema/fluidity\_options.rng stommel.flml}
 \end{frame}
 
 \begin{frame}
     \frametitle{Running Fluidity}
-\scriptsize{\texttt{/path/bin/fluidity stommel.flml}}
+\scriptsize{\texttt{/path/to/bin/fluidity name\_of\_setup\_file\_here.flml}}
 \\
-\scriptsize{\texttt{/data/<username>/fluidity/bin/fluidity stommel.flml}}
+\scriptsize{\texttt{\$HOME/fluidity/bin/fluidity stommel.flml}}
 \\
-\scriptsize{\texttt{/data/<username>/fluidity/bin/fluidity -l -v2 stommel.flml}}
+\scriptsize{\texttt{\$HOME/fluidity/bin/fluidity -l -v2 stommel.flml}}
 \end{frame}
 
 
