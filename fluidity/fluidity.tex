@@ -44,9 +44,10 @@
         \frametitle{How to obtain Fluidity}
 \begin{itemize}
     \item {\bf Binary} (release only)
-	  \\Prebuilt packages are available for Ubuntu LTS, Red Hat 6 (and
-              derivatives), and OpenSuSE (not officially supported)
-    \item {\bf Source} (release, trunk or branch)
+	  \\Prebuilt packages are available for Ubuntu 14.04 (LTS),
+              and CentOS 6 and 7 (which should be binary-compatible
+              with Red Hat Enterprise Linux).
+    \item {\bf Source} (release, master, or branch)
 	  \\Available from GitHub as a tarball (release only) or git repository
 \end{itemize}
 \end{frame}
@@ -68,19 +69,20 @@ Fluidity examples.
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{Installing the Fluidity package: Red Hat}
+        \frametitle{Installing the Fluidity package: CentOS/RHEL}
 \lstset{language=bash}
-RHEL (Or CentOS) 6.5 is recommended for Fluidity, and requires the EPEL
-repository to be enabled 
+Fluidity on CentOS/RHEL requires the EPEL repository to be enabled 
+(see http://fedoraproject.org/wiki/EPEL). 
 
-\hspace{10mm}(see http://fedoraproject.org/wiki/EPEL). 
+\hspace{10mm}
 
 Add the Fluidity repository to your system:
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
 sudo yum-config-manager --add-repo \
   https://fluidityproject.github.com/yum/fluidity-rhel6.repo
 \end{lstlisting}
-Then install Fluidity:
+
+(change '6' to '7' as appropriate). Then install Fluidity:
 \begin{lstlisting}[language=bash,basicstyle=\ttfamily\scriptsize]
 sudo yum install fluidity
 \end{lstlisting}
