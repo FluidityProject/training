@@ -29,9 +29,9 @@
   \begin{center}
   {\Large Running Fluidity and Visualising the Results}
   \vspace{1.5cm}\\
-  \large Dave Robinson\\
+  \large Simon Mouradian\\
   \vspace{0.2cm}
-  6th November 2014
+  11-13 November 2015
   \end{center}
 \end{frame}
 
@@ -46,55 +46,59 @@
 \begin{frame}
     \frametitle{Running Fluidity}
 
-    Running source code:\\
-\texttt{[fluidity-directory]/fluidity my.flml}\\    
-\vspace{1ex}    
-    Running binary:\\
-\texttt{fluidity my.flml}
+\texttt{\$ <trunk>/bin/fluidity my.flml}\\
+\vspace{1ex}
+If fluidity is installed on the system:\\
+\texttt{\$ fluidity my.flml}
 
-\texttt{fluidity -l my.flml}
+\vspace{1ex}
+Common options:\\
+-l \qquad (Create log file for each process)\\
+-v N \qquad (Verbosity level, default level 0, N can be 0,1 or 2)\\
+-h \qquad (Help)
+\vspace{1ex}
 
-\texttt{fluidity -l -v3 my.flml}
+Example:\\
+\texttt{\$ fluidity -l -v2 my.flml}
 
 \end{frame}
 
+%% \begin{frame}[fragile]
+%%     \frametitle{{\tt fluidity --help}}
+%% \lstset{language=bash,basicstyle=\tiny}
+%% \begin{lstlisting}[language=bash]
 
-\begin{frame}[fragile]
-    \frametitle{{\tt fluidity --help}}
-\lstset{language=bash,basicstyle=\tiny}
-\begin{lstlisting}[language=bash]
-
-Revision: fluidity/4.1
-Compile date: Nov 20 2012 10:16:12
-OpenMP Support			no
-Adaptivity support		yes
-...
-FEMDEM support			no
-Hyperlight support		no
+%% Revision: fluidity/4.1
+%% Compile date: Nov 20 2012 10:16:12
+%% OpenMP Support			no
+%% Adaptivity support		yes
+%% ...
+%% FEMDEM support			no
+%% Hyperlight support		no
 
 
-Usage: fluidity [options ...] [simulation-file]
+%% Usage: fluidity [options ...] [simulation-file]
 
-Options:
- -h, --help
-	Help! Prints this message.
- -l, --log
-	Create log file for each process (useful for non-interactive testing).
- -v <level>, --verbose
-	Verbose output to stdout, default level 0
- -p, --profile
-	Print profiling data at end of run
-	This provides aggregated elapsed time for coarse-level computation
-	(Turned on automatically if verbosity is at level 2 or above)
- -V, --version
-	Version
-\end{lstlisting}
-\end{frame}
+%% Options:
+%%  -h, --help
+%% 	Help! Prints this message.
+%%  -l, --log
+%% 	Create log file for each process (useful for non-interactive testing).
+%%  -v <level>, --verbose
+%% 	Verbose output to stdout, default level 0
+%%  -p, --profile
+%% 	Print profiling data at end of run
+%% 	This provides aggregated elapsed time for coarse-level computation
+%% 	(Turned on automatically if verbosity is at level 2 or above)
+%%  -V, --version
+%% 	Version
+%% \end{lstlisting}
+%% \end{frame}
 
 \begin{frame}
     \frametitle{Copy ``Top Hat'' example}
 
-We're going to copy and run a ready-made example to show you what the process looks like.
+We're going to copy and run a ready--made example:
 
 \vspace{5mm}
 First, to prepare the files...\\
@@ -108,14 +112,14 @@ First, to prepare the files...\\
 \begin{frame}
     \frametitle{Run ``Top Hat'' example}
 
-If you type ``{\tt ls}'' then you can see three sets of {\tt .flml} files and three ``{\tt line.*}'' files.
-These are the three separate set-up files and one (triangle) mesh, respectively.
+Type ``{\tt ls}'' to see the {\tt .flml} and mesh {\tt line.msh} files.
+There are three separate set-up files and one mesh.
 
 \vspace{5mm}
-{\tt fluidity -v3 -l top\_hat\_cg.flml \&}\\
+{\tt \$ fluidity -l -v2 top\_hat\_cg.flml \&}\\
 \vspace{5mm}
-This simulation is one-dimensional so will complete almost immediately.  
-If you now type ``{\tt ls}'' again you will see a whole string of vtu files containing results data.
+
+After running Fluidity, the {\tt .vtu} files contain the results. Each {\tt .vtu} contains the output at a single time--level.
 
 \end{frame}
 
@@ -124,10 +128,15 @@ If you now type ``{\tt ls}'' again you will see a whole string of vtu files cont
 \subsection{Filetypes and tools}
 \begin{frame}
     \frametitle{Filetypes}
-There are \textbf{two} main filetypes:
+Today we will look at two filetypes:
 \begin{itemize}
     \item .stat file
     \item Unstructured VTK file (.vtu or .pvtu)
+\end{itemize}
+\vspace{5mm}
+You may also have a third filetype:
+\begin{itemize}
+\item Files for detectors
 \end{itemize}
 \vspace{5mm}
 You may also have log files:
@@ -175,8 +184,8 @@ You may also have log files:
     \frametitle{Statplot}
 \begin{center}
 \includegraphics[width=0.6\textwidth]{images/statplot.png}\\
-\texttt{statplot top\_hat\_cg.stat}
 \end{center}
+\texttt{\$ statplot top\_hat\_cg.stat}
 \end{frame}
 
 \begin{frame}
