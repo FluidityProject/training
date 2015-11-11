@@ -95,6 +95,44 @@ Example:\\
 %% \end{lstlisting}
 %% \end{frame}
 
+
+\section{Output}
+
+\subsection{Filetypes and tools}
+\begin{frame}
+    \frametitle{Output Filetypes}
+Today we will look at two types:
+\begin{itemize}
+    \item Stat file (.stat)
+    \item Unstructured VTK file (.vtu or .pvtu)
+\end{itemize}
+\vspace{5mm}
+Fluidity also has a third filetype:
+\begin{itemize}
+\item Detectors (.detectors)
+\end{itemize}
+\vspace{5mm}
+You may also have log files:
+\begin{itemize}
+    \item fluidity.log-*
+    \item fluidity.err-*
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tools}
+\begin{itemize}
+\item Statplot
+\item Paraview
+\item Python
+    \begin{itemize}
+    \item fluidity.statparser
+    \item vtktools
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
 \begin{frame}
     \frametitle{Copy ``Top Hat'' example}
 
@@ -121,43 +159,6 @@ There are three separate set-up files and one mesh.
 
 After running Fluidity, the {\tt .vtu} files contain the results. Each {\tt .vtu} contains the output at a single time--level.
 
-\end{frame}
-
-\section{Output}
-
-\subsection{Filetypes and tools}
-\begin{frame}
-    \frametitle{Filetypes}
-Today we will look at two filetypes:
-\begin{itemize}
-    \item .stat file
-    \item Unstructured VTK file (.vtu or .pvtu)
-\end{itemize}
-\vspace{5mm}
-You may also have a third filetype:
-\begin{itemize}
-\item Files for detectors
-\end{itemize}
-\vspace{5mm}
-You may also have log files:
-\begin{itemize}
-    \item fluidity.log.*
-    \item fluidity.err.*
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Tools}
-\begin{itemize}
-\item Statplot
-\item Paraview
-\item Python
-    \begin{itemize}
-    \item vtktools
-    \item fluidity.statparser
-    \end{itemize}
-\end{itemize}
 \end{frame}
 
 \subsection{The stat file}
@@ -216,20 +217,20 @@ Things to try:
 \begin{itemize}
 \item Switch between scatter plot and line plot views
 \item Change the graph to show the number of elements through the run
-\item Plot velocity magnitude minimum against velocity magnitude maximum
+\item Plot tracer maximum against time
 \item Zoom in and save a small part of the plot to file
 \end{itemize}
 \end{frame}
 
-
 \subsection{Paraview}
 \begin{frame}
     \frametitle{Paraview}
-Open-source scientific visualisation software from KitView
+Open--source scientific visualisation software from KitView
 \begin{center}
 \includegraphics[width=0.6\textwidth]{images/paraview_example.png}\\
 \vspace{5mm}
-{\tt sudo apt-get install paraview} $\dashleftarrow$ \emph{\color{red}But not now}
+This can be obtained on your own machine using:\\
+{\tt \$ sudo apt-get install paraview} $\leftarrow$ \emph{\color{red}But not now!}
 \end{center}
 \end{frame}
 
@@ -293,8 +294,8 @@ to play around with.\\
 \item Use the green arrow keys to change the timestep
 \end{itemize}
 You are likely to use Paraview a lot for visualisation of data
-and learning to use it well is a whole training course in itself.
-Please consult the Paraview tutorials for further practice and worked examples:\\
+and learning to use it well is useful. Feel free to consult the Paraview
+tutorials for further practice and worked examples:\\
 \begin{center}
  {\tt www.paraview.org/Wiki/The\_ParaView\_Tutorial}
 \end{center}
@@ -311,17 +312,33 @@ Please consult the Paraview tutorials for further practice and worked examples:\
 \end{frame}
 
 \begin{frame}
-    \frametitle{Useful python modules}
-\begin{itemize}
-\item numpy - numerical package, including arrays
-\item stats - linear regression, etc
-\item matplotlib - plotting 2- and 3-D
-\end{itemize}
+  \frametitle{Reading .stat file in Python}
+\texttt{import fluidity\_tools} \\
+\texttt{stat = fluidity\_tools.stat\_parser(filename)} \\
+\vspace{5mm}
+The stat object is a hierarchy of dictionaries! \\
+\vspace{5mm}
+\texttt{stat["Fluid"].keys()} \\
+\vspace{5mm}
+More info in the Fluidity manual section $9.4.2$
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reading .vtu files in Python}
+
+\texttt{import vtktools} \\
+\texttt{data = vtktools.vtu(’example.vtu’)} \\
+\texttt{p = data.GetScalarField(’Pressure’)} \\
+
+\vspace{5mm}
+$p$ is now an array of the scalar field 'Pressure' \\
+\vspace{5mm}
+More info in the Fluidity manual section $9.3.1$
 \end{frame}
 
 \begin{frame}
     \frametitle{Post-processing Python script}
-We have some read-made post-processing script to analyse the data we've copied locally.\\
+We have a ready--made post--processing script.\\
 \vspace{5mm}
 To view the script, type ``{\tt gedit postprocessor\_2d.py \&}''\\
 \vspace{5mm}
@@ -332,4 +349,3 @@ To run the script, type:\\
 \end{frame}
 
 \end{document}
-
