@@ -83,59 +83,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-This file is a solution template for:
-\end_layout
-
-\begin_layout Itemize
-Talk at a conference/colloquium.
- 
-\end_layout
-
-\begin_layout Itemize
-Talk length is about 20min.
- 
-\end_layout
-
-\begin_layout Itemize
-Style is ornate.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
- 
-\end_layout
-
-\begin_layout Plain Layout
-In principle, this file can be redistributed and/or modified under the terms
- of the GNU Public License, version 2.
- However, this file is supposed to be a template to be modified for your
- own needs.
- For this reason, if you use this file as a template and not specifically
- distribute it as part of a another package/program, the author grants the
- extra permission to freely copy and modify this file as you see fit and
- even to delete this copyright notice.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Title
 A Brief Introduction to Finite Element Methods for Fluid Flow Problems
 \begin_inset Argument 1
@@ -143,16 +90,6 @@ status open
 
 \begin_layout Plain Layout
 Intro to FEM for Fluids
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-optional, use only with long paper titles
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -261,7 +198,7 @@ optional, but mostly needed
 \end_layout
 
 \begin_layout Date
-Fluidity Training 2014
+Fluidity Training 2015
 \begin_inset Note Note
 status collapsed
 
@@ -282,7 +219,7 @@ Not really informative to the audience, more for people (including yourself)
 status open
 
 \begin_layout Plain Layout
-Fluidity Training 2014
+Fluidity Training 2015
 \begin_inset Note Note
 status collapsed
 
@@ -293,112 +230,6 @@ optional, should be abbreviation of conference name
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-If you have a file called "institution-logo-filename.xxx", where xxx is a
- graphic format that can be processed by latex or pdflatex, resp., then you
- can add a logo by uncommenting the following:
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pgfdeclareimage[height=0.5cm]{institution-logo}{institution-logo-filename}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-logo{
-\backslash
-pgfuseimage{institution-logo}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The following causes the table of contents to be shown at the beginning
- of every subsection.
- Delete this, if you do not want it.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-AtBeginSubsection[]{
-\end_layout
-
-\begin_layout Plain Layout
-
-%  
-\backslash
-frame<beamer>{ 
-\end_layout
-
-\begin_layout Plain Layout
-
-%    
-\backslash
-frametitle{Outline}   
-\end_layout
-
-\begin_layout Plain Layout
-
-%    
-\backslash
-tableofcontents[currentsection,currentsubsection] 
-\end_layout
-
-\begin_layout Plain Layout
-
-%  }
-\end_layout
-
-\begin_layout Plain Layout
-
-%}
 \end_layout
 
 \end_inset
@@ -437,6 +268,10 @@ beamerdefaultoverlayspecification{<+->}
 \end_layout
 
 \begin_layout Frame
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
 \begin_inset Argument 4
 status open
 
@@ -450,7 +285,7 @@ Outline
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -459,7 +294,7 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -509,6 +344,139 @@ If you omit details that are vital to the proof/implementation, just say
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+These slides
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not an entire description of the finite element method 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+one hour lecture, not ten week course
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For mode details refer to the 
+\shape italic
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Fluidity"
+target "http://files.figshare.com/2031637/Fluidity.Manual.v.4.1.12.pdf"
+
+\end_inset
+
+
+\shape default
+\color inherit
+ manual.
+\end_layout
+
+\begin_layout Itemize
+Slides available at 
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "jrper.github.io/2015/IntroToFEM.pdf"
+target "jrper.github.io/2015/IntroToFEM.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Partial lecture notes are available at 
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "jrper.github.io/2015/FEMNotes.pdf"
+target "jrper.github.io/2015/FEMNotes.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What We'll Cover
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+At the end of the hour we'll have discussed:
+\end_layout
+
+\begin_layout Itemize
+Numerical discretizations in general.
+\end_layout
+
+\begin_layout Itemize
+Overview of basic finite element method, applied to a simple ODE.
+\end_layout
+
+\begin_layout Itemize
+Definitions of polynomial Lagrangian finite element basis functions, as
+ used in the 
+\shape italic
+Fluidity
+\shape default
+ solver
+\end_layout
+
+\begin_layout Itemize
+Definitions of continuous and discontinuous finite element basis functions,
+ as used in the 
+\shape italic
+Fluidity
+\shape default
+ solver
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Section
 Numerical Solution of PDEs
 \end_layout
@@ -532,10 +500,10 @@ Numerical Solutions to PDEs
 
 \begin_deeper
 \begin_layout Standard
-Mathematical descriptions of the equations governing physical processes
- are often in the form of partial differential equations (PDEs).
- Variable values are functions of time and satisfy relationships between
- variables and their partial derivatives.
+Mathematical descriptions of physical processes are often as partial differentia
+l equations (PDEs).
+ Variables are functions of time & space and satisfy relationships between
+ their own partial derivatives.
 \end_layout
 
 \begin_layout ExampleBlock
@@ -598,7 +566,7 @@ emph{infinite}
 \end_inset
 
  number of locations in space and time.
- However memory available in computers (and humans) is finite.
+ However memory in computers (and humans) is finite.
  Equations must be 
 \begin_inset ERT
 status open
@@ -714,7 +682,11 @@ emph{Finite element methods}
 \end_layout
 
 \begin_layout Standard
-The Fluidity model primarily implements the last of these.
+
+\shape italic
+Fluidity
+\shape default
+ (and Firedrake) implements the last of these.
 \end_layout
 
 \end_deeper
@@ -839,8 +811,89 @@ emph{finite}
 \end_inset
 
  set of sub-
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-emph{volumes}.
+emph{volumes}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Volumes are typically simple geometric polyhedra (cuboids, wedges, tetrahedra)
+\end_layout
+
+\begin_layout Itemize
+Forming a good mesh can be tricky.
+\end_layout
+
+\begin_layout Itemize
+See meshing talk tomorrow by Dr.
+ Alex Avdis for more on getting a good mesh.
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+\begin_inset Graphics
+	filename images/Med_Nasa.jpg
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+\begin_inset Graphics
+	filename images/Med_mesh_FV.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finite Volume Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
 \end_layout
 
 \begin_layout Itemize
@@ -977,7 +1030,11 @@ emph{Global}
 \end_layout
 
 \begin_layout Itemize
-Truncate infinite series and calculate behaviour of finite set of coefficients.
+Truncate infinite series and calculate 
+\lang british
+behaviour
+\lang english
+ of finite set of coefficients.
 \end_layout
 
 \begin_layout Column
@@ -1166,7 +1223,11 @@ Finite Element Methods
 
 \begin_deeper
 \begin_layout Itemize
-Break the problem domain down into a finite set of sub-volumes (
+Combine parts of finite volume and spectral methods.
+\end_layout
+
+\begin_layout Itemize
+Break domain into finite set of simple subvolumes (
 \begin_inset ERT
 status open
 
@@ -1184,7 +1245,7 @@ emph{elements}
 \end_layout
 
 \begin_layout Itemize
-Represent variables as a sum of 
+Represent variables as a sum of simple 
 \begin_inset ERT
 status open
 
@@ -1218,7 +1279,7 @@ emph{local}
 \end_layout
 
 \begin_layout Itemize
-Solve 
+Discretize 
 \begin_inset ERT
 status open
 
@@ -1255,18 +1316,18 @@ Hybrid Methods
 
 \begin_deeper
 \begin_layout Itemize
-Very common to combine these different approaches
+Very common to combine multiple different approaches
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Couple finite volume method for globally conserved quanity to finite difference
- method to calculate fluxes
+Couple finite volume method (for global conservation) + finite difference
+ method (for fluxes)
 \end_layout
 
 \begin_layout Itemize
-Couple finite volume method for globally conserved quanity to finite element
- method to calculate fluxes.
+Couple finite volume method (for global conservation) + finite element method
+ (for fluxes).
  
 \begin_inset Quotes eld
 \end_inset
@@ -1292,15 +1353,10 @@ emph{Control Volume}
 \end_layout
 
 \begin_layout Itemize
-Fluidity velocity solver: Finite element method in space, finite difference
- in time
+Fluidity: Finite elements (space) + finite differences (time)
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-
-\end_layout
-
 \end_deeper
 \begin_layout Section
 Finite Elements from First Principles
@@ -1445,7 +1501,7 @@ Poisson Equation
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\tag{*}\nabla^{2}\psi+f\left(\bm{x}\right)=0,\quad\forall\bm{x}\in\Omega
+\nabla^{2}\psi+f\left(\bm{x}\right)=0,\quad\forall\bm{x}\in\Omega
 \]
 
 \end_inset
@@ -1462,7 +1518,7 @@ In 1D, setting
  to the unit interval:
 \begin_inset Formula 
 \[
-\frac{\partial^{2}\psi}{\partial x^{2}}+f\left(x\right)=0\quad\forall x\in(0,1).
+\frac{\partial^{2}\psi}{\partial x^{2}}+f\left(x\right)=0\quad\forall x\in(0,1).\tag{*}
 \]
 
 \end_inset
@@ -1527,12 +1583,9 @@ Strong form
 
 \begin_layout Block
 Equation (*) true individually for each point in space,
-\end_layout
-
-\begin_layout Block
 \begin_inset Formula 
 \[
-\nabla^{2}\psi+f\left(x\right)=0,
+\mathcal{L}_{\psi}\left(x\right):=\frac{d^{2}\psi}{dx^{2}}+f\left(x\right)=0,
 \]
 
 \end_inset
@@ -1551,6 +1604,10 @@ for all
 \begin_layout Block
 Test a 
 \begin_inset Formula $\psi$
+\end_inset
+
+ for 
+\begin_inset Formula $\mathcal{L}_{\psi}$
 \end_inset
 
  by checking equation holds individually for each point in space.
@@ -1594,7 +1651,7 @@ emph{test function}
 ,
 \begin_inset Formula 
 \[
-\int_{\Omega}\phi\left(\nabla^{2}\psi+f\right)\, dV=0,
+I_{\psi}\left(\phi\right):=\int_{0}^{1}\phi\left(\frac{d^{2}\psi}{dx^{2}}+f\right)\,dx=0,
 \]
 
 \end_inset
@@ -1603,7 +1660,7 @@ where
 \begin_inset Formula $\phi:\Omega\rightarrow\mathbb{R}$
 \end_inset
 
- is from a function space defined later.
+ is from a function space to be defined later.
 \end_layout
 
 \begin_layout Block
@@ -1655,329 +1712,6 @@ emph{test functions}
 status open
 
 \begin_layout Plain Layout
-Quick Review of Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-A set, 
-\begin_inset Formula $\mathcal{V}$
-\end_inset
-
-, is a vector space if it has + (addition) and scalar multiplication operators
- where 
-\begin_inset Formula 
-\begin{alignat*}{1}
-\tag{associativity}\bm{a}+\left(\bm{b+\bm{c}}\right) & =\left(\bm{a}+\bm{b}\right)+\bm{c},\\
-\tag{commutivity}\bm{a}+\bm{b} & =\bm{b}+\bm{a},\\
-\mbox{there exists }\bm{0}\in\mathcal{V}\mbox{ such that } & \bm{a}+\bm{0}=\bm{a},\mbox{ for all }\bm{a}\in\mathcal{V},\\
-\mbox{for all }\bm{a}\mbox{ there exists }-\bm{a}\in\mathcal{V} & \mbox{ such that }\bm{a}+\left(-\bm{a}\right)=\bm{0},\\
-\tag{distributivity I}\alpha\left(\bm{a}+\bm{b}\right) & =\alpha\bm{a}+\alpha\bm{b},\\
-\tag{distributivity II}\left(\alpha+\beta\right)\bm{a} & =\alpha\bm{a}+\beta\bm{a},\\
-\alpha\left(\beta\bm{a}\right) & =\left(\alpha\beta\right)\bm{a},\\
-1\bm{a} & =\bm{a}.
-\end{alignat*}
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Functions are a vector space under the following definitions of addition
- and scalar multiplication:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{alignat*}{1}
-\left(f+g\right)\left(x\right) & =f\left(x\right)+g\left(x\right),\\
-\left(\alpha f\right)\left(x\right) & =\alpha\left(f\left(x\right)\right).
-\end{alignat*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I.e.
- functions are added/multiplied pointwise based on their result.
- Necessary axioms all follow from the normal rules of addition/multiplication.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename images/add_fns_0.png
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename images/add_fns_1.png
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename images/add_fns_2.png
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Within the space of functions there are many smaller subspaces.
- Eg:
-\end_layout
-
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Examples
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout ExampleBlock
-Polynomials 
-\begin_inset Formula $f(x)=1+3x+4x^{2}+5x^{3}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout ExampleBlock
-Functions on an interval 
-\begin_inset Formula $f(x)=\begin{cases}
-0 & x<0,\\
-e^{x} & 0\leq x\leq1,\\
-0 & x>1.
-\end{cases}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout ExampleBlock
-Twice differentiable functions 
-\begin_inset Formula $f\left(x\right)=\begin{cases}
-x^{2}+2, & x<0,\\
-2\left(e^{x}-x\right). & x\geq0.
-\end{cases}$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Vector Spaces
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Key idea of finite element method: 
-\end_layout
-
-\begin_layout Itemize
-Desire an exact solution 
-\begin_inset Formula $\psi$
-\end_inset
-
-, from an inifinite dimensional vector space, 
-\begin_inset Formula $\mathcal{V}$
-\end_inset
-
-, which satisfies weak form equation, for test functions 
-\begin_inset Formula $\phi$
-\end_inset
-
- in 
-\begin_inset Formula $\mathcal{U}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Find 
-\begin_inset Formula $\psi^{\delta}$
-\end_inset
-
- in approximate vector (sub)space 
-\begin_inset Formula $\mathcal{V}^{\delta}\subset\mathcal{V}$
-\end_inset
-
- with finite representation, which satisfies same weak form equation, for
- test functions 
-\begin_inset Formula $\phi^{\delta}$
-\end_inset
-
- in approximate space 
-\begin_inset Formula $\mathcal{U}^{\delta}\subset\mathcal{U}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Expectation that as 
-\begin_inset Formula $\delta\rightarrow0$
-\end_inset
-
-, 
-\begin_inset Formula $\mathcal{V}^{\delta}\rightarrow\mathcal{V}$
-\end_inset
-
- and 
-\begin_inset Formula $\psi^{\delta}\rightarrow\psi$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 Strong and Weak Forms
 \end_layout
 
@@ -2001,55 +1735,8 @@ emph{will}
 
 \end_inset
 
- be a solution to the weak form equations:
-\end_layout
-
-\begin_layout Standard
-If 
-\begin_inset Formula $\nabla^{2}\psi+f=0$
-\end_inset
-
- then
-\begin_inset Formula 
-\[
-\int\phi\left(\nabla^{2}\psi+f\right)\: dV=\int\phi\cdot0\: dV=0,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-independent of 
-\begin_inset Formula $\phi$
-\end_inset
-
-, i.e.
- for any possible choice of test space.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Strong and Weak Forms
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-A solution to the weak form of the equations 
+ be a solution to the weak form equations.
+ A solution to the weak form of the equations 
 \begin_inset ERT
 status open
 
@@ -2120,7 +1807,7 @@ f\left(0\right), & a>0,\\
 status open
 
 \begin_layout Plain Layout
-Example of a Weak Nonclassical Solution
+Review of Vector Spaces
 \end_layout
 
 \end_inset
@@ -2130,6 +1817,342 @@ Example of a Weak Nonclassical Solution
 
 \begin_deeper
 \begin_layout Standard
+A set, 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+, is a vector space if it has + (addition) and 
+\begin_inset Formula $\cdot$
+\end_inset
+
+(scalar multiplication) operators which satisfy the following eight rules:
+ 
+\begin_inset Formula 
+\begin{alignat*}{1}
+\tag{+ associativity}\bm{a}+\left(\bm{b+\bm{c}}\right) & =\left(\bm{a}+\bm{b}\right)+\bm{c},\\
+\tag{commutivity}\bm{a}+\bm{b} & =\bm{b}+\bm{a},\\
+\mbox{\tag{+identity}there exists }\bm{0}\in\mathcal{V}\mbox{ s.t. } & \bm{a}+\bm{0}=\bm{a},\forall\bm{a}\in\mathcal{V},\\
+\tag{+ inverse}\forall\bm{a}\mbox{ there exists }-\bm{a}\in\mathcal{V} & \mbox{ s.t. }\bm{a}+\left(-\bm{a}\right)=\bm{0},\\
+\tag{distributivity I}\alpha\cdot\left(\bm{a}+\bm{b}\right) & =\alpha\cdot\bm{a}+\alpha\cdot\bm{b},\\
+\tag{distributivity II}\left(\alpha+\beta\right)\cdot\bm{a} & =\alpha\cdot\bm{a}+\beta\cdot\bm{a},\\
+\tag{\cdot\ associativity}\alpha\cdot\left(\beta\cdot\bm{a}\right) & =\left(\alpha\times\beta\right)\cdot\bm{a},\\
+\tag{\cdot\ identity}1\cdot\bm{a} & =\bm{a}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review of Vector Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Functions are a vector space under the following definitions of addition
+ and scalar multiplication:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{alignat*}{1}
+\left(f+g\right)\left(x\right) & =f\left(x\right)+g\left(x\right),\\
+\left(\alpha\cdot f\right)\left(x\right) & =\alpha\times\left(f\left(x\right)\right).
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I.e.
+ functions are added/multiplied pointwise based on their result.
+ Necessary axioms all follow from the normal rules of addition/multiplication
+ and the zero function is just 
+\begin_inset Formula $f\left(x\right)=0.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review of Vector Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_0.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review of Vector Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_1.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review of Vector Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/add_fns_2.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review of Vector Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Within the space of functions there are many smaller subspaces.
+ Eg:
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Polynomials 
+\begin_inset Formula $f(x)=1+3x+4x^{2}+5x^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Functions on an interval 
+\begin_inset Formula $f(x)=\begin{cases}
+0 & x<0,\\
+e^{x} & 0\leq x\leq1,\\
+0 & x>1.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Twice differentiable functions 
+\begin_inset Formula $f\left(x\right)=\begin{cases}
+x^{2}+2, & x<0,\\
+2\left(e^{x}-x\right). & x\geq0.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Back to Finite Elements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Key idea of finite element method: 
+\end_layout
+
+\begin_layout Itemize
+Desire an exact solution 
+\begin_inset Formula $\psi$
+\end_inset
+
+, from an infinite dimensional vector space, 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+, which satisfies weak form equation, for test functions 
+\begin_inset Formula $\phi$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\psi^{\delta}$
+\end_inset
+
+ in approximate vector (sub)space 
+\begin_inset Formula $\mathcal{V}^{\delta}\subset\mathcal{V}$
+\end_inset
+
+ with finite representation, which satisfies same weak form equation, for
+ test functions 
+\begin_inset Formula $\phi^{\delta}$
+\end_inset
+
+ in approximate space 
+\begin_inset Formula $\mathcal{U}^{\delta}\subset\mathcal{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Expectation that as 
+\begin_inset Formula $\delta\rightarrow0$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{V}^{\delta}\rightarrow\mathcal{V}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi^{\delta}\rightarrow\psi$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example of a Weak Nonclassical Solution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \tag{Helmholtz}\psi-\nabla^{2}\psi\left(x\right)=a\delta\left(X-x\right)
@@ -2151,7 +2174,7 @@ a\exp\left(X-x\right) & x>X
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename peakon.png
@@ -2165,6 +2188,11 @@ a\exp\left(X-x\right) & x>X
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2195,7 +2223,11 @@ emph{Strong}
 
 \end_inset
 
- form of PDEs prescribes behaviour 
+ form of PDEs prescribes 
+\lang british
+behaviour
+\lang english
+ 
 \begin_inset ERT
 status open
 
@@ -2230,7 +2262,11 @@ emph{Weak}
 
 \end_inset
 
- form of PDEs prescribes behaviour over intervals (areas, volumes etc.)
+ form of PDEs prescribes 
+\lang british
+behaviour
+\lang english
+ over intervals (areas, volumes etc.)
 \end_layout
 
 \begin_deeper
@@ -2263,8 +2299,8 @@ Boundary Conditions for Weak Equations
 
 \begin_deeper
 \begin_layout Standard
-Two possible forms of boundary condition for a solution to the Poisson equation
- to be well posed:
+Some possible forms of bc.
+ for solution of Poisson equation to be well posed:
 \end_layout
 
 \begin_layout Enumerate
@@ -2292,7 +2328,7 @@ Neumann:
 \end_layout
 
 \begin_layout Standard
-In the Galerkin formulation, 
+In Galerkin FE formulation, 
 \begin_inset ERT
 status open
 
@@ -2318,7 +2354,10 @@ emph{modification}
 
 \end_inset
 
- of the structure of the problem to be solved, whereas 
+ to structure of the problem.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2345,7 +2384,11 @@ emph{naturally}
 \end_inset
 
  as part of the formulation.
- We'll use a Dirichlet boundary condition at 
+ 
+\end_layout
+
+\begin_layout Standard
+We'll use a Dirichlet boundary condition at 
 \begin_inset Formula $x=0$
 \end_inset
 
@@ -2377,20 +2420,17 @@ Natural Boundary Conditions
 \begin_deeper
 \begin_layout Standard
 Our weak form equation is
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \[
-\int_{0}^{1}\phi\left(\frac{\partial^{2}\psi}{\partial x^{2}}+f\right)\: dx=0,
+\int_{0}^{1}\phi\left(\frac{\partial^{2}\psi}{\partial x^{2}}+f\right)\:dx=0,
 \]
 
 \end_inset
 
-Integrate by parts,
+Integrate by parts, putting boundary terms on RHS,
 \begin_inset Formula 
 \[
-\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\, dx-\int_{0}^{1}\phi f\, dx=-\left[\phi\frac{\partial\psi}{\partial x}\right]_{0}^{1}.
+\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\,dx-\int_{0}^{1}\phi f\,dx=-\left[\phi\frac{\partial\psi}{\partial x}\right]_{0}^{1}.
 \]
 
 \end_inset
@@ -2403,14 +2443,18 @@ Chose
 \begin_inset Formula $\psi=a(0)$
 \end_inset
 
-), and use our knowlege of 
+)
+\end_layout
+
+\begin_layout Standard
+Use our knowledge of 
 \begin_inset Formula $\frac{\partial\psi}{\partial x}$
 \end_inset
 
  on Neumann boundaries:
 \begin_inset Formula 
 \[
-\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\, dx=\int_{0}^{1}\phi f\, dx-\phi\left(1\right)b\left(1\right)
+\tag{\dagger}\sum_{e}\left[\int_{\Omega^{(e)}}\frac{\partial\phi}{\partial x}\frac{\partial\psi}{\partial x}\,dx\right]=\sum_{e}\left[\int_{\Omega^{(e)}}\phi f\,dx\right]-\phi\left(1\right)b\left(1\right)
 \]
 
 \end_inset
@@ -2440,9 +2484,6 @@ Dirichlet Boundary Conditions
 \begin_layout Standard
 Dirichlet boundary conditions can be enforced through splitting solution
  into two parts
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \[
 \psi=\psi_{0}+\psi_{d}
@@ -2454,34 +2495,57 @@ where
 \begin_inset Formula $\psi_{d}$
 \end_inset
 
- is any (chosen) function satisfying 
+ is any (chosen) function satisfying Dirichlet bcs, 
 \begin_inset Formula 
 \[
-\psi_{d}\left(0\right)=a(0),\qquad\frac{\partial\psi_{d}}{\partial x}\left(1\right)=0
+\psi_{d}\left(0\right)=a,\qquad\frac{\partial\psi_{d}}{\partial x}\left(1\right)=0.
 \]
 
 \end_inset
 
-while 
+while the unknown 
 \begin_inset Formula $\psi_{0}$
 \end_inset
 
- satisfies a modified weak equation, with 
-\begin_inset Formula $\psi_{d}$
-\end_inset
-
- on r.h.s,
+ satisfies a modified weak equation with bcs
 \begin_inset Formula 
 \[
-\psi_{0}(0)=0,
+\psi_{0}(0)=0,\qquad\frac{\partial\psi_{d}}{\partial x}\left(1\right)=b
 \]
 
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Boundary Conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Substitute back into weak form, putting 
+\begin_inset Formula $\psi_{0}$
+\end_inset
+
+ on the left and known functions on the RHS.
 \begin_inset Formula 
 \[
-\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{0}}{\partial x}\: dx=\int_{0}^{1}\phi f\: dx-\phi\left(1\right)b\left(1\right)-\int_{0}^{1}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{d}}{\partial x}\: dx,
+\tag{\dagger}\int_{\Omega}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{0}}{\partial x}\,dx=\int_{\Omega}\phi f\,dx-\phi\left(1\right)b\left(1\right)-\int_{\Omega}\frac{\partial\phi}{\partial x}\frac{\partial\psi_{d}}{\partial x}\,dx
 \]
 
 \end_inset
@@ -2494,11 +2558,12 @@ Note
 \begin_inset Formula $\psi_{0}$
 \end_inset
 
- vanishes on the Dirichlet boundaries, same condition we apply to 
+ vanishes on Dirichlet boundaries, same as condition to 
 \begin_inset Formula $\phi$
 \end_inset
 
 .
+ Important for existence.
 \end_layout
 
 \end_deeper
@@ -2523,7 +2588,11 @@ Boundary Conditions: Strong vs.
 \begin_deeper
 \begin_layout Standard
 More generally, implementations of finite element boundary conditions come
- in two flavours, strong and weak.
+ in two 
+\lang british
+flavours
+\lang english
+, strong & weak.
 \end_layout
 
 \begin_layout Columns
@@ -2540,7 +2609,7 @@ More generally, implementations of finite element boundary conditions come
 status collapsed
 
 \begin_layout Plain Layout
-Strong form bc.s
+Strong form bcs.
 \end_layout
 
 \end_inset
@@ -2549,9 +2618,15 @@ Strong form bc.s
 \end_layout
 
 \begin_layout Block
-Information contained in boundary condition appears implicitly in the weak
- form of the PDE.
- Solve by lifting method.
+Information in boundary condition appears implicitly in weak form of PDE.
+\end_layout
+
+\begin_layout Block
+
+\end_layout
+
+\begin_layout Block
+Solve by lifting method.
 \end_layout
 
 \begin_layout Column
@@ -2572,9 +2647,16 @@ Weak form bcs.
 \end_layout
 
 \begin_layout Block
-Information contained in boundary condition appears explicitly in surface
- integrals in the weak form of the PDE.
- Solve by direct substitution.
+Information in boundary condition appears explicitly in boundary integrals
+ in weak form of PDE.
+\end_layout
+
+\begin_layout Block
+
+\end_layout
+
+\begin_layout Block
+Solve by direct substitution.
 \end_layout
 
 \end_deeper
@@ -2599,14 +2681,13 @@ Boundary Conditions: Strong vs.
 
 \begin_deeper
 \begin_layout Standard
-Which method to apply depends on the details of both the original PDE and
- the weak form to be solved.
+Which method to apply depends on both original PDE and weak form to be solved.
  Sometimes both are possible.
  
 \end_layout
 
 \begin_layout Standard
-For example, consider solving the advection equation,
+E.g., consider the advection equation,
 \begin_inset Formula 
 \[
 \frac{\partial\tau}{\partial t}+\bm{a}\cdot\nabla\tau=0,
@@ -2622,12 +2703,11 @@ for a tracer
 \begin_inset Formula $\bm{a}$
 \end_inset
 
- and dirichlet boundary conditions at a inlet.
+ and Dirichlet boundary conditions at a inlet.
 \end_layout
 
 \begin_layout Standard
-Note the odd number of spatial derivatives, whereas even number for Poisson
- equation.
+Note odd number of spatial derivatives, whereas even for Poisson equation.
 \end_layout
 
 \end_deeper
@@ -2664,7 +2744,7 @@ Boundary Conditions: Strong vs.
 status collapsed
 
 \begin_layout Plain Layout
-Strong form bc.s
+Strong form bcs.
 \end_layout
 
 \end_inset
@@ -2710,7 +2790,7 @@ Integrate by parts,
 \begin_inset Formula 
 \begin{alignat*}{1}
 \int_{\Omega}\phi\frac{\partial\tau}{\partial t}-\tau\nabla\cdot\left(\phi\bm{a}\right)dx\\
-\qquad=-\int_{\delta\Omega^{+}}\bm{a}\cdot\bm{n}\phi\tau_{b}\: dS,
+\qquad=-\int_{\delta\Omega^{+}}\bm{a}\cdot\bm{n}\phi\tau_{b}\:dS,
 \end{alignat*}
 
 \end_inset
@@ -2770,7 +2850,7 @@ where
 \begin_inset Formula $N_{i}:\Omega\rightarrow\mathbb{R}$
 \end_inset
 
- is a fixed shape function specifing spatial dependence.
+ is a fixed shape function specifying spatial dependence.
  Can do the same for the space of test functions, 
 \begin_inset Formula $\phi$
 \end_inset
@@ -3093,12 +3173,19 @@ To obtain the Galerkin approximation of the Poisson equation, we find the
 \begin_inset Formula $\phi$
 \end_inset
 
- are approximated by our finite element expansions, 
+ are both represented by our finite element expansions, 
 \begin_inset Formula 
-\begin{alignat*}{1}
-\psi^{\delta} & =\sum_{i=0}^{n}\hat{\psi}_{i}N_{i},\\
-\phi^{\delta} & =\sum_{j=0}^{n}\hat{\phi}_{j}N_{j}.
-\end{alignat*}
+\[
+\psi_{0}^{\delta}\left(t,x\right)=\sum_{i=1}^{n}\hat{\psi}_{i}\left(t\right)N_{i}\left(x\right),\quad\phi^{\delta}\left(t,x\right)=\sum_{j=1}^{n}\hat{\phi}_{j}\left(t\right)N_{j}\left(x\right).
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi_{d}=a\left(0\right)N_{0}
+\]
 
 \end_inset
 
@@ -3106,11 +3193,12 @@ To obtain the Galerkin approximation of the Poisson equation, we find the
 \end_layout
 
 \begin_layout Standard
-The 
+Note sums start from 0 due to bcs.
+ The 
 \begin_inset Formula $\psi^{\delta}$
 \end_inset
 
- are called 
+ are 
 \begin_inset ERT
 status open
 
@@ -3123,12 +3211,13 @@ emph{trial functions}
 
 \end_inset
 
- and the function space they come from is the trial space.
+.
+ Function space they come from is the trial space.
  The 
 \begin_inset Formula $\phi^{\delta}$
 \end_inset
 
-are called 
+are 
 \begin_inset ERT
 status open
 
@@ -3141,7 +3230,7 @@ emph{test functions}
 
 \end_inset
 
- and live in the trial space.
+ and live in the test space.
  Computation involves obtaining the 
 \begin_inset ERT
 status open
@@ -3160,7 +3249,7 @@ emph{finite}
 \end_inset
 
 .
- Can then be solved on a computer.
+ Can thus be solved on a computer.
 \end_layout
 
 \end_deeper
@@ -3183,13 +3272,17 @@ Galerkin Approximation
 
 \begin_deeper
 \begin_layout Standard
-Substituing the finite representations into (*) we get
+Substituting the finite representations into (
+\begin_inset Formula $\dagger$
+\end_inset
+
+) we get
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{alignat*}{1}
-\int\sum_{j=1}^{n}\hat{\phi}_{j}\frac{\partial N_{j}}{\partial x}\sum_{i=1}^{N}\hat{\psi}_{i}\frac{\partial N_{i}}{\partial x}\: dV+v_{N}^{\delta}b\left(x_{N}\right) & =\int\sum_{j=1}^{n}\hat{\phi}_{j}^{\delta}N_{j}f\: dV,
+\int\sum_{j=1}^{n}\hat{\phi}_{j}\frac{\partial N_{j}}{\partial x}\sum_{i=1}^{N}\hat{\psi}_{i}\frac{\partial N_{i}}{\partial x}\:dV+v_{N}^{\delta}b\left(x_{N}\right) & =\int\sum_{j=1}^{n}\hat{\phi}_{j}^{\delta}N_{j}f\:dV,
 \end{alignat*}
 
 \end_inset
@@ -3244,7 +3337,7 @@ Generally the right hand side of the equation is known explicitly as a function
 
 .
  Hence 
-\begin_inset Formula $\int_{0}^{1}\phi^{\delta}f\, dx$
+\begin_inset Formula $\int_{0}^{1}\phi^{\delta}f\,dx$
 \end_inset
 
  can be calculated exactly.
@@ -3252,12 +3345,12 @@ Generally the right hand side of the equation is known explicitly as a function
  in the approximate function space,
 \begin_inset Formula 
 \[
-f^{\delta}\left(x\right)=\sum_{i=1}^{N}\hat{f}_{i}N_{i}\left(x\right),
+f^{\delta}\left(x\right)=\sum_{i=0}^{N}\hat{f}_{i}N_{i}\left(x\right),
 \]
 
 \end_inset
 
-where, for our choice of shape functions,
+where (for our choice of shape functions),
 \begin_inset Formula 
 \[
 \hat{f}_{i}=f\left(x_{i}\right).
@@ -3297,7 +3390,7 @@ Dirichlet condition:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
 	filename images/FEmatrix.png
 	lyxscale 40
@@ -3309,6 +3402,10 @@ Dirichlet condition:
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
 \begin_layout Separator
 
 \end_layout
@@ -3327,12 +3424,12 @@ Local to global
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Note that
 \begin_inset Formula 
 \begin{alignat*}{1}
-D_{ij} & =\int_{\Omega}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\: dV,\\
- & =\sum_{k}\int_{\Omega^{(k)}}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\: dV,
+D_{ij} & =\int_{\Omega}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\:dV,\\
+ & =\sum_{k}\int_{\Omega^{(k)}}\frac{\partial N_{i}}{\partial x}\frac{\partial N_{j}}{\partial x}\:dV,
 \end{alignat*}
 
 \end_inset
@@ -3354,6 +3451,15 @@ Global matrix assembled from sum of local integrals over elements.
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3636,7 +3742,7 @@ Use same finite element framework for 1D advection diffusion equation:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\int_{0}^{1}\phi\frac{\partial\tau}{\partial t}\, dx=\int\frac{\partial\phi}{\partial x}\left(u\tau-\kappa\frac{\partial\tau}{\partial x}\right)\: dx
+\int_{0}^{1}\phi\frac{\partial\tau}{\partial t}\,dx=\int\frac{\partial\phi}{\partial x}\left(u\tau-\kappa\frac{\partial\tau}{\partial x}\right)\:dx
 \]
 
 \end_inset
@@ -3743,7 +3849,7 @@ Following substitution, integrate by parts to obtain
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\underbrace{\int_{0}^{1}N_{i}N_{j}\: dx}_{\mbox{"Mass matrix"}M_{ij}}\frac{\partial\hat{\tau}_{j}}{\partial t}-\int_{0}^{1}\frac{\partial N_{i}}{\partial x}\left(N_{j}\sum_{k=0}^{n}u_{k}N_{k}^{u}-\kappa\frac{\partial N_{j}}{\partial x}\right)\: dx\hat{\tau}_{j}=0,
+\underbrace{\int_{0}^{1}N_{i}N_{j}\:dx}_{\mbox{"Mass matrix"}M_{ij}}\frac{\partial\hat{\tau}_{j}}{\partial t}-\int_{0}^{1}\frac{\partial N_{i}}{\partial x}\left(N_{j}\sum_{k=0}^{n}u_{k}N_{k}^{u}-\kappa\frac{\partial N_{j}}{\partial x}\right)\:dx\hat{\tau}_{j}=0,
 \]
 
 \end_inset
@@ -3818,12 +3924,12 @@ equations
 \end_layout
 
 \begin_layout Itemize
-Functions get approximated by finite dimensional summations of functions,
+Functions get approximated by finite dimensional sums of polynomial functions,
  non-zero over small regions of problem domain (elements)
 \end_layout
 
 \begin_layout Itemize
-Linear PDE problem gives a linear (matrix) problem for the 
+Linear PDE problem gives linear (matrix) problem for 
 \begin_inset Formula $\hat{\psi}_{i}$
 \end_inset
 
@@ -3833,7 +3939,7 @@ Linear PDE problem gives a linear (matrix) problem for the
 
 \begin_layout Standard
 The efficient computational representation and solution of these sorts of
- problems will form the basis of the other session.
+ problems will form the basis of other sessions.
 \end_layout
 
 \end_deeper
@@ -4047,7 +4153,7 @@ Use discontinuous functions [Discontinuous Galerkin formulation]
 
 \end_deeper
 \begin_layout Subsection
-High order polynomials and discontinous FEM
+High order polynomials and discontinuous FEM
 \end_layout
 
 \begin_layout Frame
@@ -4541,7 +4647,7 @@ In 1d degrees of freedom
 \end_layout
 
 \begin_layout Itemize
-Good representation of discontinuties/fronts/large gradients.
+Good representation of discontinuities/fronts/large gradients.
 \end_layout
 
 \begin_layout Standard
@@ -4678,7 +4784,7 @@ Choice of Vector Spaces
 Going back to the weak form for the original infinite dimensional problem,
 \begin_inset Formula 
 \[
-\int_{\Omega}\nabla\phi\cdot\nabla\psi\: dV=\int_{\Omega}\phi f\: dV+\int_{\delta\Omega^{N}}\phi b\: dV,
+\int_{\Omega}\nabla\phi\cdot\nabla\psi\:dV=\int_{\Omega}\phi f\:dV+\int_{\delta\Omega^{N}}\phi b\:dV,
 \]
 
 \end_inset
@@ -4718,7 +4824,7 @@ Choice of Vector Spaces
 We require the function is square integrable,
 \begin_inset Formula 
 \begin{equation}
-\left\Vert \psi\right\Vert ^{2}:=\int_{\Omega}\psi^{2}\: dV<\infty.
+\left\Vert \psi\right\Vert ^{2}:=\int_{\Omega}\psi^{2}\:dV<\infty.
 \end{equation}
 
 \end_inset
@@ -4730,7 +4836,7 @@ We require the function is square integrable,
 ) and also that
 \begin_inset Formula 
 \begin{equation}
-\left\Vert \nabla\psi\right\Vert ^{2}:=\int_{\Omega}\nabla\psi\cdot\nabla\psi\: dV<\infty,
+\left\Vert \nabla\psi\right\Vert ^{2}:=\int_{\Omega}\nabla\psi\cdot\nabla\psi\:dV<\infty,
 \end{equation}
 
 \end_inset
@@ -4784,7 +4890,7 @@ The volume integral in (*) defines a symmetric bilinear form,
 
 \begin_inset Formula 
 \[
-a(\phi,\psi):=\int_{\Omega}\nabla\psi\cdot\nabla\phi\: d^{n}x.
+a(\phi,\psi):=\int_{\Omega}\nabla\psi\cdot\nabla\phi\:d^{n}x.
 \]
 
 \end_inset
@@ -4931,7 +5037,7 @@ Suppose there are two different solutions,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-a\left(\phi,\psi_{1}\right)=a\left(\phi,\psi_{2}\right)=\int_{\Omega}\phi f\, d^{n}x,\mbox{ for all }\phi\in\mathcal{H}^{1}\left(\Omega\right).
+a\left(\phi,\psi_{1}\right)=a\left(\phi,\psi_{2}\right)=\int_{\Omega}\phi f\,d^{n}x,\mbox{ for all }\phi\in\mathcal{H}^{1}\left(\Omega\right).
 \]
 
 \end_inset
@@ -5367,7 +5473,7 @@ p_{n}=a_{0}x^{n}+a_{1}x^{n-1}+\ldots a_{n}\quad a_{i}\in\mathbb{R}.
 \end_layout
 
 \begin_layout Standard
-For a FE method, would a quadrature which captures the 
+For a FE method, want a quadrature which captures the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5389,7 +5495,7 @@ worst
 \end_deeper
 \begin_layout Separator
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -5508,7 +5614,7 @@ Rule for change of variables in integrals is
 \begin_layout Plain Layout
 \begin_inset Formula 
 \[
-\iint_{\Omega}f\left(x,y\right)\, dx\, dy=\int_{0}^{1}\int_{0}^{1-\chi}f\left(\xi\left(x,y\right),\chi\left(x,y\right)\right)\frac{\partial\left(x,y\right)}{\partial\left(\left(\xi,\chi\right)\right)}\, d\xi\: d\chi
+\iint_{\Omega}f\left(x,y\right)\,dx\,dy=\int_{0}^{1}\int_{0}^{1-\chi}f\left(\xi\left(x,y\right),\chi\left(x,y\right)\right)\frac{\partial\left(x,y\right)}{\partial\left(\left(\xi,\chi\right)\right)}\,d\xi\:d\chi
 \]
 
 \end_inset
@@ -5601,7 +5707,7 @@ Reference Elements
 
 \begin_deeper
 \begin_layout Plain Layout
-Determinent of the Jacobian matrix for the change of variables is given
+Determinant of the Jacobian matrix for the change of variables is given
  by
 \end_layout
 
@@ -5772,6 +5878,38 @@ emph{everywhere}
 \end_layout
 
 \begin_layout Itemize
+
+\color none
+Basis functions have 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{order}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{continuity}
+\end_layout
+
+\end_inset
+
+ criteria.
+\end_layout
+
+\begin_layout Itemize
 \begin_inset ERT
 status open
 
@@ -5828,7 +5966,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -5870,7 +6008,7 @@ beamertemplatebookbibitems
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Start with overview books.
@@ -6006,9 +6144,9 @@ newblock
 
 \end_inset
 
- 2014
+ 2015
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Followed by interesting articles.

@@ -16,7 +16,7 @@
 
 \institute{Department of Earth Science and Engineering, Imperial College London}
 
-\date{5-7 November 2014}
+\date{11-13 November 2015}
 \title[Meshing]{Meshing}
 \subtitle[]{Fluidity training workshop}
 
@@ -76,7 +76,7 @@
       \vspace{10pt}
       \item Fetch \& open a copy of the present slides:
       \begin{itemize}
-         \item[$\circ$] From GitHub (under meshing): \url{http://fluidityproject.github.io/training/}
+         \item[$\circ$] From the course \href{https://fluidityproject.github.io/DocumentationSupport/TrainingWorkshop/index.html}{on-line time table}.
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -241,13 +241,14 @@ where $ele$ is the number of elements in the tessellation.
       \item Fluidity can read meshes in gmsh format.\vspace{10pt}
       \item Fluidity can also read meshes in triangle format.
       \begin{itemize}
-         \item[$\circ$] The gmsh2triangle utility is part of the Fluidity distribution and can convert gmsh to triangle format:
+         \item[$\circ$] Deprecated.
+         \item[$\circ$] The gmsh2triangle utility is part of the Fluidity distribution. Converts gmsh to triangle format:
          \item[\$] \emph{gmsh2triangle torus.msh} \\ \hspace{10pt} Generates torus.ele, torus.face, torus.node
          \item[\$] \emph{ls -l} \\ \hspace{10pt} to list the files.
          \item[\$] \emph{gmsh2triangle} \\ \hspace{10pt} Shows usage and options.\vspace{10pt}
       \end{itemize}
       \item Fluidity can also read meshes in ExodusII format.\vspace{10pt}
-      \item Work is on--going on PETSc DMPlex capability.
+      \item More information on mesh formats in the \href{http://files.figshare.com/2031637/Fluidity.Manual.v.4.1.12.pdf}{Fluidity manual}
    \end{itemize}
 \end{frame}
 

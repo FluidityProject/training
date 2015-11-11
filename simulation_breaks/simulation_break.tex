@@ -1,33 +1,43 @@
-\documentclass[professionalfonts, 8pt]{beamer}
-
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{url}  
-\usepackage{color}  
-\usepackage{float}
-\usepackage{textcomp}
+\documentclass[t]{beamer}
 \usetheme{amcg}
-\usepackage[latin1]{inputenc}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-\usepackage{movie15}
-% \usepackage{multimedia}
-%\usepackage{hyperref}
-\usefonttheme{serif}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    urlcolor=cyan
+}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\newcommand\TILDE{\char`\~}
+\usepackage{listings}
 \setbeamertemplate{navigation symbols}{}
+
+\author[Alexandros Avdis]{Applied Modelling and Computation Group\\[15pt]Alexandros Avdis}
+
+\institute{Department of Earth Science and Engineering, Imperial College London}
+
+\date{11-13 November 2015}
+\title[What to do if your simulation breaks?]{What to do if your simulation breaks?}
+\subtitle[]{Fluidity training workshop}
+
+\setbeamersize{text margin left=0.3in}
+\setbeamersize{text margin right=0.3in}
 
 \begin{document}
 
-%% \rmdefault{lmodern}\normalfont\upshape
-
-\begin{frame}{Fluidity Training}
-  \begin{center}
-  {\Huge What to do if your simulation breaks?}
-  \vspace{1.5cm}\\
-  \large Dave Robinson\\
-  \vspace{0.2cm}
-  7th November 2014
-  \end{center}
+\setbeamertemplate{footline}
+{%
+\begin{beamercolorbox}[ht=.35cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm]{author in head/foot}%
+        \begin{minipage}[c]{5cm}%
+        \usebeamerfont{author in head/foot}
+        \end{minipage}\hfill% 
+        \begin{minipage}{6cm}
+        \hfill\includegraphics[height=.5cm]{AMCGFlow-long}
+        \end{minipage}
+\end{beamercolorbox}%
+}
+\begin{frame}
+\titlepage
 \end{frame}
 
 \begin{frame}{Introduction}
