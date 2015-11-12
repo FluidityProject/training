@@ -40,95 +40,155 @@
 \titlepage
 \end{frame}
 
-\begin{frame}{Introduction}
-
-This presentation will cover:
-\vspace{1ex}
-\begin{description}
- \item[$\cdot$] Some reasons your simulation can fail
- \item[$\cdot$] Sources of useful data
- \item[$\cdot$] What can cause numerical instability?
- \item[$\cdot$] Simplifying your problem
- \item[$\cdot$] (Occasionally) helpful third party software 
- \item[$\cdot$] HELP!
-\end{description}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Some reasons that your simulation can fail}
+\begin{frame}{An overview to debugging your failing run.}
 
-Roughly speaking, the reason that your simulation can failed will be placed in one of the following categories:
+You \emph{will} encounter failures while running code.\\
+\vspace{1ex}
+You \emph{have already encountered} failing software: Crashes!\\
+\vspace{1ex}
+Keep calm and carry out the following steps:
 \vspace{1ex}
 
-\begin{description}
- \item[$\cdot$] Bad environment variables, missing/out-of-date dependent software or modules
- \item[$\cdot$] Option errors, faulty Python scripts
- \item[$\cdot$] Under/over/badly constrained initial and/or boundary conditions
- \item[$\cdot$] Numerical instability
- \item[$\cdot$] Partitioning, adaptivity, field projection
-\end{description}
+\begin{itemize}
+ \item[$\circ$] Collect information.
+ \item[$\circ$] Interpret information: Think of a cause of the error.
+ \item[$\circ$] Treat \& test.
+ \item[$\circ$] Repeat, and remember simulation is an iterative process.
+\end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Sources of useful information}
+\begin{frame}{Collect information.}
 
-Information that can help you diagnose the failure can be gathered from:
-\vspace{1ex}
-
-\begin{description}
- \item[$\cdot$] log file (``{\tt -l -v3}'')
- \item[$\cdot$] error file (including backtrace)
- \item[$\cdot$] stat file
- \item[$\cdot$] pbs output (if running on a HPC)
- \item[$\cdot$] ``matrixdump'' and ``core'' files
- \item[$\cdot$] vtus
-\end{description}
-
-It is also possible to re-run your simulation with extra diagnostic fields, increase your dump-rate, 
-and re-run the simulation with a Fluidity binary compiled with debugging enabled.
+Collect and go through \emph{even if you do not understand all of it}\\
+\vspace{20pt}
+The model \& OS output is a primary source of information:
+\begin{itemize}
+ \item[$\circ$] log file (Fluidity options ``{\tt -l -v3}'')
+ \item[$\circ$] error file (including backtrace)
+ \item[$\circ$] pbs output (if running on a HPC)
+ \item[$\circ$] stat file
+ \item[$\circ$] vtus
+\end{itemize}
+\vspace{20pt}
+Treat is as a puzzle/crossword: Go through the information again\\
+\vspace{20pt}
+Repeat \& Remember: Simulation is an iterative process.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{``My simulation broke in 10 seconds flat!''}
+\begin{frame}{Further sources of useful information}
 
-If your simulation broke very very quickly 
-then it was more than likely due to one of the following reasons:
+You can re-run a simulation in order to obtain more information:
 \vspace{1ex}
 
-\begin{description}
- \item[$\cdot$] Bad environment variables, missing/out-of-date dependent software or modules
- \item[$\cdot$] Option errors, faulty Python scripts
-\end{description}
+\begin{itemize}
+ \item[$\circ$] Re-run simulation with extra diagnostic fields.
+ \item[$\circ$] Increase dump-rate.
+ \item[$\circ$] Re-run simulation using binary compiled with debugging flags.
+ \item[$\circ$] pbs output (if running on a HPC).
+ \item[$\circ$] ``matrixdump'' and ``core'' files.
+\end{itemize}
 
-A common mistake, for instance, is having a mis-directed PYTHONPATH environment variable.  
-You can check this by typing ``{\tt echo \$PYTHONPATH}'' into your terminal window 
-(the list of paths should include {\tt [Fluidity directory]/python})
+``matrixdump'' and ``core'' files are here included for completeness. However, they
+large files, do not send to individuals/mailing lists. They are very useful when combined
+with debuggers.
 
-\vspace{1ex}
-If you're suspicious that your Fluidity build isn't working correctly, navigate to the Fluidity directory and type ``{\tt make unittest}''.
-
-\vspace{1ex}
-For an option error, then hopefully the error message should give useful advice on what to correct,
-but if all else fails, backing-up your {\tt .flml} file and progressively removing fields can help. 
-Also, using the {\tt diff} and {\tt meld} commands to compare against working {\tt .flml} files.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{What can cause numerical instability?}
+\begin{frame}{Interpret information}
 
-Thankfully, for most causes of failure, the error messages given by Fluidity are fairly self-explanatory.
-But, unfortunately, the cause of numerical instability is often a little more tricky to pin-point.
+Going through the information will give you the time to think of what may have gone wrong.\\
+\vspace{10pt}
+Common causes of failing simulations:
+\vspace{10pt}
+\begin{itemize}
+ \item[$\circ$] Bad environment variables, missing/out-of-date dependent software or modules
+ \item[$\circ$] Bad options set-up:
+ \begin{itemize}
+  \item[$\circ$] Option errors
+  \item[$\circ$] Faulty Python scripts
+  \item[$\circ$] Under/over/badly constrained initial and/or boundary conditions
+  \item[$\circ$] Numerical instability
+  \item[$\circ$] Partitioning, adaptivity, field projection
+ \end{itemize}
+ \item[$\circ$] An error in software, a ``bug''.
+ \begin{itemize}
+  \item[$\circ$] When \emph{certain} of a bug, contact the development team.
+ \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Bad environment variables}
+
+What to check:
+
+\begin{itemize}
+ \item[$\circ$] Check environment variables, in particular PYTHONPATH: type ``{\tt echo \$PYTHONPATH}'' into your terminal window
+ \item[$\circ$] Check for absent dynamic libraries:
+ \begin{itemize}
+  \item[$\circ$] Navigate to the fluidity \texttt{bin} directory 
+  \item[$\circ$] Issue \texttt{\$ ldd fluidity} at the prompt, it will list all dynamic libraries used by the binary.
+  \item[$\circ$] There should be no missing libraries.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{1ex}
+\begin{frame}{Bad options set-up}
+%If you're suspicious that your Fluidity build isn't working correctly, navigate to the Fluidity directory and type ``{\tt make unittest}''.
+Option errors:
+\vspace{1ex}
+\begin{itemize}
+ \item[$\circ$] The error message might contain advice on what to correct. Try again.
+ \item[$\circ$] Use the {\tt diff} and {\tt meld} commands to compare against working {\tt .flml} files.
+ \item[$\circ$] Regress to another, working set-up
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Regress}
+
+Back-up your {\tt .flml} file and progressively remove fields:
+\begin{itemize}
+ \item[$\cdot$] Remove adaptivity.
+ \item[$\cdot$] Remove any turbulence models and prescribe viscosity (as above)
+ \item[$\cdot$] Remove parameterisations
+ \item[$\cdot$] Reduce the number of spatial dimensions
+ \item[$\cdot$] Simplify the geometry 
+ \item[$\cdot$] Smooth BCs with discontinuities in space or time
+ \item[$\cdot$] If you have a viscosity field, then set that to a value that gives you a Reynolds Number $\simeq 1000$
+ \item[$\cdot$] Progressively remove prognostic fields
+\end{itemize}
+Then, add complexity back in \emph{\color{red}ONE STEP AT A TIME}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Numerical instability}
+
+The cause of numerical instability can be tricky to pin-point:
 The symptom described within an error message may not directly relate the underlying cause of failure.
 
 \vspace{1ex}
-For this reason, the best advice is to sanity check the various factors that can cause numerical instability:
-\begin{description}
+Check the various factors that can cause numerical instability:
+\begin{itemize}
  \item[$\cdot$] Timestep, Courant Number, and temporal discretisation
  \item[$\cdot$] Spatial discretisation and element pair
  \item[$\cdot$] Mesh quality, Condition Number
@@ -136,32 +196,7 @@ For this reason, the best advice is to sanity check the various factors that can
  \item[$\cdot$] Field stabilisation, upwinding/slope-limiting
  \item[$\cdot$] Strong/weak boundary conditions
  \item[$\cdot$] Preconditioner, iterative solver, convergence criteria
-\end{description}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Simplifying your simulation}
-
-Once you have extracted any useful data from a broken simulation
-it is important that you make any further progress from a simpler simulation that {\it did} solve successfully.
-If no such simulation exists, then you need to create one!
-
-\vspace{1ex}
-There are several ways in which you can simplify your simulation:
-
-\begin{description}
- \item[$\cdot$] Reduce the number of spatial dimensions
- \item[$\cdot$] Simplify the geometry 
- \item[$\cdot$] Smooth BCs with discontinuities in space or time
- \item[$\cdot$] If you have a viscosity field, then set that to a value that gives you a Reynolds Number $\simeq 1000$
- \item[$\cdot$] Remove any turbulence models and prescribe viscosity (as above)
- \item[$\cdot$] Progressively remove prognostic fields
- \item[$\cdot$] Remove adaptivity, lower the number of partitions
-\end{description}
-
-Then, add complexity back in \emph{\color{red}ONE STEP AT A TIME}
+\end{itemize}
 
 \end{frame}
 
@@ -170,7 +205,7 @@ Then, add complexity back in \emph{\color{red}ONE STEP AT A TIME}
 \begin{frame}{Monitoring the progress of a simulation}
 
 If you are suspicious that your simulation may crash and you want to monitor its progress,
-then the following commands can be useful:
+the following commands can be useful:
 
 \vspace{1ex}
 \begin{description}
@@ -180,14 +215,14 @@ then the following commands can be useful:
  \item[] {\tt grep reason fluidity.log-0}
 \end{description}
 
-Note that for the last three to work you need to be logging with a verbosity of two or more, 
+For the last three to work, run with a verbosity of two or more, 
 i.e. {\tt ./fluidity -v2 -l my.flml}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{(Occasionally) helpful third-party software}
+\begin{frame}{A bug}
 
 If you believe there might be a bug in the code
 then your first step should be to contact the development team and submit a bug report.
@@ -196,11 +231,11 @@ then your first step should be to contact the development team and submit a bug 
 The following third-party software can then be useful for slowly stepping through the simulation solve to determine the root cause:
 \vspace{1ex}
 
-\begin{description}
+\begin{itemize}
  \item[$\cdot$] Valgrind (checking for memory issues)
  \item[$\cdot$] GDB (a free Open Source de-bugger)
  \item[$\cdot$] DDT (a commercial alternative) 
-\end{description}
+\end{itemize}
 
 Similarly ``vtune'' can be useful in determining which lines of code are taking up the most time in the solve.
 
@@ -210,18 +245,22 @@ Similarly ``vtune'' can be useful in determining which lines of code are taking 
 
 \begin{frame}{HELP!!!}
 
-If you've tried and failed to fix your problem, then there is a troubleshooting section to the Manual that's worth consulting.
+Consult the \href{https://fluidityproject.github.io/DocumentationSupport/index.html}{documentation}:
+\begin{itemize}
+ \item\href{https://github.com/FluidityProject/fluidity/wiki}{Fluidity wiki}
+ \item The troubleshooting section of the \href{https://fluidityproject.github.io/DocumentationSupport/Manuals/index.html}{Fluidity manual}.
+\end{itemize}
 
 \vspace{1ex}
-But finally, Fluidity has a very eager and responsive development community.  
-We can be contacted either through the mailing list ({\tt mailman.ic.ac.uk/mailman/listinfo/fluidity})
+Fluidity has a very eager and responsive development community.  
+We can be contacted either through the \href{mailman.ic.ac.uk/mailman/listinfo/fluidity}{mailing list}
 or through IRC ({\tt \# amcg}).
 
 \vspace{1ex}
 It would be helpful for you to include information about:
 \begin{description}
  \item[$\cdot$] What simulation are you trying to run?
- \item[$\cdot$] What momentum equation are you solving?
+ \item[$\cdot$] What equations are you solving?
  \item[$\cdot$] What discretisation are you using?
  \item[$\cdot$] What similar simulations do you have that {\it did} work?
  
@@ -229,9 +268,18 @@ It would be helpful for you to include information about:
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
+\begin{frame}{Questions?}
 \begin{center}
-{\Huge Questions?}
+\vfill
+AMCG:\\
+\url{http://amcg.ese.ic.ac.uk/}\\[15pt]
+Fluidity:\\
+\url{http://fluidityproject.github.io/}\\[15pt]
+Fluidity code on GitHub:\\
+\url{https://github.com/FluidityProject/fluidity}
+\url{https://github.com/FluidityProject}\\[15pt]
+Fluidity wiki:\\
+\url{https://github.com/FluidityProject/fluidity/wiki}
 \end{center}
 \end{frame}
 
